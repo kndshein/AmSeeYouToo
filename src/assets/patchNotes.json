@@ -1,0 +1,112 @@
+[
+  {
+    "version": "1.0.0",
+    "date": "Jan 2021",
+    "notes": ["<i>AmSeeYou</i> was born."]
+  },
+  {
+    "version": "1.0.1",
+    "date": "Feb 2021",
+    "notes": ["Fixed visual and technical bugs."]
+  },
+  {
+    "version": "1.0.2",
+    "date": "Mar 2021",
+    "notes": ["Minor UX improvements."]
+  },
+  {
+    "version": "1.0.3",
+    "date": "May 2021",
+    "notes": ["Minor deployment fixes."]
+  },
+  {
+    "version": "1.1.0",
+    "date": "Jul 2021",
+    "notes": [
+      "Added <i>Black Widow</i>.",
+      "Added casts on to cards.",
+      "Increased accessibility."
+    ]
+  },
+  {
+    "version": "2.0.0",
+    "date": "Jul 2021",
+    "notes": ["Added TV shows and accompanying episodes."]
+  },
+  {
+    "version": "2.1.0",
+    "date": "Jul 2021",
+    "notes": ["Refactored API calls."]
+  },
+  {
+    "version": "2.2.0",
+    "date": "Jul 2021",
+    "notes": [
+      "Added loading spinners.",
+      "Replaced horizontal scroll with scrollbar."
+    ]
+  },
+  {
+    "version": "2.3.0",
+    "date": "Jul 2021",
+    "notes": ["Added 'Movies Only' filter and added About Card."]
+  },
+  {
+    "version": "2.3.1",
+    "date": "Sep 2021",
+    "notes": [
+      "Added <i>Shang-Chi and the Legend of Ten Rings</i>.",
+      "Refactored media json."
+    ]
+  },
+  {
+    "version": "2.3.2",
+    "date": "Oct 2021",
+    "notes": ["Added <i>What If...?</i>", "Refactored genre CSS styling."]
+  },
+  {
+    "version": "2.4.0",
+    "date": "Oct 2021",
+    "notes": [
+      "Added labels for better differentiation between movies and shows."
+    ]
+  },
+  {
+    "version": "2.4.1",
+    "date": "Nov 2021",
+    "notes": ["Added <i>Eternals</i>."]
+  },
+  {
+    "version": "2.4.2",
+    "date": "Jan 2022",
+    "notes": ["Added <i>Spider-Man: No Way Home</i> and <i>Hawkeye</i>."]
+  },
+  {
+    "version": "2.5.0",
+    "date": "Jan 2022",
+    "notes": [
+      "Added <i>Doctor Strange in the Multiverse of Madness</i>, <i>Moon Knight</i>, and <i>Thor: Love and Thunder</i>.",
+      "Made the app more responsive on ultrawide screens.",
+      "Misc. CSS fixes."
+    ]
+  },
+  {
+    "version": "2.6.0",
+    "date": "Nov 2022",
+    "notes": [
+      "Updated patch notes system.",
+      "Reordered various media to reflect original source.",
+      "Added <i>I am Groot</i>, <i>She-Hulk</i>, <i>Ms. Marvel</i>, and <i>Werewolf by Night</i>",
+      "Fixed 'Too Many Requests' API bug."
+    ]
+  },
+  {
+    "version": "2.7.0",
+    "date": "Nov 2022",
+    "notes": [
+      "Created 'misc' category.",
+      "Added additional genre colors.",
+      "Round media vote averages."
+    ]
+  }
+]
