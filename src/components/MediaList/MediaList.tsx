@@ -22,9 +22,11 @@ export default function MediaList({ movies_only }: PropTypes) {
                 : ''
             }`}
           >
-            {ele.type == 'movie' && <MediaWrapper media_data={ele} />}
+            {ele.type == 'movie' && (
+              <MediaWrapper media_data={ele} movies_only={movies_only} />
+            )}
             {!movies_only && (ele.type == 'tv' || ele.type == 'misc') && (
-              <MediaWrapper media_data={ele} />
+              <MediaWrapper media_data={ele} movies_only={movies_only} />
             )}
           </Fragment>
         );

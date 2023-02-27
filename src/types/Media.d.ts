@@ -14,3 +14,4 @@ export interface ShowType extends Id {
 }
 
 export type MediaType = MovieType | ShowType;
+export type MediaUiType = 'movie' | 'misc' | 'show';
