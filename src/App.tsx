@@ -4,11 +4,11 @@ import './components/MediaWrapper';
 import MediaWrapper from './components/MediaWrapper';
 
 function App() {
-  const [moviesOnly, setMoviesOnly] = useState(true);
+  const [movies_only, setMoviesOnly] = useState(true);
 
   return (
     <div className="App">
-      <MediaWrapper moviesOnly={moviesOnly} />
+      <MediaWrapper movies_only={movies_only} />
     </div>
   );
 }
