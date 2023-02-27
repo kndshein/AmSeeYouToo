@@ -5,6 +5,7 @@ import { MediaType } from '../../types/Media';
 import Loading from '../Loading/Loading';
 import Movie from '../Movie/Movie';
 import Show from '../Show/Show';
+import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
   media_data: MediaType;
@@ -35,21 +36,24 @@ export default function MediaWrapper({ media_data }: PropTypes) {
   if (isLoading) return <Loading />;
 
   return (
-    <>
+    <section className={styles.media}>
       {!is_backdrop_loaded && <Loading />}
-      <img
-        src={`https://image.tmdb.org/t/p/w1280${
-          data.backdrop_path ? data.backdrop_path : data.poster_path
-        }`}
-        alt={data.original_title}
-        onLoad={() => setIsBackdropLoaded(true)}
-      />
+      <div className={styles.backdrop_wrapper}>
+        <img
+          className={styles.backdrop}
+          src={`https://image.tmdb.org/t/p/w1280${
+            data.backdrop_path ? data.backdrop_path : data.poster_path
+          }`}
+          alt={data.original_title}
+          onLoad={() => setIsBackdropLoaded(true)}
+        />
+      </div>
       {media_data.type == 'movie' && (
         <Movie movie_data={media_data} tmdb_data={data} />
       )}
       {media_data.type == 'tv' && (
         <Show show_data={media_data} tmdb_data={data} />
       )}
-    </>
+    </section>
   );
 }

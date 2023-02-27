@@ -1,5 +1,4 @@
 import MediaList from '../MediaList/MediaList';
-import styles from './MediaListWrapper.module.scss';
 
 type PropTypes = {
   movies_only: boolean;

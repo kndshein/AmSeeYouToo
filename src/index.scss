@@ -1,0 +1,40 @@
+@use './sass/variables.scss' as *;
+@import url('https://use.typekit.net/ncb2bkr.css');
+
+* {
+  box-sizing: border-box;
+  font-family: $body-text;
+  font-weight: 400;
+  font-weight: normal;
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: $background;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2 {
+  font-family: $title-text;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 2px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  color: $code;
+}
