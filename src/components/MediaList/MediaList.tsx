@@ -1,8 +1,7 @@
 import { Fragment } from 'react';
-import Movie from './Movie';
-import Show from './Show';
-import media_list from '../assets/media-list.json';
-import { MediaType } from '../types/Media';
+import media_list from '../../assets/media-list.json';
+import { MediaType } from '../../types/Media';
+import MediaWrapper from '../MediaWrapper/MediaWrapper';
 
 type PropTypes = {
   movies_only: boolean;
@@ -22,9 +21,10 @@ export default function MediaList({ movies_only }: PropTypes) {
                 : ''
             }`}
           >
-            {ele.type == 'movie' && <Movie movie_data={ele} />}
-            {!movies_only && ele.type == 'tv' && <Show show_data={ele} />}
-            {!movies_only && ele.type == 'misc' && <Movie movie_data={ele} />}
+            {ele.type == 'movie' && <MediaWrapper media_data={ele} />}
+            {!movies_only && (ele.type == 'tv' || ele.type == 'misc') && (
+              <MediaWrapper media_data={ele} />
+            )}
           </Fragment>
         );
       })}
