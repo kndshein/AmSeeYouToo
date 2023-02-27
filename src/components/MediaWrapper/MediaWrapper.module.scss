@@ -11,6 +11,12 @@
   cursor: pointer;
   overflow: hidden;
   transition: ease-in-out 0.3s;
+  // To rotate the scrollbar
+  transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg); /* Mozilla */
+  -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+  -ms-transform: rotateX(180deg); /* IE 9+ */
+  -o-transform: rotateX(180deg); /* Opera */
 }
 
 .backdrop_wrapper {

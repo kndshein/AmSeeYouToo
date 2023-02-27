@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
+import {
+  ActiveToggleType,
+  HandleToggleType,
+  HandleKeyDownType,
+} from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Movie from '../Movie/Movie';
 import Show from '../Show/Show';
@@ -10,9 +15,19 @@ import styles from './MediaWrapper.module.scss';
 type PropTypes = {
   media_data: MediaType;
   movies_only: boolean;
+  handleToggle: HandleToggleType;
+  handleKeyDown: HandleKeyDownType;
+  active_toggle: ActiveToggleType;
+  idx: number;
 };
 
-export default function MediaWrapper({ media_data, movies_only }: PropTypes) {
+export default function MediaWrapper({
+  media_data,
+  movies_only,
+  handleToggle,
+  handleKeyDown,
+  idx,
+}: PropTypes) {
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
 
   let query_array = [];
@@ -77,7 +92,12 @@ export default function MediaWrapper({ media_data, movies_only }: PropTypes) {
   };
 
   return (
-    <section className={styles.media}>
+    <section
+      className={`${styles.media}`}
+      onClick={() => handleToggle(idx)}
+      tabIndex={0}
+      onKeyDown={(event) => handleKeyDown(event, idx)}
+    >
       {isLoading ? <Loading /> : LoadedComponent()}
     </section>
   );
