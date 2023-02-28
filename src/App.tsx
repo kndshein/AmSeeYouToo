@@ -12,7 +12,7 @@ function App() {
       },
     },
   });
-  const [movies_only, setMoviesOnly] = useState(true);
+  const [movies_only, setMoviesOnly] = useState(false);
 
   return (
     <QueryClientProvider client={query_client}>

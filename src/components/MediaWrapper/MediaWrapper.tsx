@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import {
-  ActiveToggleType,
-  HandleToggleType,
-  HandleKeyDownType,
-} from '../../types/Toggles';
+import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Movie from '../Movie/Movie';
 import Show from '../Show/Show';
+import Tag from '../Tag/Tag';
+import Title from '../Title/Title';
 import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
@@ -26,6 +24,7 @@ export default function MediaWrapper({
   movies_only,
   handleToggle,
   handleKeyDown,
+  active_toggle,
   idx,
 }: PropTypes) {
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
@@ -46,9 +45,7 @@ export default function MediaWrapper({
     media_ui_type = media_data.type;
   }
 
-  let url = `https://api.themoviedb.org/3/${url_media_type}/${
-    media_data.id
-  }?api_key=${
+  let url = `https://api.themoviedb.org/3/${url_media_type}/${media_data.id}?api_key=${
     import.meta.env.VITE_API_KEY
   }&language=en-US&append_to_response=credits${url_append}`;
 
@@ -71,29 +68,17 @@ export default function MediaWrapper({
             onLoad={() => setIsBackdropLoaded(true)}
           />
         </div>
-        <div className={styles.movie_title}>
-          <h2>{data.original_title}</h2>
-        </div>
-        <div
-          className={`${styles.type_tag} ${styles[media_ui_type]} ${
-            !movies_only ? `${styles.show_type}` : ''
-          }`}
-        >
-          {media_ui_type}
-        </div>
-        {media_data.type == 'movie' && (
-          <Movie movie_data={media_data} tmdb_data={data} />
-        )}
-        {media_data.type == 'tv' && (
-          <Show show_data={media_data} tmdb_data={data} />
-        )}
+        <Title tmdb_data={data} />
+        <Tag movies_only={movies_only} media_ui_type={media_ui_type} />
+        {media_data.type == 'movie' && <Movie movie_data={media_data} tmdb_data={data} />}
+        {media_data.type == 'tv' && <Show show_data={media_data} tmdb_data={data} />}
       </>
     );
   };
 
   return (
     <section
-      className={`${styles.media}`}
+      className={`media ${active_toggle == idx ? 'active' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       onKeyDown={(event) => handleKeyDown(event, idx)}

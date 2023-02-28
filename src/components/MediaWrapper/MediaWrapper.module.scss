@@ -1,6 +1,6 @@
 @use '../../sass/variables.scss' as *;
 
-.media {
+:global(.media) {
   position: relative;
   align-self: center;
   min-width: 200px;
@@ -19,97 +19,32 @@
   -o-transform: rotateX(180deg); /* Opera */
 }
 
+:global(.media):hover,
+:global(.media):focus,
+:global(.media):global(.active) {
+  box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+}
+
+:global(.media):global(.active) {
+  min-width: 60%;
+  transition: ease-in-out 0.3s;
+}
+
 .backdrop_wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.media .backdrop {
+.backdrop {
   object-fit: cover;
   width: 100%;
   height: 100%;
   transition: ease-in-out 0.3s;
 }
 
-.movie_title {
-  position: absolute;
-  margin: 0;
-  padding: 2px 7px 3px 15px;
-  left: 0;
-  color: rgba(255, 255, 255, 0.3);
-  white-space: nowrap;
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  transition: color ease-in-out 0.3s;
-}
-
-.movie_title::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-right: 35px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(37, 37, 37, 0.69);
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  -webkit-transform: skew(-45deg);
-  -ms-transform: skew(-45deg);
-  transform: skew(-30deg);
-  z-index: -1;
-  transition: color ease-in-out 0.3s;
-}
-
-.movie_title h2 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-.type_tag {
-  opacity: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  right: 0px;
-  height: 22px;
-  padding: 0 10px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  background-color: $main;
-  /* transition: opacity 0.5s; */
-}
-
-.type_tag.movie {
-  color: $accent-lite;
-}
-
-.type_tag.show {
-  color: #ffa17c;
-}
-
-.type_tag.misc {
-  color: #75ffbc;
-}
-
-.type_tag.show_type {
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.type_tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -21px;
-  border: 11px solid transparent;
-  border-top-color: $main;
-  border-right-color: $main;
-  display: inline-block;
+:global(.media):global(.active) .backdrop {
+  filter: blur(20px);
+  opacity: 0.1;
+  transition: ease-in-out 0.3s;
 }
