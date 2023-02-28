@@ -4,10 +4,10 @@ import MediaList from '../MediaList/MediaList';
 import styles from './MediaListWrapper.module.scss';
 
 type PropTypes = {
-  movies_only: boolean;
+  is_movies_only: boolean;
 };
 
-export default function MediaListWrapper({ movies_only }: PropTypes) {
+export default function MediaListWrapper({ is_movies_only }: PropTypes) {
   const media_list_ref = useRef<HTMLDivElement>(null);
 
   const scroll_intensity = 800;
@@ -26,7 +26,7 @@ export default function MediaListWrapper({ movies_only }: PropTypes) {
       <button className={styles.arrow_left} onClick={() => handleScroll('left')}>
         <MdKeyboardArrowLeft />
       </button>
-      <MediaList movies_only={movies_only} media_list_ref={media_list_ref} />
+      <MediaList is_movies_only={is_movies_only} media_list_ref={media_list_ref} />
       <button className={styles.arrow_right} onClick={() => handleScroll('right')}>
         <MdKeyboardArrowRight />
       </button>

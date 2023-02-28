@@ -12,12 +12,12 @@ function App() {
       },
     },
   });
-  const [movies_only, setMoviesOnly] = useState(false);
+  const [is_movies_only, setMoviesOnly] = useState(false);
 
   return (
     <QueryClientProvider client={query_client}>
       <div className="App">
-        <MediaListWrapper movies_only={movies_only} />
+        <MediaListWrapper is_movies_only={is_movies_only} />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

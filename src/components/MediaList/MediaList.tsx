@@ -8,11 +8,11 @@ import styles from './MediaList.module.scss';
 let media_list_typed = media_list as Array<MediaType>;
 
 type PropTypes = {
-  movies_only: boolean;
+  is_movies_only: boolean;
   media_list_ref: RefObject<HTMLDivElement>;
 };
 
-export default function MediaList({ movies_only, media_list_ref }: PropTypes) {
+export default function MediaList({ is_movies_only, media_list_ref }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
 
   const handleToggle: HandleToggleType = (index) => {
@@ -34,7 +34,7 @@ export default function MediaList({ movies_only, media_list_ref }: PropTypes) {
     return (
       <MediaWrapper
         media_data={ele}
-        movies_only={movies_only}
+        is_movies_only={is_movies_only}
         handleToggle={handleToggle}
         handleKeyDown={handleKeyDown}
         active_toggle={active_toggle}
@@ -49,7 +49,7 @@ export default function MediaList({ movies_only, media_list_ref }: PropTypes) {
         return (
           <Fragment key={`${ele.id}${ele.type == 'tv' ? `${ele.season}${ele.epiStart}${ele.epiEnd}` : ''}`}>
             {ele.type == 'movie' && WrapperComponent(ele, idx)}
-            {!movies_only && (ele.type == 'tv' || ele.type == 'misc') && WrapperComponent(ele, idx)}
+            {!is_movies_only && (ele.type == 'tv' || ele.type == 'misc') && WrapperComponent(ele, idx)}
           </Fragment>
         );
       })}
