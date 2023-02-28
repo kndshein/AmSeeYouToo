@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, RefObject } from 'react';
 import { MediaType } from '../../types/Media';
 import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../types/Toggles';
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
@@ -9,9 +9,10 @@ let media_list_typed = media_list as Array<MediaType>;
 
 type PropTypes = {
   movies_only: boolean;
+  media_list_ref: RefObject<HTMLDivElement>;
 };
 
-export default function MediaList({ movies_only }: PropTypes) {
+export default function MediaList({ movies_only, media_list_ref }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
 
   const handleToggle: HandleToggleType = (index) => {
@@ -43,7 +44,7 @@ export default function MediaList({ movies_only }: PropTypes) {
   };
 
   return (
-    <div className={styles.media_list}>
+    <div className={styles.media_list} ref={media_list_ref}>
       {media_list_typed.map((ele, idx) => {
         return (
           <Fragment key={`${ele.id}${ele.type == 'tv' ? `${ele.season}${ele.epiStart}${ele.epiEnd}` : ''}`}>

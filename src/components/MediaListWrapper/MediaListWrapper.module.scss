@@ -1,0 +1,50 @@
+@use '../../sass/variables.scss' as *;
+
+.arrow_left,
+.arrow_right {
+  z-index: 1;
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 5vw;
+  background-color: transparent;
+  border: none;
+  background-image: linear-gradient(to left, transparent, $background);
+}
+
+.arrow_right {
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, transparent, $background);
+}
+
+.arrow_left svg,
+.arrow_right svg {
+  fill: white;
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0 0 10px $accent-lite);
+}
+
+.arrow_left:hover.arrow_left svg,
+.arrow_right:hover.arrow_right svg {
+  filter: drop-shadow(0 0 2px $accent-lite);
+}
+
+.arrow_left:hover {
+  background-image: linear-gradient(to left, transparent, rgba(45, 100, 114, 0.7));
+}
+
+.arrow_right:hover {
+  background-image: linear-gradient(to right, transparent, rgba(45, 100, 114, 0.7));
+}
+
+@media only screen and (max-width: 500px) {
+  .arrow_left,
+  .arrow_right {
+    display: none;
+  }
+}
