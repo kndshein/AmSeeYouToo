@@ -16,12 +16,12 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
         <span className={styles.vote}>{Math.round(tmdb_data.vote_average * 10) / 10}</span>
         <span className={styles.dot}>•</span>
         {media_data.type == 'tv' ? (
-          <span className="date">{dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}</span>
+          <span>{dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}</span>
         ) : (
           <>
-            <span className="date">{dateCalc(tmdb_data.release_date)}</span>
+            <span>{dateCalc(tmdb_data.release_date)}</span>
             <span className={styles.dot}>•</span>
-            <span className="runtime">{runtimeCalc(tmdb_data.runtime)}</span>
+            <span>{runtimeCalc(tmdb_data.runtime)}</span>
           </>
         )}
       </div>
