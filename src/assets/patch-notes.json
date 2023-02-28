@@ -22,91 +22,75 @@
   {
     "version": "1.1.0",
     "date": "Jul 2021",
-    "notes": [
-      "Added <i>Black Widow</i>.",
-      "Added casts on to cards.",
-      "Increased accessibility."
-    ]
+    "notes": ["Added <i>Black Widow</i>.", "Added casts.", "Increased accessibility."]
   },
   {
-    "version": "2.0.0",
+    "version": "1.2.0",
     "date": "Jul 2021",
     "notes": ["Added TV shows and accompanying episodes."]
   },
   {
-    "version": "2.1.0",
+    "version": "1.3.0",
     "date": "Jul 2021",
     "notes": ["Refactored API calls."]
   },
   {
-    "version": "2.2.0",
+    "version": "1.4.0",
     "date": "Jul 2021",
-    "notes": [
-      "Added loading spinners.",
-      "Replaced horizontal scroll with scrollbar."
-    ]
+    "notes": ["Added loading spinners.", "Replaced horizontal scroll with scrollbar."]
   },
   {
-    "version": "2.3.0",
+    "version": "1.5.0",
     "date": "Jul 2021",
-    "notes": ["Added 'Movies Only' filter and added About Card."]
+    "notes": ["Added 'Movies Only' filter and About Card."]
   },
   {
-    "version": "2.3.1",
+    "version": "1.5.1",
     "date": "Sep 2021",
-    "notes": [
-      "Added <i>Shang-Chi and the Legend of Ten Rings</i>.",
-      "Refactored media json."
-    ]
+    "notes": ["Added <i>Shang-Chi and the Legend of Ten Rings</i>.", "Refactored media list."]
   },
   {
-    "version": "2.3.2",
+    "version": "1.5.2",
     "date": "Oct 2021",
-    "notes": ["Added <i>What If...?</i>", "Refactored genre CSS styling."]
+    "notes": ["Added <i>What If...?</i>", "Refactored genres' CSS styling."]
   },
   {
-    "version": "2.4.0",
+    "version": "1.6.0",
     "date": "Oct 2021",
-    "notes": [
-      "Added labels for better differentiation between movies and shows."
-    ]
+    "notes": ["Added labels for better differentiation between movies and shows."]
   },
   {
-    "version": "2.4.1",
+    "version": "1.6.1",
     "date": "Nov 2021",
     "notes": ["Added <i>Eternals</i>."]
   },
   {
-    "version": "2.4.2",
+    "version": "1.6.2",
     "date": "Jan 2022",
     "notes": ["Added <i>Spider-Man: No Way Home</i> and <i>Hawkeye</i>."]
   },
   {
-    "version": "2.5.0",
+    "version": "1.6.3",
     "date": "Jan 2022",
     "notes": [
       "Added <i>Doctor Strange in the Multiverse of Madness</i>, <i>Moon Knight</i>, and <i>Thor: Love and Thunder</i>.",
-      "Made the app more responsive on ultrawide screens.",
+      "Responsiveness on ultrawide screens.",
       "Misc. CSS fixes."
     ]
   },
   {
-    "version": "2.6.0",
+    "version": "1.7.0",
     "date": "Nov 2022",
     "notes": [
       "Updated patch notes system.",
       "Reordered various media to reflect original source.",
       "Added <i>I am Groot</i>, <i>She-Hulk</i>, <i>Ms. Marvel</i>, and <i>Werewolf by Night</i>",
-      "Fixed 'Too Many Requests' API bug."
+      "Fixed 429 Too Many Requests bug."
     ]
   },
   {
-    "version": "2.7.0",
+    "version": "1.8.0",
     "date": "Nov 2022",
-    "notes": [
-      "Created 'misc' category.",
-      "Added additional genre colors.",
-      "Round media vote averages."
-    ]
+    "notes": ["Created 'misc' category.", "Added additional genre colors.", "Rounded media vote averages."]
   }
 ]
