@@ -3,6 +3,7 @@ import { TmdbType } from '../../../types/Tmdb';
 import { MediaType } from '../../../types/Media';
 import dateCalc from '../../../utils/date-calc';
 import runtimeCalc from '../../../utils/runtime-calc';
+import Episodes from '../Episodes/Episodes';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -40,6 +41,7 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
           ? tmdb_data[`season/${media_data.season}`].overview || tmdb_data.overview
           : tmdb_data.overview}
       </div>
+      {media_data.type == 'tv' && <Episodes tmdb_data={tmdb_data} media_data={media_data} />}
     </section>
   );
 }

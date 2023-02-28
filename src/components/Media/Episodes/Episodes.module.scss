@@ -1,0 +1,67 @@
+@use '../../../sass/variables.scss' as *;
+
+.container {
+  margin-top: 20px;
+  height: 100%;
+}
+
+.episode_container {
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  margin: 20px 0 20px 0;
+  background-color: rgba(37, 37, 37, 0.5);
+  border-radius: 5px;
+}
+
+.episode_container:first-child {
+  margin: 0;
+}
+
+.still_wrapper {
+  position: relative;
+  flex-shrink: 0;
+  padding-top: 5px;
+  margin-right: 15px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.still {
+  padding-left: 5px;
+  object-fit: cover;
+  width: 100%;
+  border-left: 2px $accent-lite solid;
+}
+
+.overview_container {
+  color: grey;
+}
+
+.episode {
+  position: relative;
+  font-weight: 700;
+}
+
+.number {
+  color: $accent-lite;
+  font-weight: inherit;
+}
+
+.name {
+  font-weight: inherit;
+  color: white;
+}
+
+.overview {
+  margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 0;
+  }
+
+  .episode_container {
+    flex-flow: column;
+  }
+}

@@ -3,8 +3,34 @@
 .container {
   display: flex;
   flex-flow: column;
+  padding-right: 20px;
   margin-left: 30px;
   min-height: 60%;
+  overflow-y: auto;
+  scrollbar-color: $accent-lite $main;
+  scrollbar-width: thin;
+}
+
+.container::-webkit-scrollbar {
+  cursor: pointer;
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-track-piece {
+  background-color: $main;
+}
+
+.container::-webkit-scrollbar-track-piece:hover {
+  background-color: $main-lite;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: $accent-lite;
+  border-radius: 50px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: white;
 }
 
 .info_group {
@@ -17,7 +43,6 @@
 }
 
 .info_group span {
-  margin-top: 20px;
   font-size: clamp(1.25rem, 1.5vw, 2rem);
   margin-right: 10px;
   color: white;
@@ -64,5 +89,6 @@
     margin: 0;
     margin-bottom: 50px;
     min-height: unset;
+    overflow: visible;
   }
 }
