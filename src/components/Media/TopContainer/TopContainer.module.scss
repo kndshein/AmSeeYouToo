@@ -10,6 +10,11 @@
 .title {
   position: relative;
   width: 100%;
+  margin: 0;
+  padding-left: 20px;
+  color: white;
+  font-size: clamp(2.5rem, 3vw, 4.25rem);
+  line-height: clamp(2.5rem, 3vw, 4.25rem);
 }
 
 .title::before {
@@ -20,14 +25,6 @@
   width: 5px;
   height: 95%;
   background-color: $accent-lite;
-}
-
-.title h2 {
-  margin: 0;
-  padding-left: 20px;
-  color: white;
-  font-size: clamp(2.5rem, 3vw, 4.25rem);
-  line-height: clamp(2.5rem, 3vw, 4.25rem);
 }
 
 .tagline {

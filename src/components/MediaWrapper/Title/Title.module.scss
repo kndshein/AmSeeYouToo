@@ -1,6 +1,6 @@
 @use '../../../sass/variables.scss' as *;
 
-.movie_title {
+.title {
   position: absolute;
   margin: 0;
   padding: 2px 7px 3px 15px;
@@ -12,7 +12,7 @@
   transition: color ease-in-out 0.3s;
 }
 
-.movie_title::before {
+.title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -31,38 +31,38 @@
   transition: color ease-in-out 0.3s;
 }
 
-.movie_title h2 {
+.title h2 {
   margin: 0;
   font-size: 2rem;
 }
 
-:global(.media):hover .movie_title,
-:global(.media):global(.active) .movie_title {
+:global(.media):hover .title,
+:global(.media):global(.active) .title {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 5px $background;
   transition: ease-in-out 0.3s;
 }
 
-:global(.media):global(.active) .movie_title {
+:global(.media):global(.active) .title {
   color: rgba(110, 110, 110, 0.3);
   text-shadow: none;
   transition: ease-in-out 0.3s;
 }
 
-:global(.media):hover .movie_title::before {
+:global(.media):hover .title::before {
   background-color: rgba(37, 37, 37, 0.69);
   box-shadow: 10px 0 0 $accent-lite;
   transition: ease-in-out 0.3s;
 }
 
-:global(.media):global(.active) .movie_title::before {
+:global(.media):global(.active) .title::before {
   box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
   padding-right: 1000px;
   transition: ease-in-out 0.3s;
 }
 
 @media only screen and (max-width: 800px) {
-  :global(.media).active .movie_title {
+  :global(.media):global(.active) .title {
     opacity: 0;
   }
 }

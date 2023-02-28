@@ -67,7 +67,7 @@ export default function MediaWrapper({
             onLoad={() => setIsBackdropLoaded(true)}
           />
         </div>
-        <Title tmdb_data={data} />
+        <Title tmdb_data={data} media_data={media_data} />
         <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
         <Media tmdb_data={data} media_data={media_data} />
       </>

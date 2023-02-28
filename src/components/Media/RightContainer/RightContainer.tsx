@@ -25,15 +25,15 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
           </>
         )}
       </section>
-      <div className={styles.cast}>
+      <section className={styles.cast}>
         {tmdb_data.credits.cast.slice(0, 5).map((actor: any, idx: number) => {
           return (
-            <div className={styles.actor} key={idx}>
+            <span className={styles.actor} key={idx}>
               {actor.name}
-            </div>
+            </span>
           );
         })}
-      </div>
+      </section>
     </section>
   );
 }

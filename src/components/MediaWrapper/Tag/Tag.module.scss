@@ -45,3 +45,9 @@
   border-right-color: $main;
   display: inline-block;
 }
+
+@media only screen and (max-width: 800px) {
+  :global(.media):global(.active) .type_tag {
+    opacity: 0;
+  }
+}
