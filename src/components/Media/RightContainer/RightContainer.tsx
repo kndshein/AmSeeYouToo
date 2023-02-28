@@ -34,6 +34,12 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
           );
         })}
       </section>
+      <div className={styles.overview}>
+        {/* Shows w/ singular seasons don't nest their overview info */}
+        {media_data.type == 'tv'
+          ? tmdb_data[`season/${media_data.season}`].overview || tmdb_data.overview
+          : tmdb_data.overview}
+      </div>
     </section>
   );
 }
