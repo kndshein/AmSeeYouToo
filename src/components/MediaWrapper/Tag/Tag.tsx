@@ -1,4 +1,4 @@
-import { MediaUiType } from '../../types/Media';
+import { MediaUiType } from '../../../types/Media';
 import styles from './Tag.module.scss';
 
 type PropTypes = {

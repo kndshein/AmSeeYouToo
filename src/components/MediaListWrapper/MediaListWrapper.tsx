@@ -20,6 +20,7 @@ export default function MediaListWrapper({ movies_only }: PropTypes) {
       }
     }
   };
+
   return (
     <>
       <button className={styles.arrow_left} onClick={() => handleScroll('left')}>

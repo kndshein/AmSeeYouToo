@@ -1,7 +1,8 @@
+import { TmdbType } from '../../../types/Tmdb';
 import styles from './Title.module.scss';
 
 type PropTypes = {
-  tmdb_data: any;
+  tmdb_data: TmdbType;
 };
 
 export default function Title({ tmdb_data }: PropTypes) {

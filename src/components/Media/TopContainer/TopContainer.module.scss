@@ -1,0 +1,41 @@
+@use '../../../sass/variables.scss' as *;
+
+.container {
+  grid-area: 1 / 1 / 2 / 3;
+  padding-right: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 5px;
+  height: 95%;
+  background-color: $accent-lite;
+}
+
+.title h2 {
+  margin: 0;
+  padding-left: 20px;
+  color: white;
+  font-size: clamp(2.5rem, 3vw, 4.25rem);
+  line-height: clamp(2.5rem, 3vw, 4.25rem);
+}
+
+.tagline {
+  margin: 10px 5px 10px 0;
+  color: rgb(110, 110, 110);
+  font-size: clamp(1.25rem, 1.5vw, 2.25rem);
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

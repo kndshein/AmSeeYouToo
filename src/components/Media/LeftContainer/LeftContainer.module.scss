@@ -1,0 +1,18 @@
+@use '../../../sass/variables.scss' as *;
+
+.container {
+  grid-area: 2 / 1 / 3 / 2;
+  margin-top: 20px;
+}
+
+.poster {
+  width: 100%;
+  overflow: hidden;
+  background-color: $accent-lite;
+  box-shadow: 0 0 15px $background;
+}
+
+.poster img {
+  object-fit: contain;
+  width: 100%;
+}

@@ -6,8 +6,9 @@ import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../typ
 import Loading from '../Loading/Loading';
 import Movie from '../Movie/Movie';
 import Show from '../Show/Show';
-import Tag from '../Tag/Tag';
-import Title from '../Title/Title';
+import Tag from './Tag/Tag';
+import Title from './Title/Title';
+import Media from '../Media/Media';
 import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
@@ -70,6 +71,7 @@ export default function MediaWrapper({
         </div>
         <Title tmdb_data={data} />
         <Tag movies_only={movies_only} media_ui_type={media_ui_type} />
+        <Media tmdb_data={data} />
         {media_data.type == 'movie' && <Movie movie_data={media_data} tmdb_data={data} />}
         {media_data.type == 'tv' && <Show show_data={media_data} tmdb_data={data} />}
       </>
