@@ -11,6 +11,7 @@
   margin: 20px 0 20px 0;
   background-color: rgba(37, 37, 37, 0.5);
   border-radius: 5px;
+  font-size: clamp(1rem, 0.8vw, 1.2rem);
 }
 
 .episode_container:first-child {
