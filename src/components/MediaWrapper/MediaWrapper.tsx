@@ -8,6 +8,7 @@ import Tag from './Tag/Tag';
 import Title from './Title/Title';
 import Media from '../Media/Media';
 import styles from './MediaWrapper.module.scss';
+import getPosition from '../../utils/get-position';
 
 type PropTypes = {
   media_data: MediaType;
@@ -16,6 +17,7 @@ type PropTypes = {
   handleKeyDown: HandleKeyDownType;
   active_toggle: ActiveToggleType;
   idx: number;
+  idx_arr: React.MutableRefObject<number[]>;
 };
 
 export default function MediaWrapper({
@@ -24,6 +26,7 @@ export default function MediaWrapper({
   handleToggle,
   handleKeyDown,
   active_toggle,
+  idx_arr,
   idx,
 }: PropTypes) {
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
@@ -58,6 +61,7 @@ export default function MediaWrapper({
       <>
         {!is_backdrop_loaded && <Loading />}
         <div className={styles.backdrop_wrapper}>
+          <div className={styles.background}></div>
           <img
             className={styles.backdrop}
             src={`https://image.tmdb.org/t/p/w1280${
@@ -76,7 +80,9 @@ export default function MediaWrapper({
 
   return (
     <section
-      className={`media ${active_toggle == idx ? 'active' : ''}`}
+      className={`media ${active_toggle == idx ? 'active' : ''} ${
+        idx === getPosition(idx_arr.current, active_toggle, 'left') ? styles.position_left : ''
+      } ${idx === getPosition(idx_arr.current, active_toggle, 'right') ? styles.position_right : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       onKeyDown={(event) => handleKeyDown(event, idx)}

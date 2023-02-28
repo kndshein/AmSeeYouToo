@@ -1,4 +1,4 @@
-import { Fragment, useState, RefObject } from 'react';
+import { Fragment, useState, RefObject, useRef } from 'react';
 import { MediaType } from '../../types/Media';
 import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../types/Toggles';
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
@@ -14,6 +14,7 @@ type PropTypes = {
 
 export default function MediaList({ is_movies_only, media_list_ref }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
+  const idx_arr = useRef<number[]>([]);
 
   const handleToggle: HandleToggleType = (index) => {
     if (index == active_toggle) {
@@ -21,7 +22,6 @@ export default function MediaList({ is_movies_only, media_list_ref }: PropTypes)
     } else {
       setActiveToggle(index);
     }
-    console.log(index);
   };
 
   const handleKeyDown: HandleKeyDownType = (event, index) => {
@@ -39,13 +39,19 @@ export default function MediaList({ is_movies_only, media_list_ref }: PropTypes)
         handleKeyDown={handleKeyDown}
         active_toggle={active_toggle}
         idx={idx}
+        idx_arr={idx_arr}
       />
     );
   };
 
   return (
-    <div className={styles.media_list} ref={media_list_ref}>
+    <div className={`${styles.media_list} ${active_toggle ? styles.active_mode : ''}`} ref={media_list_ref}>
       {media_list_typed.map((ele, idx) => {
+        if (is_movies_only && ele.type == 'movie') {
+          idx_arr.current.push(idx);
+        } else if (!is_movies_only) {
+          idx_arr.current.push(idx);
+        }
         return (
           <Fragment key={`${ele.id}${ele.type == 'tv' ? `${ele.season}${ele.epiStart}${ele.epiEnd}` : ''}`}>
             {ele.type == 'movie' && WrapperComponent(ele, idx)}
