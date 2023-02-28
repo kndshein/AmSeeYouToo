@@ -29,7 +29,7 @@ export default function MediaWrapper({
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
 
   let query_array = [];
-  let url_append;
+  let url_append = '';
   let url_media_type;
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
 

@@ -38,6 +38,20 @@
   border-radius: 5px;
 }
 
+.cast {
+  display: flex;
+  flex-flow: row wrap;
+  color: $accent-lite;
+}
+
+.actor {
+  padding: 5px 10px 5px 10px;
+  margin: 20px 10px 0 0;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  background-color: $tab-background;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 500px) {
   .container {
     padding: 0;
