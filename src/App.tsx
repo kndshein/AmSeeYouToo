@@ -14,7 +14,7 @@ function App() {
       },
     },
   });
-  const [is_movies_only, setIsMoviesOnly] = useState(false);
+  const [is_movies_only, setIsMoviesOnly] = useState(true);
   const [is_about_open, setIsAboutOpen] = useState(false);
 
   return (

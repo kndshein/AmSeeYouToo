@@ -11,6 +11,11 @@
   cursor: pointer;
   overflow: hidden;
   transition: ease-in-out 0.3s;
+  // Undo native button html styling
+  background-color: $background;
+  border: none;
+  padding: 0;
+  text-align: left;
   // To rotate the scrollbar
   transform: rotateX(180deg);
   -moz-transform: rotateX(180deg); /* Mozilla */

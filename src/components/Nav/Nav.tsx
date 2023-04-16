@@ -6,10 +6,16 @@ type PropTypes = {
   setIsAboutOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function Nav({ is_movies_only, setIsMoviesOnly, setIsAboutOpen }: PropTypes) {
+export default function Nav({
+  is_movies_only,
+  setIsMoviesOnly,
+  setIsAboutOpen,
+}: PropTypes) {
   return (
     <nav>
-      <button onClick={() => setIsAboutOpen(true)}>About Site</button>
+      <button onClick={() => setIsAboutOpen(true)} className={styles.button}>
+        About Site
+      </button>
       <div className={styles.gif_container}>
         <img
           src="https://media.giphy.com/media/XmppNRlrlu2SA/giphy.gif"
@@ -17,7 +23,7 @@ export default function Nav({ is_movies_only, setIsMoviesOnly, setIsAboutOpen }:
         />
       </div>
       <button
-        className={is_movies_only ? styles.active : ''}
+        className={`${is_movies_only ? styles.active : ''} ${styles.button}`}
         onClick={() => {
           is_movies_only ? setIsMoviesOnly(false) : setIsMoviesOnly(true);
         }}

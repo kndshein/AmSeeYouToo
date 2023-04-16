@@ -60,7 +60,7 @@ export default function MediaWrapper({
   });
 
   return (
-    <section
+    <button
       className={`media ${active_toggle == idx ? 'active' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
@@ -87,6 +87,6 @@ export default function MediaWrapper({
           <Media tmdb_data={data} media_data={media_data} />
         </>
       )}
-    </section>
+    </button>
   );
 }
