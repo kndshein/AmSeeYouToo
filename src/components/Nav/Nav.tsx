@@ -1,21 +1,20 @@
+import { useState } from 'react';
 import styles from './Nav.module.scss';
+import About from '../About/About';
 
 type PropTypes = {
   is_movies_only: boolean;
   setIsMoviesOnly: React.Dispatch<React.SetStateAction<boolean>>;
-  setIsAboutOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function Nav({
-  is_movies_only,
-  setIsMoviesOnly,
-  setIsAboutOpen,
-}: PropTypes) {
+export default function Nav({ is_movies_only, setIsMoviesOnly }: PropTypes) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <nav>
-      <button onClick={() => setIsAboutOpen(true)} className={styles.button}>
+      <button onClick={() => setIsModalOpen(true)} className={styles.button}>
         About Site
       </button>
+      <About isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       <div className={styles.gif_container}>
         <img
           src="https://media.giphy.com/media/XmppNRlrlu2SA/giphy.gif"

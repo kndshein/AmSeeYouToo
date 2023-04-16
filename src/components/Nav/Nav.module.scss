@@ -1,7 +1,7 @@
 @use '../../sass/variables.scss' as *;
 
 nav {
-  z-index: 100;
+  z-index: 2;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -10,7 +10,6 @@ nav {
   width: 100%;
   height: max(5vh, 40px);
   background-color: $main;
-  z-index: 10;
 }
 
 nav .gif_container {
