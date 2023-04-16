@@ -28,7 +28,7 @@ export default function MediaList({
         media_data={ele}
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
-        active_toggle={active_toggle}
+        is_active={active_toggle == idx}
         idx={idx}
       />
     );

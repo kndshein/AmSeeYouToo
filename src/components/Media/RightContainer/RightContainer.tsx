@@ -14,10 +14,14 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
   return (
     <section className={styles.container}>
       <section className={styles.info_group}>
-        <span className={styles.vote}>{Math.round(tmdb_data.vote_average * 10) / 10}</span>
+        <span className={styles.vote}>
+          {Math.round(tmdb_data.vote_average * 10) / 10}
+        </span>
         <span className={styles.dot}>•</span>
         {media_data.type == 'tv' ? (
-          <span>{dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}</span>
+          <span>
+            {dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}
+          </span>
         ) : (
           <>
             <span>{dateCalc(tmdb_data.release_date)}</span>
@@ -38,10 +42,13 @@ export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
       <div className={styles.overview}>
         {/* Shows w/ singular seasons don't nest their overview info */}
         {media_data.type == 'tv'
-          ? tmdb_data[`season/${media_data.season}`].overview || tmdb_data.overview
+          ? tmdb_data[`season/${media_data.season}`].overview ||
+            tmdb_data.overview
           : tmdb_data.overview}
       </div>
-      {media_data.type == 'tv' && <Episodes tmdb_data={tmdb_data} media_data={media_data} />}
+      {media_data.type == 'tv' && (
+        <Episodes tmdb_data={tmdb_data} media_data={media_data} />
+      )}
     </section>
   );
 }

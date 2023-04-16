@@ -13,7 +13,7 @@ type PropTypes = {
   media_data: MediaType;
   is_movies_only: boolean;
   handleToggle: HandleToggleType;
-  active_toggle: ActiveToggleType;
+  is_active: boolean;
   idx: number;
 };
 
@@ -21,7 +21,7 @@ export default function MediaWrapper({
   media_data,
   is_movies_only,
   handleToggle,
-  active_toggle,
+  is_active,
   idx,
 }: PropTypes) {
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
@@ -55,7 +55,7 @@ export default function MediaWrapper({
 
   return (
     <button
-      className={`media ${active_toggle == idx ? 'active' : ''}`}
+      className={`media ${is_active ? 'active' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
     >
