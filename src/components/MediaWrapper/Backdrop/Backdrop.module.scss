@@ -1,30 +1,6 @@
-@use '../../sass/variables.scss' as *;
-
-:global(.media) {
-  position: relative;
-  align-self: center;
-  min-width: 250px;
-  height: 95%;
-  border-radius: 10px;
-  margin-left: 30px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: ease-in-out 0.3s;
-  // Undo native button html styling
-  background-color: $background;
-  border: 2px $accent solid;
-  padding: 0;
-  text-align: left;
-  // To rotate the scrollbar
-  transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg); /* Mozilla */
-  -webkit-transform: rotateX(180deg); /* Safari and Chrome */
-  -ms-transform: rotateX(180deg); /* IE 9+ */
-  -o-transform: rotateX(180deg); /* Opera */
-}
+@use '../../../sass/variables.scss' as *;
 
 :global(.media):hover {
-  box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
   &:not(:global(.active)) {
     .backdrop_motion {
       opacity: 1;
@@ -36,8 +12,6 @@
 }
 
 :global(.media):global(.active) {
-  min-width: 60%;
-  transition: ease-in-out 0.3s;
   .screen_overlay {
     opacity: 0.008;
   }
@@ -82,7 +56,7 @@
   opacity: 0;
   animation: pan-image 20s linear infinite;
   transition: ease-in-out 0.3s;
-  filter: saturate(169%);
+  filter: saturate(125%);
 }
 
 .backdrop {
@@ -96,13 +70,6 @@
   filter: blur(20px);
   opacity: 0.1;
   transition: ease-in-out 0.3s;
-}
-
-@media only screen and (max-width: 1200px) {
-  :global(.media):global(.active) {
-    min-width: 90vw;
-    transition: ease-in-out 0.3s;
-  }
 }
 
 @keyframes pan-overlay {

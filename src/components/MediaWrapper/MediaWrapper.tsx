@@ -7,6 +7,7 @@ import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
 import Media from '../Media/Media';
+import Backdrop from './Backdrop/Backdrop';
 import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
@@ -24,8 +25,6 @@ export default function MediaWrapper({
   is_active,
   idx,
 }: PropTypes) {
-  const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
-
   let query_array = [];
   let url_append = '';
   let url_media_type;
@@ -64,28 +63,7 @@ export default function MediaWrapper({
       ) : (
         <>
           {/* Double loading because the background image only loads if it's rendered */}
-          {!is_backdrop_loaded && <Loading />}
-          <div className={styles.backdrop_wrapper}>
-            <div className={styles.screen_overlay}></div>
-            {is_backdrop_loaded && (
-              <div
-                className={styles.backdrop_motion}
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
-                    data.backdrop_path ? data.backdrop_path : data.poster_path
-                  })`,
-                }}
-              />
-            )}
-            <img
-              className={styles.backdrop}
-              src={`https://image.tmdb.org/t/p/w1280${
-                data.backdrop_path ? data.backdrop_path : data.poster_path
-              }`}
-              alt={data.original_title}
-              onLoad={() => setIsBackdropLoaded(true)}
-            />
-          </div>
+          <Backdrop data={data} />
           <Title tmdb_data={data} media_data={media_data} />
           <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
           <Media tmdb_data={data} media_data={media_data} />
