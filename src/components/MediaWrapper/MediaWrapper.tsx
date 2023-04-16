@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import {
-  ActiveToggleType,
-  HandleToggleType,
-  HandleKeyDownType,
-} from '../../types/Toggles';
+import { ActiveToggleType, HandleToggleType } from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -17,7 +13,6 @@ type PropTypes = {
   media_data: MediaType;
   is_movies_only: boolean;
   handleToggle: HandleToggleType;
-  handleKeyDown: HandleKeyDownType;
   active_toggle: ActiveToggleType;
   idx: number;
 };
@@ -26,7 +21,6 @@ export default function MediaWrapper({
   media_data,
   is_movies_only,
   handleToggle,
-  handleKeyDown,
   active_toggle,
   idx,
 }: PropTypes) {
@@ -64,7 +58,6 @@ export default function MediaWrapper({
       className={`media ${active_toggle == idx ? 'active' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
-      onKeyDown={(event) => handleKeyDown(event, idx)}
     >
       {isLoading ? (
         <Loading />

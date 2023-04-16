@@ -1,6 +1,6 @@
 import { Fragment, useState, RefObject } from 'react';
 import { MediaType } from '../../types/Media';
-import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../types/Toggles';
+import { ActiveToggleType, HandleToggleType } from '../../types/Toggles';
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
 import media_list from '../../assets/media-list.json';
 import styles from './MediaList.module.scss';
@@ -12,22 +12,14 @@ type PropTypes = {
   media_list_ref: RefObject<HTMLDivElement>;
 };
 
-export default function MediaList({ is_movies_only, media_list_ref }: PropTypes) {
+export default function MediaList({
+  is_movies_only,
+  media_list_ref,
+}: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
 
   const handleToggle: HandleToggleType = (index) => {
-    if (index == active_toggle) {
-      setActiveToggle(null);
-    } else {
-      setActiveToggle(index);
-    }
-    console.log(index);
-  };
-
-  const handleKeyDown: HandleKeyDownType = (event, index) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      handleToggle(index);
-    }
+    setActiveToggle(index == active_toggle ? null : index);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
@@ -36,7 +28,6 @@ export default function MediaList({ is_movies_only, media_list_ref }: PropTypes)
         media_data={ele}
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
-        handleKeyDown={handleKeyDown}
         active_toggle={active_toggle}
         idx={idx}
       />
@@ -47,9 +38,17 @@ export default function MediaList({ is_movies_only, media_list_ref }: PropTypes)
     <div className={styles.media_list} ref={media_list_ref}>
       {media_list_typed.map((ele, idx) => {
         return (
-          <Fragment key={`${ele.id}${ele.type == 'tv' ? `${ele.season}${ele.epiStart}${ele.epiEnd}` : ''}`}>
+          <Fragment
+            key={`${ele.id}${
+              ele.type == 'tv'
+                ? `${ele.season}${ele.epiStart}${ele.epiEnd}`
+                : ''
+            }`}
+          >
             {ele.type == 'movie' && WrapperComponent(ele, idx)}
-            {!is_movies_only && (ele.type == 'tv' || ele.type == 'misc') && WrapperComponent(ele, idx)}
+            {!is_movies_only &&
+              (ele.type == 'tv' || ele.type == 'misc') &&
+              WrapperComponent(ele, idx)}
           </Fragment>
         );
       })}
