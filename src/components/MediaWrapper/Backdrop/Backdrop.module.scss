@@ -1,6 +1,7 @@
 @use '../../../sass/variables.scss' as *;
 
-:global(.media):hover {
+:global(.media):hover,
+:global(.media):focus {
   &:not(:global(.active)) {
     .backdrop_motion {
       opacity: 1;

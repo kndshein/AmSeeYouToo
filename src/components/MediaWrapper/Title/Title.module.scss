@@ -37,27 +37,27 @@
 }
 
 :global(.media):hover .title,
-:global(.media):global(.active) .title {
+:global(.media):focus .title {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 5px $background;
   transition: ease-in-out 0.3s;
+
+  &::before {
+    box-shadow: 10px 0 0 $accent-lite;
+    transition: ease-in-out 0.3s;
+  }
 }
 
 :global(.media):global(.active) .title {
   color: rgba(110, 110, 110, 0.3);
   text-shadow: none;
   transition: ease-in-out 0.3s;
-}
 
-:global(.media):hover .title::before {
-  box-shadow: 10px 0 0 $accent-lite;
-  transition: ease-in-out 0.3s;
-}
-
-:global(.media):global(.active) .title::before {
-  box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
-  padding-right: 1000px;
-  transition: ease-in-out 0.3s;
+  &::before {
+    box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
+    padding-right: 1000px;
+    transition: ease-in-out 0.3s;
+  }
 }
 
 @media only screen and (max-width: 800px) {
