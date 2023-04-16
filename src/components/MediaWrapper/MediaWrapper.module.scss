@@ -29,6 +29,9 @@
   .screen_overlay {
     opacity: 0.03;
   }
+  .backdrop_motion {
+    opacity: 1;
+  }
   .backdrop_wrapper {
     filter: none;
   }
@@ -60,8 +63,64 @@
   }
 }
 
+@keyframes pan-image {
+  0% {
+    background-position: 46% 32%;
+    background-size: 900%;
+  }
+
+  20% {
+    background-position: 55% 59%;
+    background-size: 900%;
+  }
+
+  20.0001% {
+    /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 900%;
+  }
+
+  40% {
+    background-position: 52% 81%;
+    background-size: 900%;
+  }
+
+  40.0001% {
+    /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 900%;
+  }
+
+  60% {
+    background-position: 84% 33%;
+    background-size: 900%;
+  }
+
+  60.0001% {
+    /* -- View 4 -- */
+    background-position: 0% 0%;
+    background-size: 900%;
+  }
+
+  80% {
+    background-position: 15% 4%;
+    background-size: 900%;
+  }
+
+  80.0001% {
+    /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 900%;
+  }
+
+  100% {
+    background-position: 72% 14%;
+    background-size: 900%;
+  }
+}
+
 .screen_overlay {
-  visibility: visible;
+  opacity: 0;
   background: linear-gradient(
     $accent-lite,
     $accent 3px,
@@ -76,6 +135,20 @@
   opacity: 0.1;
   left: 0px;
   top: 0px;
+  z-index: 1;
+}
+
+.backdrop_motion {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-size: 900%;
+  background-position: 0% 0%;
+  animation: pan-image 20s linear infinite;
+  transition: ease-in-out 0.3s;
 }
 
 .backdrop {

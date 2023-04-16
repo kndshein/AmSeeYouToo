@@ -67,6 +67,16 @@ export default function MediaWrapper({
           {!is_backdrop_loaded && <Loading />}
           <div className={styles.backdrop_wrapper}>
             <div className={styles.screen_overlay}></div>
+            {is_backdrop_loaded && (
+              <div
+                className={styles.backdrop_motion}
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
+                    data.backdrop_path ? data.backdrop_path : data.poster_path
+                  })`,
+                }}
+              />
+            )}
             <img
               className={styles.backdrop}
               src={`https://image.tmdb.org/t/p/w1280${
