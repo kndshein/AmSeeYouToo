@@ -5,7 +5,7 @@
   margin: 0;
   padding: 2px 7px 3px 15px;
   left: 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: white;
   white-space: nowrap;
   transform: rotate(-90deg);
   transform-origin: top left;
@@ -50,7 +50,6 @@
 }
 
 :global(.media):hover .title::before {
-  background-color: rgba(37, 37, 37, 0.69);
   box-shadow: 10px 0 0 $accent-lite;
   transition: ease-in-out 0.3s;
 }
