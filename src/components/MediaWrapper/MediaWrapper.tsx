@@ -59,27 +59,6 @@ export default function MediaWrapper({
     queryFn: () => axios.get(url).then((res) => res.data),
   });
 
-  const LoadedComponent = () => {
-    return (
-      <>
-        {!is_backdrop_loaded && <Loading />}
-        <div className={styles.backdrop_wrapper}>
-          <img
-            className={styles.backdrop}
-            src={`https://image.tmdb.org/t/p/w1280${
-              data.backdrop_path ? data.backdrop_path : data.poster_path
-            }`}
-            alt={data.original_title}
-            onLoad={() => setIsBackdropLoaded(true)}
-          />
-        </div>
-        <Title tmdb_data={data} media_data={media_data} />
-        <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
-        <Media tmdb_data={data} media_data={media_data} />
-      </>
-    );
-  };
-
   return (
     <section
       className={`media ${active_toggle == idx ? 'active' : ''}`}
@@ -87,7 +66,26 @@ export default function MediaWrapper({
       tabIndex={0}
       onKeyDown={(event) => handleKeyDown(event, idx)}
     >
-      {<Loading />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {!is_backdrop_loaded && <Loading />}
+          <div className={styles.backdrop_wrapper}>
+            <img
+              className={styles.backdrop}
+              src={`https://image.tmdb.org/t/p/w1280${
+                data.backdrop_path ? data.backdrop_path : data.poster_path
+              }`}
+              alt={data.original_title}
+              onLoad={() => setIsBackdropLoaded(true)}
+            />
+          </div>
+          <Title tmdb_data={data} media_data={media_data} />
+          <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
+          <Media tmdb_data={data} media_data={media_data} />
+        </>
+      )}
     </section>
   );
 }
