@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import { ActiveToggleType, HandleToggleType } from '../../types/Toggles';
+import { HandleToggleType } from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -66,6 +66,7 @@ export default function MediaWrapper({
           {/* Double loading because the background image only loads if it's rendered */}
           {!is_backdrop_loaded && <Loading />}
           <div className={styles.backdrop_wrapper}>
+            <div className={styles.screen_overlay}></div>
             <img
               className={styles.backdrop}
               src={`https://image.tmdb.org/t/p/w1280${

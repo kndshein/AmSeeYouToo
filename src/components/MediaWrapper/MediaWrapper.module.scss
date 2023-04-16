@@ -28,6 +28,9 @@
 :global(.media):focus,
 :global(.media):global(.active) {
   box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+  .screen_overlay {
+    visibility: hidden;
+  }
 }
 
 :global(.media):global(.active) {
@@ -39,6 +42,35 @@
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% -100%;
+  }
+}
+
+.screen_overlay {
+  visibility: visible;
+  background: linear-gradient(
+    $accent-lite,
+    $accent 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  opacity: 0.1;
+  left: 0px;
+  top: 0px;
 }
 
 .backdrop {
