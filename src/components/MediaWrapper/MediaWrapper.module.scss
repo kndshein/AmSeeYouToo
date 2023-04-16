@@ -13,7 +13,7 @@
   transition: ease-in-out 0.3s;
   // Undo native button html styling
   background-color: $background;
-  border: none;
+  border: 2px $accent solid;
   padding: 0;
   text-align: left;
   // To rotate the scrollbar
@@ -24,21 +24,26 @@
   -o-transform: rotateX(180deg); /* Opera */
 }
 
-:global(.media):hover,
-:global(.media):focus,
-:global(.media):global(.active) {
+:global(.media):hover {
   box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
   .screen_overlay {
-    visibility: hidden;
+    opacity: 0.03;
+  }
+  .backdrop_wrapper {
+    filter: none;
   }
 }
 
 :global(.media):global(.active) {
   min-width: 60%;
   transition: ease-in-out 0.3s;
+  .screen_overlay {
+    opacity: 0.008;
+  }
 }
 
 .backdrop_wrapper {
+  filter: sepia(100%) hue-rotate(165deg);
   position: relative;
   width: 100%;
   height: 100%;
