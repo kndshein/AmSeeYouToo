@@ -3,8 +3,7 @@
 :global(.media) {
   position: relative;
   align-self: center;
-  min-width: 200px;
-  width: 200px;
+  min-width: 250px;
   height: 95%;
   border-radius: 10px;
   margin-left: 30px;
@@ -26,14 +25,13 @@
 
 :global(.media):hover {
   box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
-  .screen_overlay {
-    opacity: 0.03;
-  }
-  .backdrop_motion {
-    opacity: 1;
-  }
-  .backdrop_wrapper {
-    filter: none;
+  &:not(:global(.active)) {
+    .backdrop_motion {
+      opacity: 1;
+    }
+    .backdrop_wrapper {
+      filter: none;
+    }
   }
 }
 
@@ -130,7 +128,7 @@
   background-size: 100% 9px;
   height: 100%;
   width: 100%;
-  animation: pan-overlay 22s infinite linear;
+  animation: pan-overlay 25s infinite linear;
   position: absolute;
   opacity: 0.1;
   left: 0px;
