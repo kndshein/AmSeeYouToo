@@ -1,0 +1,13 @@
+// .wrapper {
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+// }
+
+.spinner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transform: scale(500%);
+  opacity: 0.05;
+}

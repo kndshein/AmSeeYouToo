@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import { ActiveToggleType, HandleToggleType, HandleKeyDownType } from '../../types/Toggles';
+import {
+  ActiveToggleType,
+  HandleToggleType,
+  HandleKeyDownType,
+} from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -44,7 +48,9 @@ export default function MediaWrapper({
     media_ui_type = media_data.type;
   }
 
-  let url = `https://api.themoviedb.org/3/${url_media_type}/${media_data.id}?api_key=${
+  let url = `https://api.themoviedb.org/3/${url_media_type}/${
+    media_data.id
+  }?api_key=${
     import.meta.env.VITE_API_KEY
   }&language=en-US&append_to_response=credits${url_append}`;
 
@@ -81,7 +87,7 @@ export default function MediaWrapper({
       tabIndex={0}
       onKeyDown={(event) => handleKeyDown(event, idx)}
     >
-      {isLoading ? <Loading /> : LoadedComponent()}
+      {<Loading />}
     </section>
   );
 }

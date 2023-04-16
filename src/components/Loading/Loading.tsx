@@ -1,3 +1,5 @@
+import styles from './Loading.module.scss';
+
 export default function Loading() {
   return (
     <svg
@@ -11,6 +13,7 @@ export default function Loading() {
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
       display="block"
+      className={styles.spinner}
     >
       <style>
         {
