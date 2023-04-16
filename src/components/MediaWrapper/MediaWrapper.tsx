@@ -70,6 +70,7 @@ export default function MediaWrapper({
         <Loading />
       ) : (
         <>
+          {/* Double loading because the background image only loads if it's rendered */}
           {!is_backdrop_loaded && <Loading />}
           <div className={styles.backdrop_wrapper}>
             <img
