@@ -22,7 +22,11 @@
   {
     "version": "1.1.0",
     "date": "Jul 2021",
-    "notes": ["Added <i>Black Widow</i>.", "Added casts.", "Increased accessibility."]
+    "notes": [
+      "Added <i>Black Widow</i>.",
+      "Added casts.",
+      "Increased accessibility."
+    ]
   },
   {
     "version": "1.2.0",
@@ -37,7 +41,10 @@
   {
     "version": "1.4.0",
     "date": "Jul 2021",
-    "notes": ["Added loading spinners.", "Replaced horizontal scroll with scrollbar."]
+    "notes": [
+      "Added loading spinners.",
+      "Replaced horizontal scroll with scrollbar."
+    ]
   },
   {
     "version": "1.5.0",
@@ -47,7 +54,10 @@
   {
     "version": "1.5.1",
     "date": "Sep 2021",
-    "notes": ["Added <i>Shang-Chi and the Legend of Ten Rings</i>.", "Refactored media list."]
+    "notes": [
+      "Added <i>Shang-Chi and the Legend of Ten Rings</i>.",
+      "Refactored media list."
+    ]
   },
   {
     "version": "1.5.2",
@@ -57,7 +67,9 @@
   {
     "version": "1.6.0",
     "date": "Oct 2021",
-    "notes": ["Added labels for better differentiation between movies and shows."]
+    "notes": [
+      "Added labels for better differentiation between movies and shows."
+    ]
   },
   {
     "version": "1.6.1",
@@ -91,6 +103,24 @@
   {
     "version": "1.8.0",
     "date": "Nov 2022",
-    "notes": ["Created 'misc' category.", "Added additional genre colors.", "Rounded media vote averages."]
+    "notes": [
+      "Created 'misc' category.",
+      "Added additional genre colors.",
+      "Rounded media vote averages."
+    ]
+  },
+  {
+    "version": "2.0.0",
+    "date": "Feb 2022",
+    "notes": ["Rebuilt site using Vite."]
+  },
+  {
+    "version": "2.1.0",
+    "date": "Apr 2022",
+    "notes": [
+      "Added movie static effects to cards.",
+      "Added animated card effect on hover",
+      "Misc bug fixes."
+    ]
   }
 ]
