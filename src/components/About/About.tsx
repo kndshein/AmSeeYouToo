@@ -94,7 +94,7 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
           >
             TMDB
           </a>{' '}
-          for the API, and{' '}
+          for the API,{' '}
           <a
             href="https://30000fps.com/#"
             target="_blank"
@@ -109,6 +109,15 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             rel="noopener noreferrer"
           >
             Sci-fi GIF
+          </a>
+          , and <a href="https://twitter.com/Hyperplexed">Hyperplexed</a> for
+          this{' '}
+          <a
+            href="https://youtu.be/jMVhxBB3l0w"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tutorial
           </a>
           .
         </p>
