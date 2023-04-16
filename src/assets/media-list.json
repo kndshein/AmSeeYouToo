@@ -368,13 +368,7 @@
     "type": "movie",
     "id": "453395-doctor-strange-in-the-multiverse-of-madness"
   },
-  {
-    "type": "tv",
-    "id": "92783-she-hulk-attorney-at-law",
-    "season": 1,
-    "epiStart": 1,
-    "epiEnd": 9
-  },
+
   {
     "type": "tv",
     "id": "88329-hawkeye",
@@ -391,11 +385,25 @@
   },
   {
     "type": "tv",
+    "id": "92783-she-hulk-attorney-at-law",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 9
+  },
+  {
+    "type": "tv",
     "id": "92782-ms-marvel",
     "season": 1,
     "epiStart": 1,
     "epiEnd": 6
   },
   { "type": "movie", "id": "616037-thor-love-and-thunder" },
-  { "type": "misc", "id": "894205-werewolf-by-night" }
+  { "type": "misc", "id": "894205-werewolf-by-night" },
+  { "type": "movie", "id": "505642-black-panther-wakanda-forever" },
+  {
+    "type": "misc",
+    "id": "774752-the-guardians-of-the-galaxy-holiday-special"
+  },
+  { "type": "movie", "id": "640146-ant-man-and-the-wasp-quantumania" },
+  { "type": "movie", "id": "447365-guardians-of-the-galaxy-volume-3" }
 ]
