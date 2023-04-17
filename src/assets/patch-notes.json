@@ -135,13 +135,13 @@
     "version": "2.2.0",
     "date": "Apr 2022",
     "notes": [
-      "Added a new hover effect",
-      "Added underline styling element on card view"
+      "Added a new hover effect.",
+      "Added underline styling element on card view."
     ]
   },
   {
     "version": "2.3.0",
     "date": "Apr 2022",
-    "notes": ["Added numbering design on media interface"]
+    "notes": ["Added numbering design on media interface."]
   }
 ]
