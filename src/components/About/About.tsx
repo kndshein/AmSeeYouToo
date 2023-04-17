@@ -121,6 +121,17 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
           </a>
           .
         </p>
+        <p>
+          See the legacy site v1.0{' '}
+          <a
+            href="https://amseeyou-legacy.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
+          .
+        </p>
       </section>
     </Modal>
   );
