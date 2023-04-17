@@ -8,6 +8,7 @@ import Title from './Title/Title';
 import Media from '../Media/Media';
 import Backdrop from './Backdrop/Backdrop';
 import { useState } from 'react';
+import Index from './Index/Index';
 
 type PropTypes = {
   media_data: MediaType;
@@ -73,6 +74,7 @@ export default function MediaWrapper({
           />
           <Title tmdb_data={data} media_data={media_data} />
           <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
+          <Index idx={idx} />
           <Media tmdb_data={data} media_data={media_data} />
         </>
       )}
