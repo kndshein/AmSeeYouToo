@@ -7,6 +7,7 @@ import Tag from './Tag/Tag';
 import Title from './Title/Title';
 import Media from '../Media/Media';
 import Backdrop from './Backdrop/Backdrop';
+import { useState } from 'react';
 
 type PropTypes = {
   media_data: MediaType;
@@ -27,6 +28,7 @@ export default function MediaWrapper({
   let url_append = '';
   let url_media_type;
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
+  const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
@@ -55,13 +57,18 @@ export default function MediaWrapper({
       className={`media ${is_active ? 'active' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
+      disabled={isLoading || !is_backdrop_loaded}
     >
       {isLoading ? (
         <Loading />
       ) : (
         <>
           {/* Double loading because the background image only loads if it's rendered */}
-          <Backdrop data={data} />
+          <Backdrop
+            data={data}
+            is_backdrop_loaded={is_backdrop_loaded}
+            setIsBackdropLoaded={setIsBackdropLoaded}
+          />
           <Title tmdb_data={data} media_data={media_data} />
           <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
           <Media tmdb_data={data} media_data={media_data} />

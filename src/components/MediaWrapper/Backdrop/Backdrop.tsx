@@ -4,11 +4,15 @@ import styles from './Backdrop.module.scss';
 
 interface Props {
   data: any;
+  is_backdrop_loaded: boolean;
+  setIsBackdropLoaded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Backdrop({ data }: Props) {
-  const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
-
+export default function Backdrop({
+  data,
+  is_backdrop_loaded,
+  setIsBackdropLoaded,
+}: Props) {
   return (
     <>
       {!is_backdrop_loaded && <Loading />}
