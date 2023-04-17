@@ -120,10 +120,28 @@
     "notes": [
       "Added movie static effects to cards.",
       "Added animated card effect on hover",
-      "Added a new hover effect",
-      "Added <i>Black Panther: Wakanda Forever</i>, <i>The Guardians of the Galaxy Holiday Special</i>, <i>Ant-Man and the Wasp: Quantumania</i>, and <i>Guardians of the Galaxy Volume 3</i>.",
-      "Addressed some accessibility concerns.",
+      "Addressed some accessibility concerns. ('About' modal, and tabbing through cards)",
       "Misc bug fixes."
     ]
+  },
+  {
+    "version": "2.1.1",
+    "date": "Apr 2022",
+    "notes": [
+      "Added <i>Black Panther: Wakanda Forever</i>, <i>The Guardians of the Galaxy Holiday Special</i>, <i>Ant-Man and the Wasp: Quantumania</i>, and <i>Guardians of the Galaxy Volume 3</i>."
+    ]
+  },
+  {
+    "version": "2.2.0",
+    "date": "Apr 2022",
+    "notes": [
+      "Added a new hover effect",
+      "Added underline styling element on card view"
+    ]
+  },
+  {
+    "version": "2.3.0",
+    "date": "Apr 2022",
+    "notes": ["Added numbering design on media interface"]
   }
 ]
