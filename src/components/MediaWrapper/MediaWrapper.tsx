@@ -54,7 +54,9 @@ export default function MediaWrapper({
 
   return (
     <button
-      className={`media ${is_active ? 'active' : ''}`}
+      className={`media ${is_active ? 'active' : ''} ${
+        isLoading || !is_backdrop_loaded ? '' : 'ready'
+      }`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isLoading || !is_backdrop_loaded}
