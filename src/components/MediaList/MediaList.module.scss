@@ -14,6 +14,14 @@
   -ms-transform: rotateX(180deg); /* IE 9+ */
   -o-transform: rotateX(180deg); /* Opera */
 
+  :global(.media) {
+    transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg); /* Mozilla */
+    -webkit-transform: rotateX(180deg); /* Safari and Chrome */
+    -ms-transform: rotateX(180deg); /* IE 9+ */
+    -o-transform: rotateX(180deg); /* Opera */
+  }
+
   &::after {
     content: '';
     min-width: 30px;

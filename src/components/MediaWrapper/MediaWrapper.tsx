@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
@@ -8,7 +7,6 @@ import Tag from './Tag/Tag';
 import Title from './Title/Title';
 import Media from '../Media/Media';
 import Backdrop from './Backdrop/Backdrop';
-import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
   media_data: MediaType;

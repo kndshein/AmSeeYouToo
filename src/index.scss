@@ -45,27 +45,49 @@ code {
   min-width: 250px;
   height: 95%;
   border-radius: 10px;
+  padding: 2px;
   margin-left: 30px;
   cursor: pointer;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
   transition: ease-in-out 0.3s;
   // Undo native button html styling
-  background-color: $background;
-  border: 2px $accent solid;
-  padding: 0;
+  border: 0;
   text-align: left;
-  // To rotate the scrollbar
-  transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg); /* Mozilla */
-  -webkit-transform: rotateX(180deg); /* Safari and Chrome */
-  -ms-transform: rotateX(180deg); /* IE 9+ */
-  -o-transform: rotateX(180deg); /* Opera */
+
+  &::after {
+    z-index: -2;
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    bottom: -4px;
+    right: -4px;
+    background-image: linear-gradient(
+      240deg,
+      $accent 70%,
+      white 75%,
+      $accent 80%
+    );
+    background-size: 250% 250%;
+    background-position: 0 30%;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+  }
 
   &:hover {
-    box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+    &::after {
+      background-position: 0 120%;
+    }
   }
+
   &.active {
     min-width: 60%;
     transition: ease-in-out 0.3s;
+    box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+
+    &::after {
+      opacity: 0;
+    }
   }
 }
