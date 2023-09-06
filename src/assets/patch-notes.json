@@ -111,12 +111,12 @@
   },
   {
     "version": "2.0.0",
-    "date": "Feb 2022",
+    "date": "Feb 2023",
     "notes": ["Rebuilt site using Vite."]
   },
   {
     "version": "2.1.0",
-    "date": "Apr 2022",
+    "date": "Apr 2023",
     "notes": [
       "Added movie static effects to cards.",
       "Added animated card effect on hover",
@@ -126,14 +126,14 @@
   },
   {
     "version": "2.1.1",
-    "date": "Apr 2022",
+    "date": "Apr 2023",
     "notes": [
       "Added <i>Black Panther: Wakanda Forever</i>, <i>The Guardians of the Galaxy Holiday Special</i>, <i>Ant-Man and the Wasp: Quantumania</i>, and <i>Guardians of the Galaxy Volume 3</i>."
     ]
   },
   {
     "version": "2.2.0",
-    "date": "Apr 2022",
+    "date": "Apr 2023",
     "notes": [
       "Added a new hover effect.",
       "Added underline styling element on card view."
@@ -141,7 +141,12 @@
   },
   {
     "version": "2.3.0",
-    "date": "Apr 2022",
+    "date": "Apr 2023",
     "notes": ["Added numbering design on media interface."]
+  },
+  {
+    "version": "2.3.1",
+    "date": "Sep 2023",
+    "notes": ["Fixed typo in patch notes.", "Added <i>Secret Invasion</i>."]
   }
 ]

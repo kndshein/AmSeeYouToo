@@ -405,5 +405,12 @@
     "id": "774752-the-guardians-of-the-galaxy-holiday-special"
   },
   { "type": "movie", "id": "640146-ant-man-and-the-wasp-quantumania" },
-  { "type": "movie", "id": "447365-guardians-of-the-galaxy-volume-3" }
+  { "type": "movie", "id": "447365-guardians-of-the-galaxy-volume-3" },
+  {
+    "type": "tv",
+    "id": "114472-secret-invasion",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 6
+  }
 ]
