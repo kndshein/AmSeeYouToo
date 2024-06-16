@@ -66,22 +66,22 @@
   }
 }
 
-:global(.media):global(.active) .title {
-  left: 0;
-  color: rgba(110, 110, 110, 0.3);
-  text-shadow: none;
-  transition: ease-in-out 0.3s;
+// :global(.media):global(.active) .title {
+//   left: 0;
+//   color: rgba(110, 110, 110, 0.3);
+//   text-shadow: none;
+//   transition: ease-in-out 0.3s;
 
-  &::before {
-    box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
-    padding-right: 1000px;
-    transition: ease-in-out 0.3s;
-  }
+//   &::before {
+//     box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
+//     padding-right: 1000px;
+//     transition: ease-in-out 0.3s;
+//   }
 
-  &::after {
-    width: 0;
-  }
-}
+//   &::after {
+//     width: 0;
+//   }
+// }
 
 @media only screen and (max-width: 800px) {
   :global(.media):global(.active) .title {

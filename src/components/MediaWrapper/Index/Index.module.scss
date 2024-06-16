@@ -3,22 +3,24 @@
 .index {
   z-index: -1;
   position: absolute;
-  top: -1.5rem;
-  //   bottom: 0;
-  right: 0.5rem;
+  top: -1rem;
+  left: -3rem;
+  height: 200px;
+  width: 300px;
+  text-align: left;
   font-family: 'orbitron', sans-serif;
   font-weight: 700;
-  font-size: 8rem;
+  font-size: 7rem;
   color: rgba(97, 97, 97, 0.3);
-  transition: 0.3s ease-in-out;
+  // transition: 0.3s ease-in-out;
 }
 
-:global(.media):global(.active) .index {
+:global(.media):global(.expanded-layout) .index {
   color: rgba($accent-lite, 0.05);
 }
 
 @supports (-webkit-text-stroke: 4px red) {
-  :global(.media):not(:global(.active)) .index {
+  :global(.media):not(:global(.expanded-layout)) .index {
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke: 2px rgba($accent-lite, 0.4);
   }

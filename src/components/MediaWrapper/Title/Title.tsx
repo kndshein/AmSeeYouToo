@@ -1,6 +1,7 @@
 import { MediaType } from '../../../types/Media';
 import { TmdbType } from '../../../types/Tmdb';
 import styles from './Title.module.scss';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -9,12 +10,12 @@ type PropTypes = {
 
 export default function Title({ tmdb_data, media_data }: PropTypes) {
   return (
-    <div className={styles.title}>
+    <motion.div className={styles.title} layout="size">
       <h2>
         {media_data.type == 'tv'
           ? tmdb_data.original_name
           : tmdb_data.original_title}
       </h2>
-    </div>
+    </motion.div>
   );
 }

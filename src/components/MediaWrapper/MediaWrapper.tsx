@@ -10,7 +10,7 @@ import Backdrop from './Backdrop/Backdrop';
 import { useState } from 'react';
 import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
-import { motion } from 'framer-motion';
+import { LayoutGroup, motion } from 'framer-motion';
 
 type PropTypes = {
   media_data: MediaType;
@@ -32,6 +32,7 @@ export default function MediaWrapper({
   let url_media_type;
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
+  const [is_content_expanded, setIsContentExpanded] = useState(false);
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
@@ -59,7 +60,7 @@ export default function MediaWrapper({
     <button
       className={`media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'
-      }`}
+      } ${is_content_expanded ? 'expanded-layout' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isLoading || !is_backdrop_loaded}
@@ -70,13 +71,14 @@ export default function MediaWrapper({
         <div
           className={`${styles.content_container} ${
             is_active ? styles.active : ''
-          }`}
+          } ${is_content_expanded ? styles.expanded_layout : ''}`}
         >
           <motion.div
             className={styles.content}
             layout
             transition={{ duration: 3 }}
             style={{ borderRadius: '10px' }}
+            onLayoutAnimationComplete={() => setIsContentExpanded(is_active)}
           >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop
