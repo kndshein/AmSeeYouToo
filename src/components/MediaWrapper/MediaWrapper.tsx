@@ -10,6 +10,7 @@ import Backdrop from './Backdrop/Backdrop';
 import { useState } from 'react';
 import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
   media_data: MediaType;
@@ -71,7 +72,11 @@ export default function MediaWrapper({
             is_active ? styles.active : ''
           }`}
         >
-          <div className={styles.content}>
+          <motion.div
+            className={styles.content}
+            layout
+            transition={{ duration: 3 }}
+          >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop
               data={data}
@@ -85,7 +90,7 @@ export default function MediaWrapper({
             />
             <Index idx={idx} />
             <Media tmdb_data={data} media_data={media_data} />
-          </div>
+          </motion.div>
         </div>
       )}
     </button>
