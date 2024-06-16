@@ -4,6 +4,8 @@ import { MediaType } from '../../../types/Media';
 import dateCalc from '../../../utils/date-calc';
 import runtimeCalc from '../../../utils/runtime-calc';
 import Episodes from '../Episodes/Episodes';
+import { container } from '../Media';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -17,7 +19,7 @@ export default function RightContainer({
   is_content_expanded,
 }: PropTypes) {
   return (
-    <section className={styles.container}>
+    <motion.section className={styles.container} variants={container}>
       <section className={styles.info_group}>
         <span className={styles.vote}>
           {Math.round(tmdb_data.vote_average * 10) / 10}
@@ -54,6 +56,6 @@ export default function RightContainer({
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
       )}
-    </section>
+    </motion.section>
   );
 }
