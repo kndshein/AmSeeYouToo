@@ -87,7 +87,7 @@ export default function MediaWrapper({
             }}
             onLayoutAnimationStart={() => {
               setIsContentExpanded((prevState) => prevState && is_active);
-              setIsContentCollapsed((prevState) => !prevState && is_active);
+              setIsContentCollapsed((prevState) => prevState && !is_active);
             }}
           >
             {/* Double loading because the background image only loads if it's rendered */}

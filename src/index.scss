@@ -53,6 +53,8 @@ code {
 
   &:not(.collapsed-layout) {
     z-index: 1;
+    border: 2px dashed $accent-lite;
+
     &::after {
       opacity: 0;
     }
