@@ -55,7 +55,6 @@ code {
   text-align: left;
 
   &.active {
-    min-width: 60%;
     transition: ease-in-out 0.3s;
     box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
 

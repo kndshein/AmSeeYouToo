@@ -9,6 +9,7 @@ import Media from '../Media/Media';
 import Backdrop from './Backdrop/Backdrop';
 import { useState } from 'react';
 import Index from './Index/Index';
+import styles from './MediaWrapper.module.scss';
 
 type PropTypes = {
   media_data: MediaType;
@@ -65,18 +66,27 @@ export default function MediaWrapper({
       {isLoading ? (
         <Loading />
       ) : (
-        <>
-          {/* Double loading because the background image only loads if it's rendered */}
-          <Backdrop
-            data={data}
-            is_backdrop_loaded={is_backdrop_loaded}
-            setIsBackdropLoaded={setIsBackdropLoaded}
-          />
-          <Title tmdb_data={data} media_data={media_data} />
-          <Tag is_movies_only={is_movies_only} media_ui_type={media_ui_type} />
-          <Index idx={idx} />
-          <Media tmdb_data={data} media_data={media_data} />
-        </>
+        <div
+          className={`${styles.content_container} ${
+            is_active ? styles.active : ''
+          }`}
+        >
+          <div className={styles.content}>
+            {/* Double loading because the background image only loads if it's rendered */}
+            <Backdrop
+              data={data}
+              is_backdrop_loaded={is_backdrop_loaded}
+              setIsBackdropLoaded={setIsBackdropLoaded}
+            />
+            <Title tmdb_data={data} media_data={media_data} />
+            <Tag
+              is_movies_only={is_movies_only}
+              media_ui_type={media_ui_type}
+            />
+            <Index idx={idx} />
+            <Media tmdb_data={data} media_data={media_data} />
+          </div>
+        </div>
       )}
     </button>
   );
