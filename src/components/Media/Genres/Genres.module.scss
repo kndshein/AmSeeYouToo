@@ -9,13 +9,14 @@
   position: relative;
   padding: 10px 0 10px 20px;
   margin: 10px 0 10px 0;
-  color: white;
-  font-size: clamp(0.75rem, 1vw, 1rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: $tab-background;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  span {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
 }
 
 .genres div::before {
@@ -27,66 +28,84 @@
   height: 100%;
 }
 
-.aa::before {
-  background-image: linear-gradient(rgb(255, 85, 85), rgb(158, 84, 255));
+@mixin themifyGenre($color, $second_color: '') {
+  @if $second_color != '' {
+    span {
+      color: transparent;
+      background-image: linear-gradient(to right, $color, $second_color);
+      background-clip: text;
+    }
+    &::before {
+      background-image: linear-gradient($color, $second_color);
+    }
+  } @else {
+    color: $color;
+    &::before {
+      background-color: $color;
+    }
+  }
 }
 
-.action::before {
-  background-color: rgb(255, 85, 85);
+.aa {
+  @include themifyGenre(rgb(255, 85, 85), rgb(158, 84, 255));
 }
 
-.adventure::before {
-  background-color: rgb(158, 84, 255);
+.action {
+  @include themifyGenre(rgb(255, 85, 85));
 }
 
-.animation::before {
-  background-color: rgb(255, 209, 84);
+.adventure {
+  @include themifyGenre(rgb(158, 84, 255));
 }
 
-.comedy::before {
-  background-color: rgb(255, 223, 82);
+.animation {
+  @include themifyGenre(rgb(255, 209, 84));
 }
 
-.crime::before {
-  background-color: rgb(255, 124, 179);
+.comedy {
+  @include themifyGenre(rgb(255, 223, 82));
 }
 
-.drama::before {
-  background-color: rgb(255, 136, 57);
+.crime {
+  @include themifyGenre(rgb(255, 124, 179));
 }
 
-.fantasy::before {
-  background-color: rgb(96, 255, 81);
+.drama {
+  @include themifyGenre(rgb(255, 136, 57));
 }
 
-.mystery::before {
-  background-color: rgb(163, 0, 0);
+.fantasy {
+  @include themifyGenre(rgb(96, 255, 81));
 }
 
-.science_fiction::before {
-  background-color: rgb(69, 196, 255);
+.mystery {
+  @include themifyGenre(rgb(163, 0, 0));
 }
 
-.sf::before {
-  background-image: linear-gradient(rgb(69, 196, 255), rgb(96, 255, 81));
+.science_fiction {
+  @include themifyGenre(rgb(69, 196, 255));
 }
 
-.thriller::before {
-  background-color: rgb(229, 124, 255);
+.sf {
+  @include themifyGenre(rgb(69, 196, 255), rgb(96, 255, 81));
 }
 
-.wp::before {
-  background-color: rgb(109, 109, 109);
+.thriller {
+  @include themifyGenre(rgb(229, 124, 255));
 }
 
-.horror::before {
-  background-color: rgb(160, 32, 32);
+.wp {
+  @include themifyGenre(rgb(109, 109, 109));
 }
 
-.family::before {
-  background-color: rgb(177, 129, 255);
+.horror {
+  @include themifyGenre(rgb(160, 32, 32));
 }
 
-.none::before {
-  background-color: white;
+.family {
+  @include themifyGenre(rgb(177, 129, 255));
+}
+
+.none {
+  @include themifyGenre(rgb(255, 255, 255));
 }
