@@ -4,13 +4,20 @@ import Genres from '../Genres/Genres';
 
 type PropTypes = {
   tmdb_data: TmdbType;
+  is_content_expanded: boolean;
 };
 
-export default function LeftContainer({ tmdb_data }: PropTypes) {
+export default function LeftContainer({
+  tmdb_data,
+  is_content_expanded,
+}: PropTypes) {
   return (
     <div className={styles.container}>
       <div className={styles.poster}>
-        <img src={`https://image.tmdb.org/t/p/w342${tmdb_data.poster_path}`} alt={tmdb_data.original_title} />
+        <img
+          src={`https://image.tmdb.org/t/p/w342${tmdb_data.poster_path}`}
+          alt={tmdb_data.original_title}
+        />
       </div>
       <Genres genres={tmdb_data.genres} />
     </div>

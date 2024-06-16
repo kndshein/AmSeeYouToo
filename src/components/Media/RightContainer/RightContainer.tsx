@@ -8,9 +8,14 @@ import Episodes from '../Episodes/Episodes';
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
+  is_content_expanded: boolean;
 };
 
-export default function RightContainer({ tmdb_data, media_data }: PropTypes) {
+export default function RightContainer({
+  tmdb_data,
+  media_data,
+  is_content_expanded,
+}: PropTypes) {
   return (
     <section className={styles.container}>
       <section className={styles.info_group}>

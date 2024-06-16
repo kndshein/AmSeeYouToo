@@ -102,7 +102,11 @@ export default function MediaWrapper({
               media_ui_type={media_ui_type}
             />
             <Index idx={idx} />
-            <Media tmdb_data={data} media_data={media_data} />
+            <Media
+              tmdb_data={data}
+              media_data={media_data}
+              is_content_expanded={is_content_expanded}
+            />
           </motion.div>
         </div>
       )}

@@ -4,23 +4,23 @@
   display: grid;
   grid-template-rows: fit-content(100px) auto;
   grid-template-columns: min(25%, 250px) auto;
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
   padding: 30px 30px 30px 80px;
   height: 100%;
   width: 100%;
-  transition: opacity ease-out 0.3s;
+  // transition: opacity ease-out 0.3s;
 }
 
 :global(.media):global(.expanded-layout) .container {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0.2s;
-  transition-property: opacity ease-in 0.3s;
+  // visibility: visible;
+  // opacity: 1;
+  // transition-delay: 0.2s;
+  // transition-property: opacity ease-in 0.3s;
 }
 
 :global(.media):not(:global(.active)) .container {
-  visibility: hidden;
+  // visibility: hidden;
 }
 
 @media only screen and (max-width: 800px) {
