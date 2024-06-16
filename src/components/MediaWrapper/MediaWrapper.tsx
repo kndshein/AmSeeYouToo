@@ -10,7 +10,7 @@ import Backdrop from './Backdrop/Backdrop';
 import { useState } from 'react';
 import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
-import { LayoutGroup, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
   media_data: MediaType;
@@ -33,7 +33,8 @@ export default function MediaWrapper({
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
   // Denotes if curr media is fully expanded or not
-  const [is_content_expanded, setIsContentExpanded] = useState(false);
+  const [is_content_expanded, setIsContentExpanded] = useState(is_active);
+  const [is_content_collapsed, setIsContentCollapsed] = useState(!is_active);
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
@@ -61,7 +62,9 @@ export default function MediaWrapper({
     <button
       className={`media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'
-      } ${is_content_expanded ? 'expanded-layout' : ''}`}
+      } ${is_content_expanded ? 'expanded-layout' : ''} ${
+        is_content_collapsed ? 'collapsed-layout' : ''
+      }`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isLoading || !is_backdrop_loaded}
@@ -78,10 +81,14 @@ export default function MediaWrapper({
             className={styles.content}
             layout
             style={{ borderRadius: '10px' }}
-            onLayoutAnimationComplete={() => setIsContentExpanded(is_active)}
-            onLayoutAnimationStart={() =>
-              setIsContentExpanded((prevState) => prevState && is_active)
-            }
+            onLayoutAnimationComplete={() => {
+              setIsContentExpanded(is_active);
+              setIsContentCollapsed(!is_active);
+            }}
+            onLayoutAnimationStart={() => {
+              setIsContentExpanded((prevState) => prevState && is_active);
+              setIsContentCollapsed((prevState) => !prevState && is_active);
+            }}
           >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop

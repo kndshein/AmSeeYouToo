@@ -11,6 +11,7 @@
   transform: rotate(-90deg) !important;
   transform-origin: top left !important;
   opacity: 1;
+  animation: fadeInOpacity 0.2s ease-in-out;
   transition: color ease-in-out 0.3s;
 
   &::before {
@@ -55,11 +56,11 @@
 :global(.media):focus .title {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 5px $background;
-  transition: ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s, text-shadow ease-in-out 0.3s;
 
   &::before {
     box-shadow: 10px 0 0 $accent-lite;
-    transition: ease-in-out 0.3s;
+    transition: box-shadow ease-in-out 0.3s;
   }
 
   &::after {
@@ -86,12 +87,28 @@
   }
 }
 
-:global(.media):global(.active):not(:global(.expanded-layout)) .title {
+:global(.media):global(.active):not(:global(.expanded-layout)) .title,
+:global(.media):not(:global(.active)):not(:global(.expanded-layout)):not(
+    :global(.collapsed-layout)
+  )
+  .title {
   opacity: 0;
+  animation: none;
 }
 
 @media only screen and (max-width: 800px) {
   :global(.media):global(.active) .title {
     opacity: 0;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
   }
 }
