@@ -12,7 +12,7 @@
   transition: opacity ease-out 0.3s;
 }
 
-:global(.media):global(.active) .container {
+:global(.media):global(.expanded-layout) .container {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.2s;

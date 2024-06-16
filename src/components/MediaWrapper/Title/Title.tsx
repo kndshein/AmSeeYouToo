@@ -10,7 +10,7 @@ type PropTypes = {
 
 export default function Title({ tmdb_data, media_data }: PropTypes) {
   return (
-    <motion.div className={styles.title} layout="size">
+    <motion.div className={styles.title} layout="position">
       <h2>
         {media_data.type == 'tv'
           ? tmdb_data.original_name

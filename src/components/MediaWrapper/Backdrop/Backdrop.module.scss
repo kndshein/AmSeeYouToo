@@ -2,7 +2,7 @@
 
 :global(.media):hover,
 :global(.media):focus {
-  &:not(:global(.active)) {
+  &:not(:global(.expanded-layout)) {
     .backdrop_motion {
       opacity: 1;
     }
@@ -12,7 +12,7 @@
   }
 }
 
-:global(.media):global(.active) {
+:global(.media):global(.expanded-layout) {
   .screen_overlay {
     opacity: 0.008;
   }
@@ -72,7 +72,7 @@
   transition: ease-in-out 0.3s;
 }
 
-:global(.media):global(.active) .backdrop {
+:global(.media):global(.expanded-layout) .backdrop {
   filter: blur(20px);
   opacity: 0.1;
   transition: ease-in-out 0.3s;
