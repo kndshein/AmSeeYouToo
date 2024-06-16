@@ -77,6 +77,18 @@ export default function MediaWrapper({
             is_active ? styles.active : ''
           } ${is_content_expanded ? styles.expanded_layout : ''}`}
         >
+          {is_content_expanded && (
+            <motion.button
+              className={styles.overlay}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.7,
+                },
+              }}
+              initial={{ opacity: 0 }}
+            ></motion.button>
+          )}
           <motion.div
             className={styles.content}
             layout
@@ -88,6 +100,9 @@ export default function MediaWrapper({
             onLayoutAnimationStart={() => {
               setIsContentExpanded((prevState) => prevState && is_active);
               setIsContentCollapsed((prevState) => prevState && !is_active);
+            }}
+            onClick={(event) => {
+              if (is_content_expanded) event.stopPropagation();
             }}
           >
             {/* Double loading because the background image only loads if it's rendered */}

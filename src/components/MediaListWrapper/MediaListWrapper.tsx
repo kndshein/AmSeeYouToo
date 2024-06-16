@@ -23,13 +23,22 @@ export default function MediaListWrapper({ is_movies_only }: PropTypes) {
 
   return (
     <>
-      <button className={styles.arrow_left} onClick={() => handleScroll('left')}>
+      <button
+        className={styles.arrow_left}
+        onClick={() => handleScroll('left')}
+      >
         <MdKeyboardArrowLeft />
       </button>
-      <MediaList is_movies_only={is_movies_only} media_list_ref={media_list_ref} />
-      <button className={styles.arrow_right} onClick={() => handleScroll('right')}>
+      <button
+        className={styles.arrow_right}
+        onClick={() => handleScroll('right')}
+      >
         <MdKeyboardArrowRight />
       </button>
+      <MediaList
+        is_movies_only={is_movies_only}
+        media_list_ref={media_list_ref}
+      />
     </>
   );
 }
