@@ -7,20 +7,6 @@
   scrollbar-color: $accent-lite $main;
   scrollbar-width: thin;
   scroll-behavior: smooth;
-  // To rotate the scrollbar
-  transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg); /* Mozilla */
-  -webkit-transform: rotateX(180deg); /* Safari and Chrome */
-  -ms-transform: rotateX(180deg); /* IE 9+ */
-  -o-transform: rotateX(180deg); /* Opera */
-
-  :global(.media) {
-    transform: rotateX(180deg);
-    -moz-transform: rotateX(180deg); /* Mozilla */
-    -webkit-transform: rotateX(180deg); /* Safari and Chrome */
-    -ms-transform: rotateX(180deg); /* IE 9+ */
-    -o-transform: rotateX(180deg); /* Opera */
-  }
 
   &::after {
     content: '';
