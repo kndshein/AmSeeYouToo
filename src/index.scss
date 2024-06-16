@@ -48,7 +48,7 @@ code {
   padding: 2px;
   margin-left: 30px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   transition: ease-in-out 0.3s;
   // Undo native button html styling
   border: 0;
@@ -70,6 +70,7 @@ code {
       z-index: -2;
       content: '';
       position: absolute;
+      // Sheen effect
       top: -4px;
       left: -4px;
       bottom: -4px;
