@@ -76,6 +76,7 @@ export default function MediaWrapper({
             className={styles.content}
             layout
             transition={{ duration: 3 }}
+            style={{ borderRadius: '10px' }}
           >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop
