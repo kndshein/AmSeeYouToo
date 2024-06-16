@@ -19,6 +19,10 @@
   transition-property: opacity ease-in 0.3s;
 }
 
+:global(.media):not(:global(.active)) .container {
+  visibility: hidden;
+}
+
 @media only screen and (max-width: 800px) {
   .container {
     padding: 20px;

@@ -32,6 +32,7 @@ export default function MediaWrapper({
   let url_media_type;
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
+  // Denotes if curr media is fully expanded or not
   const [is_content_expanded, setIsContentExpanded] = useState(false);
 
   if (media_data.type == 'tv') {
@@ -76,9 +77,11 @@ export default function MediaWrapper({
           <motion.div
             className={styles.content}
             layout
-            transition={{ duration: 3 }}
             style={{ borderRadius: '10px' }}
             onLayoutAnimationComplete={() => setIsContentExpanded(is_active)}
+            onLayoutAnimationStart={() =>
+              setIsContentExpanded((prevState) => prevState && is_active)
+            }
           >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop

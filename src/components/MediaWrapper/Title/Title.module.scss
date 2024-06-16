@@ -4,13 +4,13 @@
   position: absolute;
   left: 0;
   bottom: -45px; // To account for height of the container due to rotation
-  display: block;
   margin: 0;
   padding: 2px 7px 3px 15px;
   color: $accent-lite;
   white-space: nowrap;
   transform: rotate(-90deg) !important;
   transform-origin: top left !important;
+  opacity: 1;
   transition: color ease-in-out 0.3s;
 
   &::before {
@@ -73,12 +73,12 @@
   transform-origin: top left;
   color: rgba(110, 110, 110, 0.3);
   text-shadow: none;
-  transition: ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
 
   &::before {
     box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
     padding-right: 1000px;
-    transition: ease-in-out 0.3s;
+    transition: padding ease-in-out 0.3s;
   }
 
   &::after {
@@ -87,7 +87,7 @@
 }
 
 :global(.media):global(.active):not(:global(.expanded-layout)) .title {
-  display: none;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 800px) {

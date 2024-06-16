@@ -3,8 +3,6 @@
 .index {
   z-index: -1;
   position: absolute;
-  top: -1rem;
-  left: -3rem;
   height: 200px;
   width: 300px;
   text-align: left;
@@ -15,7 +13,14 @@
   // transition: 0.3s ease-in-out;
 }
 
-:global(.media):global(.expanded-layout) .index {
+.index,
+:global(.media):not(:global(.active)) .index {
+  top: -1rem;
+  left: -3rem;
+  right: unset;
+}
+
+:global(.media):global(.expanded-layout):global(.active) .index {
   left: unset;
   right: 0.75rem;
   text-align: right;
