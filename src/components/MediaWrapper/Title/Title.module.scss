@@ -10,8 +10,7 @@
   white-space: nowrap;
   transform: rotate(-90deg) !important;
   transform-origin: top left !important;
-  opacity: 1;
-  animation: fadeInOpacity 0.2s ease-in-out;
+  animation: 0.2s ease-in-out forwards fadeInOpacity;
   transition: color ease-in-out 0.3s;
 
   &::before {
@@ -68,18 +67,18 @@
   }
 }
 
-:global(.media):global(.active) .title {
+:global(.media):global(.expanded-layout) .title {
   left: 0;
   transform: rotate(-90deg);
   transform-origin: top left;
   color: rgba(110, 110, 110, 0.3);
   text-shadow: none;
   transition: color ease-in-out 0.3s;
+  animation: 0.3s ease-in-out both fadeInOpacity;
 
   &::before {
     box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
     padding-right: 1000px;
-    transition: padding ease-in-out 0.3s;
   }
 
   &::after {
