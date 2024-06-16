@@ -2,7 +2,8 @@
 
 .title {
   position: absolute;
-  left: 2px;
+  left: 0;
+  bottom: -45px; // To account for height of the container due to rotation
   margin: 0;
   padding: 2px 7px 3px 15px;
   color: $accent-lite;

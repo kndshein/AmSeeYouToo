@@ -1,21 +1,32 @@
-.content_container.active {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content_container {
   height: 100%;
-  width: 100%;
 
-  .content {
-    position: relative;
+  &.active {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 80vh;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+
+    .content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 700px;
+      height: 80vh;
+      margin: 0 auto;
+    }
   }
+}
+
+.content {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
