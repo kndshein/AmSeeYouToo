@@ -16,6 +16,9 @@
 }
 
 :global(.media):global(.expanded-layout) .index {
+  left: unset;
+  right: 0.75rem;
+  text-align: right;
   color: rgba($accent-lite, 0.05);
 }
 
