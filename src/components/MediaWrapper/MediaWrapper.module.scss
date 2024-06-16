@@ -25,12 +25,6 @@
       margin: 0 auto;
     }
   }
-
-  &.expanded_layout {
-    .content {
-      box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
-    }
-  }
 }
 
 .overlay {

@@ -104,6 +104,27 @@ export default function MediaWrapper({
             onClick={(event) => {
               if (is_content_expanded) event.stopPropagation();
             }}
+            variants={{
+              expanded: {
+                boxShadow:
+                  '0 0 1px white, 0 0 5px 1px rgb(102, 192, 204), 0 0 20px 7px rgb(45, 100, 114)',
+                transition: {
+                  boxShadow: {
+                    delay: 2,
+                    duration: 0.5,
+                  },
+                },
+              },
+              collapsed: {
+                boxShadow: 'none',
+                transition: {
+                  boxShadow: {
+                    duration: 0.5,
+                  },
+                },
+              },
+            }}
+            animate={is_content_expanded ? 'expanded' : 'collapsed'}
           >
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop
