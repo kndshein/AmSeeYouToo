@@ -6,6 +6,7 @@ import runtimeCalc from '../../../utils/runtime-calc';
 import Episodes from '../Episodes/Episodes';
 import { container } from '../Media';
 import { motion } from 'framer-motion';
+import Overview from '../Overview/Overview';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -82,48 +83,7 @@ export default function RightContainer({
       </motion.section>
       {/* Shows w/ singular seasons don't nest their overview info */}
       {is_content_expanded && (
-        <motion.div
-          className={styles.overview}
-          variants={{
-            ...element,
-            visible: {
-              ...element.visible,
-              transition: {
-                ...element.visible.transition,
-                staggerChildren: 0.001,
-              },
-            },
-          }}
-          initial={{ opacity: 0 }}
-        >
-          {media_data.type == 'tv'
-            ? tmdb_data[`season/${media_data.season}`].overview ||
-              tmdb_data.overview
-            : tmdb_data.overview
-                .split('')
-                .map((letter: string, idx: number) => {
-                  return (
-                    <motion.span
-                      key={idx}
-                      variants={{
-                        ...element,
-                        visible: {
-                          ...element.visible,
-                          transition: {
-                            ...element.visible.transition,
-                            opacity: {
-                              duration: 0,
-                            },
-                          },
-                        },
-                      }}
-                      initial={{ opacity: 0 }}
-                    >
-                      {letter}
-                    </motion.span>
-                  );
-                })}
-        </motion.div>
+        <Overview tmdb_data={tmdb_data} media_data={media_data} />
       )}
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
