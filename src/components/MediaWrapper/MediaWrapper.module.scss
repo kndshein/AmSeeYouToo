@@ -1,7 +1,6 @@
 @use '../../sass/variables.scss' as *;
 
 .content_container {
-  z-index: 10;
   height: 100%;
   width: 100%;
 
@@ -29,7 +28,7 @@
 
   &.expanded_layout {
     .content {
-      box-shadow: 0 0 5px 1px red, 0 0 15px red;
+      box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
     }
   }
 }
@@ -38,5 +37,5 @@
   position: relative;
   overflow: hidden;
   height: 100%;
-  box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+  border: 1px solid $accent-lite;
 }
