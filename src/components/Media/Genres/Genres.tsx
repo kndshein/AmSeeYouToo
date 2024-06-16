@@ -98,7 +98,7 @@ export default function Genres({ genres }: PropTypes) {
               },
             }}
           >
-            <span>{ele.name}</span>
+            <p>{ele.name}</p>
           </motion.div>
         );
       })}

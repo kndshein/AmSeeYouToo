@@ -15,7 +15,7 @@ export default function Overview({ tmdb_data, media_data }: PropTypes) {
       : tmdb_data.overview;
 
   return (
-    <motion.div
+    <motion.p
       className={styles.overview}
       variants={{
         visible: {
@@ -58,6 +58,6 @@ export default function Overview({ tmdb_data, media_data }: PropTypes) {
           </motion.span>
         );
       })}
-    </motion.div>
+    </motion.p>
   );
 }

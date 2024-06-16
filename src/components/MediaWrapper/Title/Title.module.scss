@@ -47,8 +47,13 @@
 }
 
 .title h2 {
+  user-select: none;
   margin: 0;
   font-size: 2rem;
+}
+
+:global(.media):global(.collapsed-layout) .title h2 {
+  cursor: pointer;
 }
 
 :global(.media):hover .title,

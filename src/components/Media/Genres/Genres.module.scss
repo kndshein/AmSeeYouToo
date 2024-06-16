@@ -11,7 +11,8 @@
   margin: 10px 0 10px 0;
   background-color: $tab-background;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  span {
+  p {
+    margin: 0;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 700;
     text-transform: uppercase;
@@ -30,7 +31,7 @@
 
 @mixin themifyGenre($color, $second_color: '') {
   @if $second_color != '' {
-    span {
+    p {
       color: transparent;
       background-image: linear-gradient(to right, $color, $second_color);
       background-clip: text;

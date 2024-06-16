@@ -1,6 +1,7 @@
 @use '../../../sass/variables.scss' as *;
 
 .index {
+  user-select: none;
   z-index: -1;
   position: absolute;
   height: 200px;
