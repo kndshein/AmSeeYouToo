@@ -33,7 +33,7 @@ export default function RightContainer({
       opacity: 0,
       x: -100,
       transition: {
-        x: {
+        opacity: {
           duration: 0,
         },
       },
@@ -80,13 +80,51 @@ export default function RightContainer({
           );
         })}
       </motion.section>
-      <motion.div className={styles.overview} variants={element}>
-        {/* Shows w/ singular seasons don't nest their overview info */}
-        {media_data.type == 'tv'
-          ? tmdb_data[`season/${media_data.season}`].overview ||
-            tmdb_data.overview
-          : tmdb_data.overview}
-      </motion.div>
+      {/* Shows w/ singular seasons don't nest their overview info */}
+      {is_content_expanded && (
+        <motion.div
+          className={styles.overview}
+          variants={{
+            ...element,
+            visible: {
+              ...element.visible,
+              transition: {
+                ...element.visible.transition,
+                staggerChildren: 0.001,
+              },
+            },
+          }}
+          initial={{ opacity: 0 }}
+        >
+          {media_data.type == 'tv'
+            ? tmdb_data[`season/${media_data.season}`].overview ||
+              tmdb_data.overview
+            : tmdb_data.overview
+                .split('')
+                .map((letter: string, idx: number) => {
+                  return (
+                    <motion.span
+                      key={idx}
+                      variants={{
+                        ...element,
+                        visible: {
+                          ...element.visible,
+                          transition: {
+                            ...element.visible.transition,
+                            opacity: {
+                              duration: 0,
+                            },
+                          },
+                        },
+                      }}
+                      initial={{ opacity: 0 }}
+                    >
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+        </motion.div>
+      )}
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
       )}
