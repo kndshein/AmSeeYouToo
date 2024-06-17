@@ -1,6 +1,7 @@
 @use '../../../sass/variables.scss' as *;
 
 .type_tag {
+  user-select: none;
   opacity: 0;
   position: absolute;
   display: flex;

@@ -1,25 +1,36 @@
 @use '../../../sass/variables.scss' as *;
 
 .index {
+  user-select: none;
   z-index: -1;
   position: absolute;
-  top: -1.5rem;
-  //   bottom: 0;
-  right: 0.5rem;
+  height: 200px;
+  width: 300px;
+  text-align: left;
   font-family: 'orbitron', sans-serif;
   font-weight: 700;
-  font-size: 8rem;
-  color: rgba(97, 97, 97, 0.3);
-  transition: 0.3s ease-in-out;
+  font-size: 7rem;
+  color: rgba(97, 97, 97, 0.5);
+  // transition: 0.3s ease-in-out;
 }
 
-:global(.media):global(.active) .index {
+.index,
+:global(.media):not(:global(.active)) .index {
+  top: -1rem;
+  left: -3rem;
+  right: unset;
+}
+
+:global(.media):global(.expanded-layout):global(.active) .index {
+  left: unset;
+  right: 0.75rem;
+  text-align: right;
   color: rgba($accent-lite, 0.05);
 }
 
 @supports (-webkit-text-stroke: 4px red) {
-  :global(.media):not(:global(.active)) .index {
+  :global(.media):not(:global(.expanded-layout)) .index {
     color: rgba(0, 0, 0, 0);
-    -webkit-text-stroke: 2px rgba($accent-lite, 0.4);
+    -webkit-text-stroke: 2px rgba($accent-lite, 0.7);
   }
 }

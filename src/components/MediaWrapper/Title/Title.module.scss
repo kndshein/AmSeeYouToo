@@ -2,13 +2,15 @@
 
 .title {
   position: absolute;
-  left: 2px;
+  left: 0;
+  bottom: -45px; // To account for height of the container due to rotation
   margin: 0;
   padding: 2px 7px 3px 15px;
   color: $accent-lite;
   white-space: nowrap;
-  transform: rotate(-90deg);
-  transform-origin: top left;
+  transform: rotate(-90deg) !important;
+  transform-origin: top left !important;
+  animation: 0.2s ease-in-out forwards fadeInOpacity;
   transition: color ease-in-out 0.3s;
 
   &::before {
@@ -45,19 +47,24 @@
 }
 
 .title h2 {
+  user-select: none;
   margin: 0;
   font-size: 2rem;
+}
+
+:global(.media):global(.collapsed-layout) .title h2 {
+  cursor: pointer;
 }
 
 :global(.media):hover .title,
 :global(.media):focus .title {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 5px $background;
-  transition: ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s, text-shadow ease-in-out 0.3s;
 
   &::before {
     box-shadow: 10px 0 0 $accent-lite;
-    transition: ease-in-out 0.3s;
+    transition: box-shadow ease-in-out 0.3s;
   }
 
   &::after {
@@ -65,16 +72,18 @@
   }
 }
 
-:global(.media):global(.active) .title {
+:global(.media):global(.expanded-layout) .title {
   left: 0;
+  transform: rotate(-90deg);
+  transform-origin: top left;
   color: rgba(110, 110, 110, 0.3);
   text-shadow: none;
-  transition: ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
+  animation: 0.3s ease-in-out both fadeInOpacity;
 
   &::before {
     box-shadow: 10px 0 0 $accent-lite, 0 0 20px $background;
     padding-right: 1000px;
-    transition: ease-in-out 0.3s;
   }
 
   &::after {
@@ -82,8 +91,29 @@
   }
 }
 
+:global(.media):global(.active):not(:global(.expanded-layout)) .title,
+:global(.media):not(:global(.active)):not(:global(.expanded-layout)):not(
+    :global(.collapsed-layout)
+  )
+  .title {
+  opacity: 0;
+  animation: none;
+}
+
 @media only screen and (max-width: 800px) {
   :global(.media):global(.active) .title {
     opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
   }
 }

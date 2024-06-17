@@ -6,7 +6,6 @@
   font-family: $body-text;
   font-weight: 400;
   font-weight: normal;
-  user-select: none;
   letter-spacing: 0.5px;
 }
 
@@ -47,34 +46,36 @@ code {
   border-radius: 10px;
   padding: 2px;
   margin-left: 30px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: ease-in-out 0.3s;
-  // Undo native button html styling
   border: 0;
   text-align: left;
+  background: transparent;
 
-  &.active {
-    min-width: 60%;
-    transition: ease-in-out 0.3s;
-    box-shadow: 0 0 5px 1px $accent-lite, 0 0 15px $accent;
+  &:not(.collapsed-layout) {
+    z-index: 1;
+    border: 2px dashed $accent-lite;
 
     &::after {
       opacity: 0;
     }
   }
 
-  &.ready {
+  &:not(.ready) {
+    overflow: hidden;
+  }
+
+  &.ready.collapsed-layout {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
 
     &::after {
       z-index: -2;
       content: '';
       position: absolute;
-      top: -4px;
-      left: -4px;
-      bottom: -4px;
-      right: -4px;
+      // Sheen effect
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
       background-image: linear-gradient(
         240deg,
         $accent 70%,

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styles from './Genres.module.scss';
 
 type PropTypes = {
@@ -73,9 +74,32 @@ export default function Genres({ genres }: PropTypes) {
     <section className={styles.genres}>
       {genres.map((ele, idx) => {
         return (
-          <div className={`${classNameColor(ele.id)}`} key={idx}>
-            {ele.name}
-          </div>
+          <motion.div
+            className={`${classNameColor(ele.id)}`}
+            key={idx}
+            variants={{
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  x: {
+                    duration: 0.1,
+                  },
+                },
+              },
+              hidden: {
+                opacity: 0,
+                x: -100,
+                transition: {
+                  x: {
+                    duration: 0.1,
+                  },
+                },
+              },
+            }}
+          >
+            <p>{ele.name}</p>
+          </motion.div>
         );
       })}
     </section>

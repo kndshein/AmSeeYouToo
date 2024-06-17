@@ -2,7 +2,7 @@
 
 :global(.media):hover,
 :global(.media):focus {
-  &:not(:global(.active)) {
+  &:not(:global(.expanded-layout)) {
     .backdrop_motion {
       opacity: 1;
     }
@@ -12,20 +12,23 @@
   }
 }
 
-:global(.media):global(.active) {
+:global(.media):global(.expanded-layout) {
   .screen_overlay {
     opacity: 0.008;
   }
 }
 
 .backdrop_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   filter: brightness(0.69) sepia(100%) hue-rotate(165deg);
-  position: relative;
-  width: 100%;
-  height: 100%;
+  width: 1000px;
+  height: 100vh;
   z-index: -1;
   border-radius: 8px;
   overflow: hidden;
+  background-color: $background;
 }
 
 .screen_overlay {
@@ -47,20 +50,21 @@
   z-index: 1;
 }
 
+// Taken out, but kept for reference in case this feature could be reimplemented
 // https://www.youtube.com/watch?v=jMVhxBB3l0w
-.backdrop_motion {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-size: 900%;
-  background-position: 0% 0%;
-  opacity: 0;
-  animation: pan-image 20s linear infinite;
-  transition: ease-in-out 0.3s;
-  filter: saturate(125%);
-}
+// .backdrop_motion {
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   width: 100%;
+//   height: 100%;
+//   background-size: 900%;
+//   background-position: 0% 0%;
+//   opacity: 0;
+//   animation: pan-image 20s linear infinite;
+//   transition: ease-in-out 0.3s;
+//   filter: saturate(125%);
+// }
 
 .backdrop {
   object-fit: cover;
@@ -69,9 +73,9 @@
   transition: ease-in-out 0.3s;
 }
 
-:global(.media):global(.active) .backdrop {
+:global(.media):global(.expanded-layout) .backdrop {
   filter: blur(20px);
-  opacity: 0.1;
+  opacity: 0.15;
   transition: ease-in-out 0.3s;
 }
 
