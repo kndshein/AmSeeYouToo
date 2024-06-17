@@ -56,7 +56,7 @@ export default function Episodes({ tmdb_data, media_data }: PropTypes) {
               <div className={styles.still_wrapper}>
                 <img
                   className={styles.still}
-                  src={`https://image.tmdb.org/t/p/w342${
+                  src={`https://image.tmdb.org/t/p/w185${
                     ele.still_path
                       ? ele.still_path
                       : tmdb_data[`season/${media_data.season}`].poster_path
