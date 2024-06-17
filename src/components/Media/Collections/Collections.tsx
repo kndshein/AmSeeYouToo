@@ -1,5 +1,5 @@
 import { TmdbType } from '../../../types/Tmdb';
-import styles from './Collection.module.scss';
+import styles from './Collections.module.scss';
 import media_list from '../../../assets/media-list.json';
 import {
   CollectionRefType,
