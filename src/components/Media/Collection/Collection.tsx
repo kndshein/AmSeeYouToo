@@ -5,6 +5,7 @@ import axios from 'axios';
 import styles from './Collection.module.scss';
 import media_list from '../../../assets/media-list.json';
 import { HandleToggleType } from '../../../types/Toggles';
+import { motion } from 'framer-motion';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -41,7 +42,21 @@ export default function Collection({
   return (
     <section className={styles.collections_container}>
       {!isLoading && (
-        <div className={styles.parts_container}>
+        <motion.div
+          className={styles.parts_container}
+          variants={{
+            visible: {
+              opacity: 1,
+              transition: {
+                delayChildren: 0.1 + 0.3 * (tmdb_data.overview.length / 200),
+                staggerChildren: 0.2,
+              },
+            },
+            hidden: {
+              opacity: 0,
+            },
+          }}
+        >
           {data.parts.map((part: any) => {
             //TODO: Make this more efficient
             const media_id_in_app = media_list.find(
@@ -50,22 +65,37 @@ export default function Collection({
             return (
               <>
                 {curr_media_id != part.id && !!media_id_in_app && (
-                  <button
+                  <motion.button
                     className={styles.part_container}
                     key={part.id}
                     onClick={() => handleToggle(media_id_in_app.id)}
+                    variants={{
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          y: {
+                            duration: 0.2,
+                          },
+                        },
+                      },
+                      hidden: {
+                        opacity: 0,
+                        y: -50,
+                      },
+                    }}
                   >
                     <img
                       src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
                       alt={part.original_title}
                     />
                     <p className={styles.part_title}>{part.original_title}</p>
-                  </button>
+                  </motion.button>
                 )}
               </>
             );
           })}
-        </div>
+        </motion.div>
       )}
     </section>
   );
