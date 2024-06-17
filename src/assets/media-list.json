@@ -364,6 +364,13 @@
   },
   {
     "type": "tv",
+    "id": "91363-what-if",
+    "season": 2,
+    "epiStart": 1,
+    "epiEnd": 9
+  },
+  {
+    "type": "tv",
     "id": "85271-wandavision",
     "season": 1,
     "epiStart": 1,
@@ -398,6 +405,13 @@
     "season": 1,
     "epiStart": 1,
     "epiEnd": 6
+  },
+  {
+    "type": "tv",
+    "id": "122226-echo",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 5
   },
   {
     "type": "tv",
