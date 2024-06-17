@@ -48,6 +48,7 @@ export default function MediaWrapper({
     media_ui_type = 'show';
   } else {
     query_array = ['movie', media_data.id];
+    url_append = ',collection';
     url_media_type = 'movie';
     media_ui_type = media_data.type;
   }
@@ -155,6 +156,7 @@ export default function MediaWrapper({
             <Media
               tmdb_data={data}
               media_data={media_data}
+              is_active={is_active}
               is_content_expanded={is_content_expanded}
             />
           </motion.div>

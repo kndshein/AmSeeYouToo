@@ -10,6 +10,7 @@ type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_content_expanded: boolean;
+  is_active: boolean;
 };
 
 export const container = {
@@ -25,6 +26,7 @@ export default function Media({
   tmdb_data,
   media_data,
   is_content_expanded,
+  is_active,
 }: PropTypes) {
   return (
     <motion.section
@@ -55,6 +57,7 @@ export default function Media({
         tmdb_data={tmdb_data}
         media_data={media_data}
         is_content_expanded={is_content_expanded}
+        is_active={is_active}
       />
     </motion.section>
   );
