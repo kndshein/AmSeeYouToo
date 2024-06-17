@@ -48,9 +48,9 @@ export default function Collection({
     if (is_active && !isLoading) {
       const collection_parts: CollectionRefType = [];
       data.parts.forEach((part: any) => {
-        const curr_sanitized_id = part.id.toString();
-        if (app_media_ids.includes(curr_sanitized_id))
-          collection_parts.push(curr_sanitized_id);
+        const curr_part_id = part.id.toString();
+        if (app_media_ids.includes(curr_part_id))
+          collection_parts.push(curr_part_id);
       });
       if (collection_parts.length) setCollectionReferences(collection_parts);
     }
