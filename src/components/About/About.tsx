@@ -48,7 +48,10 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             </p>
             <p>
               I will continue to maintain the site as long as it still brings me
-              joy. Here's to small things in life!
+              joy. Follow along the progression of this site by viewing each
+              major versions of the project: <a href="/v1">v1</a>,{' '}
+              <a href="/v2">v2</a>, and <a href="/v3">v3</a>. Here's to small
+              things in life!
             </p>
             <p>
               Warmly,
@@ -66,7 +69,7 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             <tbody>
               {[...patch_notes]
                 .reverse()
-                .map(({ version, date, notes }, idx) => {
+                .map(({ version, date, notes, url }, idx) => {
                   return (
                     <tr
                       key={version}
@@ -74,7 +77,9 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
                         idx == 0 ? styles.current : ''
                       }`}
                     >
-                      <td className={styles.version}>{version}</td>
+                      <td className={styles.version}>
+                        {url ? <a href={url}>{version}</a> : version}
+                      </td>
                       <td className={styles.date}>{date}</td>
                       <td className={styles.notes_container}>
                         {notes.map((note, idx) => (
@@ -125,11 +130,6 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
               tutorial
             </a>
             .
-          </p>
-          <p>
-            Follow along the progression of this site by viewing each major
-            versions of the project: <a href="/v1">v1</a>, <a href="/v2">v2</a>,
-            and <a href="/v3">v3</a>.
           </p>
         </div>
       </section>

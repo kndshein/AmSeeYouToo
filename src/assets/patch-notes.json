@@ -26,7 +26,8 @@
       "Added <i>Black Widow</i>.",
       "Added casts.",
       "Increased accessibility."
-    ]
+    ],
+    "url": "/v1"
   },
   {
     "version": "2.0.0",
@@ -107,7 +108,8 @@
       "Created 'misc' category.",
       "Added additional genre colors.",
       "Rounded media vote averages."
-    ]
+    ],
+    "url": "/v2"
   },
   {
     "version": "3.0.0",
@@ -147,7 +149,8 @@
   {
     "version": "3.3.1",
     "date": "Sep 2023",
-    "notes": ["Fixed typo in patch notes.", "Added <i>Secret Invasion</i>."]
+    "notes": ["Fixed typo in patch notes.", "Added <i>Secret Invasion</i>."],
+    "url": "/v3"
   },
   {
     "version": "4.0.0",
