@@ -12,6 +12,7 @@ import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Season from './Season/Season';
 
 type PropTypes = {
   media_data: MediaType;
@@ -145,6 +146,7 @@ export default function MediaWrapper({
               media_ui_type={media_ui_type}
             />
             <Index idx={idx} />
+            {media_data.type == 'tv' && <Season media_data={media_data} />}
             <Media
               tmdb_data={data}
               media_data={media_data}
