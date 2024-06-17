@@ -1,12 +1,48 @@
+@use '../../../sass/variables.scss' as *;
+
+.collections_container {
+  margin-top: 25px;
+  border: 2px solid $accent;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.collections_title {
+  color: $accent;
+  font-size: 1.5rem;
+  line-height: 1.3rem;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  font-family: $title-text;
+}
+
 .parts_container {
   display: flex;
   flex-flow: row wrap;
+  margin-right: -20px;
 }
 
 .part_container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   width: 20%;
+  padding: 10px;
+  margin-right: 20px;
+  background-color: rgba($main, 0.5);
+  border-radius: 5px;
+  border: none;
 
   img {
     width: 100%;
+    border-radius: 5px;
   }
+}
+
+.part_title {
+  color: $accent;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  margin-top: 5px;
 }

@@ -31,22 +31,21 @@ export default function Collection({
   const curr_media_id = media_data.id.split('-')[0];
 
   return (
-    <section>
-      <h3>Collection</h3>
+    <section className={styles.collections_container}>
       {!isLoading && (
         <div className={styles.parts_container}>
           {data.parts.map((part: any) => {
             return (
               <>
                 {curr_media_id != part.id && (
-                  <div className={styles.part_container}>
+                  <button className={styles.part_container} key={part.id}>
                     {/* TODO: Find to make sure the movie exists in the site */}
                     <img
                       src={`https://image.tmdb.org/t/p/w342${part.poster_path}`}
                       alt={part.original_title}
                     />
-                    {part.original_title}
-                  </div>
+                    <p className={styles.part_title}>{part.original_title}</p>
+                  </button>
                 )}
               </>
             );
