@@ -228,5 +228,14 @@
     "version": "4.5.1",
     "date": "June 2024",
     "notes": ["Fixed stacking media interaction from navigation."]
+  },
+  {
+    "version": "4.5.2",
+    "date": "June 2024",
+    "notes": [
+      "Fixed bug where shows were stacking together on click.",
+      "Fixed bug where pinging interval isn't cleared properly.",
+      "Fixed bug where collection reference is not tracked properly."
+    ]
   }
 ]
