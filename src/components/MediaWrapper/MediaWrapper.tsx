@@ -42,7 +42,7 @@ export default function MediaWrapper({
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
-    url_append = `,season/${media_data.season}`;
+    url_append = `,season/${media_data.season},images`;
     url_media_type = 'tv';
     media_ui_type = 'show';
   } else {
@@ -55,7 +55,7 @@ export default function MediaWrapper({
     media_data.id
   }?api_key=${
     import.meta.env.VITE_API_KEY
-  }&language=en-US&append_to_response=credits${url_append}`;
+  }&language=en-US&include_image_language=null&append_to_response=credits${url_append}`;
 
   const { isLoading, data } = useQuery({
     queryKey: query_array,
@@ -135,6 +135,7 @@ export default function MediaWrapper({
             {/* Double loading because the background image only loads if it's rendered */}
             <Backdrop
               data={data}
+              media_data={media_data}
               is_backdrop_loaded={is_backdrop_loaded}
               setIsBackdropLoaded={setIsBackdropLoaded}
             />
