@@ -34,7 +34,7 @@ export default function MediaList({
         media_data={ele}
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
-        is_active={active_toggle == ele.id}
+        is_active={active_toggle == idx}
         idx={idx}
         collection_references={collection_references}
         setCollectionReferences={setCollectionReferences}

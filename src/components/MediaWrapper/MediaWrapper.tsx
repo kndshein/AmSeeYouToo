@@ -84,7 +84,7 @@ export default function MediaWrapper({
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
       }`}
-      onClick={() => handleToggle(media_data.id)}
+      onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isLoading || !is_backdrop_loaded}
     >

@@ -37,13 +37,17 @@ export default function Collections({
       const collection_parts: CollectionRefType = [];
       const combined_filtered_parts = [];
       for (let part of collection_data.parts) {
-        const app_media = media_list.find(
+        const app_media_idx = media_list.findIndex(
           (media) =>
             sanitizeMediaId(media.id) == part.id && tmdb_data.id != part.id
         );
-        if (app_media) {
-          combined_filtered_parts.push({ ...part, app_media_id: app_media.id });
-          collection_parts.push(app_media.id);
+        if (app_media_idx != -1) {
+          combined_filtered_parts.push({
+            ...part,
+            app_media_id: media_list[app_media_idx].id,
+            app_media_idx: app_media_idx,
+          });
+          collection_parts.push(media_list[app_media_idx].id);
         }
         setCollectionReferences(collection_parts);
         setReferencedLoadingParts(collection_parts);
@@ -102,7 +106,7 @@ export default function Collections({
             key={part.id}
             onClick={(event) => {
               event.stopPropagation();
-              handleToggle(part.app_media_id);
+              handleToggle(part.app_media_idx);
             }}
             disabled={is_ref_media_unready}
             variants={{
