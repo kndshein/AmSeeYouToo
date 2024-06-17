@@ -8,7 +8,7 @@ import media_list from '../../../assets/media-list.json';
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
-  is_content_expanded: boolean;
+  inView: boolean;
 };
 
 function sanitizeMediaId(id: string) {
@@ -18,7 +18,7 @@ function sanitizeMediaId(id: string) {
 export default function Collection({
   tmdb_data,
   media_data,
-  is_content_expanded,
+  inView,
 }: PropTypes) {
   const { isLoading, data } = useQuery({
     queryKey: ['collection', tmdb_data.belongs_to_collection.id],
@@ -30,7 +30,7 @@ export default function Collection({
           }?api_key=${import.meta.env.VITE_API_KEY}`
         )
         .then((res) => res.data),
-    enabled: is_content_expanded,
+    enabled: inView,
   });
 
   const curr_media_id = sanitizeMediaId(media_data.id);

@@ -13,14 +13,14 @@ type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_content_expanded: boolean;
-  is_active: boolean;
+  inView: boolean;
 };
 
 export default function RightContainer({
   tmdb_data,
   media_data,
   is_content_expanded,
-  is_active,
+  inView,
 }: PropTypes) {
   const element = {
     visible: {
@@ -91,13 +91,13 @@ export default function RightContainer({
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
       )}
-      {is_active &&
+      {inView &&
         media_data.type == 'movie' &&
         tmdb_data.belongs_to_collection != null && (
           <Collection
             tmdb_data={tmdb_data}
             media_data={media_data}
-            is_content_expanded={is_content_expanded}
+            inView={inView}
           />
         )}
     </motion.section>

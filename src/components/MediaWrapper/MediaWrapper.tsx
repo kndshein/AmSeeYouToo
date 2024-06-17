@@ -156,8 +156,8 @@ export default function MediaWrapper({
             <Media
               tmdb_data={data}
               media_data={media_data}
-              is_active={is_active}
               is_content_expanded={is_content_expanded}
+              inView={inView}
             />
           </motion.div>
         </div>
