@@ -159,6 +159,7 @@
       "Overhauled content view UI.",
       "Added animations to media interactions.",
       "Improved network efficiency by only fetching for data if the media is in view",
+      "Refactored styling of genre tags",
       "Accessibility improvements."
     ]
   },
@@ -188,8 +189,8 @@
     "version": "4.1.0",
     "date": "June 2024",
     "notes": [
-      "Archive previous versions of the site.",
-      "Redirect subdirectories to archived versions."
+      "Archived previous versions of the site.",
+      "Redirected subdirectories to archived versions."
     ]
   }
 ]
