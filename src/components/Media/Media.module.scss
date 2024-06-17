@@ -1,6 +1,7 @@
 @use '../../sass/variables.scss' as *;
 
 .container {
+  box-sizing: border-box;
   visibility: hidden;
   display: grid;
   grid-template-rows: fit-content(100px) auto;
