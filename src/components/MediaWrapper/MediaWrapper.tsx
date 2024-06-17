@@ -11,6 +11,7 @@ import { useState } from 'react';
 import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 type PropTypes = {
   media_data: MediaType;
@@ -27,6 +28,7 @@ export default function MediaWrapper({
   is_active,
   idx,
 }: PropTypes) {
+  const { ref, inView } = useInView();
   let query_array = [];
   let url_append = '';
   let url_media_type;
@@ -53,13 +55,15 @@ export default function MediaWrapper({
     import.meta.env.VITE_API_KEY
   }&language=en-US&append_to_response=credits${url_append}`;
 
-  const { isLoading, isError, data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
+    enabled: inView,
   });
 
   return (
     <button
+      ref={ref}
       className={`media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
@@ -78,7 +82,7 @@ export default function MediaWrapper({
           } ${is_content_expanded ? styles.expanded_layout : ''}`}
         >
           {is_content_expanded && (
-            <motion.button
+            <motion.div
               className={styles.overlay}
               animate={{
                 opacity: 1,
@@ -87,7 +91,7 @@ export default function MediaWrapper({
                 },
               }}
               initial={{ opacity: 0 }}
-            ></motion.button>
+            ></motion.div>
           )}
           <motion.div
             className={styles.content}
