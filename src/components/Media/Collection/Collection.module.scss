@@ -2,9 +2,6 @@
 
 .collections_container {
   margin-top: 25px;
-  border: 2px solid $accent;
-  border-radius: 5px;
-  padding: 20px;
 }
 
 .collections_title {
@@ -20,22 +17,36 @@
   display: flex;
   flex-flow: row wrap;
   margin-right: -20px;
+  margin-bottom: -20px;
 }
 
 .part_container {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: max(25%, 100px);
   padding: 10px;
   margin-right: 20px;
-  background-color: rgba($main, 0.5);
+  margin-bottom: 20px;
+  background-color: $tab-background;
   border-radius: 5px;
   border: none;
 
   img {
     width: 100%;
     border-radius: 5px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(black, 0.3);
+
+    img {
+      box-shadow: 0 0 0 1px $accent;
+    }
+
+    .part_title {
+      color: $accent-lite;
+    }
   }
 }
 
@@ -44,5 +55,5 @@
   font-size: 1rem;
   text-align: left;
   margin: 0;
-  margin-top: 5px;
+  margin-top: 7px;
 }

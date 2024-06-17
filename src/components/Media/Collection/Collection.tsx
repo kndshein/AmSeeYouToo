@@ -41,7 +41,7 @@ export default function Collection({
                   <button className={styles.part_container} key={part.id}>
                     {/* TODO: Find to make sure the movie exists in the site */}
                     <img
-                      src={`https://image.tmdb.org/t/p/w342${part.poster_path}`}
+                      src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
                       alt={part.original_title}
                     />
                     <p className={styles.part_title}>{part.original_title}</p>
