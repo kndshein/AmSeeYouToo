@@ -5,11 +5,16 @@ import TopContainer from './TopContainer/TopContainer';
 import LeftContainer from './LeftContainer/LeftContainer';
 import RightContainer from './RightContainer/RightContainer';
 import { motion } from 'framer-motion';
+import { HandleToggleType, SetCollectionReferences } from '../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
+  is_active: boolean;
   is_content_expanded: boolean;
+  inView: boolean;
+  handleToggle: HandleToggleType;
+  setCollectionReferences: SetCollectionReferences;
 };
 
 export const container = {
@@ -24,7 +29,11 @@ export const container = {
 export default function Media({
   tmdb_data,
   media_data,
+  is_active,
   is_content_expanded,
+  inView,
+  handleToggle,
+  setCollectionReferences,
 }: PropTypes) {
   return (
     <motion.section
@@ -54,7 +63,11 @@ export default function Media({
       <RightContainer
         tmdb_data={tmdb_data}
         media_data={media_data}
+        is_active={is_active}
         is_content_expanded={is_content_expanded}
+        inView={inView}
+        handleToggle={handleToggle}
+        setCollectionReferences={setCollectionReferences}
       />
     </motion.section>
   );

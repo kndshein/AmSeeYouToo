@@ -2,7 +2,9 @@
 
 .container {
   grid-area: 2 / 1 / 3 / 2;
-  overflow-y: scroll; // When the title is too long, it takes up quite a bit of height, not leaving enough room for genres
+  padding-right: 15px;
+  overflow-y: auto; // When the title is too long, it takes up quite a bit of height, not leaving enough room for genres
+  scrollbar-width: thin;
 }
 
 .poster {

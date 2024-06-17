@@ -1,0 +1,75 @@
+@use '../../../sass/variables.scss' as *;
+
+.collections_container {
+  margin-top: 25px;
+}
+
+.parts_container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: -20px;
+  margin-bottom: -20px;
+}
+
+.part_container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: max(25%, 100px);
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: $tab-background;
+  border-radius: 5px;
+  border: none;
+  transition: box-shadow 0.2s ease-in-out;
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  &.disabled {
+    cursor: auto;
+
+    img {
+      filter: grayscale(100%);
+    }
+
+    .part_title {
+      color: rgba(white, 0.2);
+    }
+  }
+
+  &:not(.disabled):hover {
+    box-shadow: 0 0 15px rgba(black, 0.3);
+
+    img {
+      box-shadow: 0 0 0 1px $accent;
+    }
+
+    .part_title {
+      color: $accent-lite;
+    }
+  }
+}
+
+.loading_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.part_title {
+  color: $accent;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0;
+  margin-top: 7px;
+  transition: color 0.2s ease-in-out;
+}

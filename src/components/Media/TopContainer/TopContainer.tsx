@@ -45,9 +45,14 @@ export default function TopContainer({ tmdb_data, media_data }: PropTypes) {
           : tmdb_data.original_title}
       </motion.h2>
       <motion.p className={styles.tagline} variants={text}>
-        {media_data.type == 'tv'
-          ? `Season ${media_data.season}, Episodes ${media_data.epiStart} - ${media_data.epiEnd}`
-          : tmdb_data.tagline}
+        {media_data.type == 'tv' ? (
+          <>
+            <span className={styles.season}>Season {media_data.season}</span>,
+            Episodes {media_data.epiStart} - {media_data.epiEnd}
+          </>
+        ) : (
+          tmdb_data.tagline
+        )}
       </motion.p>
     </motion.section>
   );

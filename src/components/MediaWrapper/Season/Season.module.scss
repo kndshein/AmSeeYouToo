@@ -1,0 +1,51 @@
+@use '../../../sass/variables.scss' as *;
+
+.season_wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: $show;
+  margin: 0 15px 15px 0;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
+
+  p {
+    margin: 0;
+  }
+
+  .season_label {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .season_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $show;
+    background-color: rgba($show, 0.8);
+    width: 55px;
+    padding: 0.2rem;
+    margin-top: 0.2rem;
+    border-radius: 5px;
+    font-family: $title-text;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    color: black;
+    mix-blend-mode: screen;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+:global(.media):hover,
+:global(.media):focus {
+  .season_wrapper {
+    color: white;
+
+    .season_num {
+      background-color: white;
+    }
+  }
+}

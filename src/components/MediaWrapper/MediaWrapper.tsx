@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import { HandleToggleType } from '../../types/Toggles';
+import {
+  CollectionRefType,
+  HandleToggleType,
+  SetCollectionReferences,
+} from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -12,6 +16,7 @@ import Index from './Index/Index';
 import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Season from './Season/Season';
 
 type PropTypes = {
   media_data: MediaType;
@@ -19,6 +24,8 @@ type PropTypes = {
   handleToggle: HandleToggleType;
   is_active: boolean;
   idx: number;
+  collection_references: CollectionRefType;
+  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function MediaWrapper({
@@ -27,6 +34,8 @@ export default function MediaWrapper({
   handleToggle,
   is_active,
   idx,
+  collection_references,
+  setCollectionReferences,
 }: PropTypes) {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -47,6 +56,7 @@ export default function MediaWrapper({
     media_ui_type = 'show';
   } else {
     query_array = ['movie', media_data.id];
+    url_append = ',collection';
     url_media_type = 'movie';
     media_ui_type = media_data.type;
   }
@@ -60,13 +70,16 @@ export default function MediaWrapper({
   const { isLoading, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
-    enabled: inView,
+    enabled:
+      inView ||
+      (!!collection_references &&
+        collection_references.includes(media_data.id)),
   });
 
   return (
     <button
       ref={ref}
-      className={`media ${is_active ? 'active' : ''} ${
+      className={`${media_data.id} media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
@@ -145,10 +158,20 @@ export default function MediaWrapper({
               media_ui_type={media_ui_type}
             />
             <Index idx={idx} />
+            {media_data.type == 'tv' && (
+              <Season
+                media_data={media_data}
+                is_content_collapsed={is_content_collapsed}
+              />
+            )}
             <Media
               tmdb_data={data}
               media_data={media_data}
+              is_active={is_active}
               is_content_expanded={is_content_expanded}
+              inView={inView}
+              handleToggle={handleToggle}
+              setCollectionReferences={setCollectionReferences}
             />
           </motion.div>
         </div>
