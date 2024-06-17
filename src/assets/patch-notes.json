@@ -210,5 +210,23 @@
       "Added season marker for TV shows.",
       "Adjusted scrollbar paddings on small view heights."
     ]
+  },
+  {
+    "version": "4.4.0",
+    "date": "June 2024",
+    "notes": ["Added collections display to media view."]
+  },
+  {
+    "version": "4.5.0",
+    "date": "June 2024",
+    "notes": [
+      "Implemented navigation to media displayed in the collections list.",
+      "Implemented pre-fetching resources shown in the collections list."
+    ]
+  },
+  {
+    "version": "4.5.1",
+    "date": "June 2024",
+    "notes": ["Fixed stacking media interaction from navigation."]
   }
 ]
