@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { MediaType } from '../../../types/Media';
 import { TmdbType } from '../../../types/Tmdb';
 import axios from 'axios';
+import styles from './Collection.module.scss';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -29,5 +30,25 @@ export default function Collection({
 
   console.log(data);
 
-  return <div></div>;
+  return (
+    <section>
+      <h3>Collection</h3>
+      {!isLoading && (
+        <div className={styles.parts_container}>
+          {data.parts.map((part: any) => {
+            return (
+              <div className={styles.part_container}>
+                {/* TODO: Find to make sure the movie exists in the site */}
+                <img
+                  src={`https://image.tmdb.org/t/p/w342${part.poster_path}`}
+                  alt={part.original_title}
+                />
+                {part.original_title}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </section>
+  );
 }
