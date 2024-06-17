@@ -2,6 +2,7 @@ import styles from './Episodes.module.scss';
 import { TmdbType } from '../../../types/Tmdb';
 import { ShowType } from '../../../types/Media';
 import { motion } from 'framer-motion';
+import { calculateDelay } from '../../../utils/utils';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -21,7 +22,7 @@ export default function Episodes({ tmdb_data, media_data }: PropTypes) {
         visible: {
           opacity: 1,
           transition: {
-            delayChildren: 0.1 + 0.3 * (overview_text.length / 200),
+            delayChildren: calculateDelay(overview_text),
             staggerChildren: 0.2,
           },
         },

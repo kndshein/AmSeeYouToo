@@ -6,6 +6,8 @@ import styles from './Collection.module.scss';
 import media_list from '../../../assets/media-list.json';
 import { HandleToggleType } from '../../../types/Toggles';
 import { motion } from 'framer-motion';
+import { calculateDelay } from '../../../utils/utils';
+import { Fragment } from 'react';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -48,7 +50,7 @@ export default function Collection({
             visible: {
               opacity: 1,
               transition: {
-                delayChildren: 0.1 + 0.3 * (tmdb_data.overview.length / 200),
+                delayChildren: calculateDelay(tmdb_data.overview),
                 staggerChildren: 0.2,
               },
             },
@@ -58,17 +60,16 @@ export default function Collection({
           }}
         >
           {data.parts.map((part: any) => {
-            //TODO: Make this more efficient
-            const media_id_in_app = media_list.find(
+            const app_media_id = media_list.find(
               (media) => sanitizeMediaId(media.id) == part.id
             );
+
             return (
-              <>
-                {curr_media_id != part.id && !!media_id_in_app && (
+              <Fragment key={part.id}>
+                {curr_media_id != part.id && !!app_media_id && (
                   <motion.button
                     className={styles.part_container}
-                    key={part.id}
-                    onClick={() => handleToggle(media_id_in_app.id)}
+                    onClick={() => handleToggle(app_media_id.id)}
                     variants={{
                       visible: {
                         opacity: 1,
@@ -92,7 +93,7 @@ export default function Collection({
                     <p className={styles.part_title}>{part.original_title}</p>
                   </motion.button>
                 )}
-              </>
+              </Fragment>
             );
           })}
         </motion.div>
