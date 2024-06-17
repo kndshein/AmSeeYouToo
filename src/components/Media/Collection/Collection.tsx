@@ -3,12 +3,17 @@ import { MediaType } from '../../../types/Media';
 import { TmdbType } from '../../../types/Tmdb';
 import axios from 'axios';
 import styles from './Collection.module.scss';
+import media_list from '../../../assets/media-list.json';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_content_expanded: boolean;
 };
+
+function sanitizeMediaId(id: string) {
+  return id.split('-')[0];
+}
 
 export default function Collection({
   tmdb_data,
@@ -28,18 +33,21 @@ export default function Collection({
     enabled: is_content_expanded,
   });
 
-  const curr_media_id = media_data.id.split('-')[0];
+  const curr_media_id = sanitizeMediaId(media_data.id);
 
   return (
     <section className={styles.collections_container}>
       {!isLoading && (
         <div className={styles.parts_container}>
           {data.parts.map((part: any) => {
+            //TODO: Make this more efficient
+            const does_media_exist = media_list.find(
+              (media) => sanitizeMediaId(media.id) == part.id
+            );
             return (
               <>
-                {curr_media_id != part.id && (
+                {curr_media_id != part.id && does_media_exist && (
                   <button className={styles.part_container} key={part.id}>
-                    {/* TODO: Find to make sure the movie exists in the site */}
                     <img
                       src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
                       alt={part.original_title}
