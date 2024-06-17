@@ -12,6 +12,7 @@ import {
   HandleToggleType,
   SetCollectionReferences,
 } from '../../../types/Toggles';
+import { CollectionWrapper } from '../CollectionWrapper/CollectionWrapper';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -104,11 +105,9 @@ export default function RightContainer({
       {(inView || is_active) &&
         media_data.type == 'movie' &&
         tmdb_data.belongs_to_collection != null && (
-          <Collection
+          <CollectionWrapper
             tmdb_data={tmdb_data}
-            media_data={media_data}
             is_active={is_active}
-            inView={inView}
             handleToggle={handleToggle}
             setCollectionReferences={setCollectionReferences}
           />

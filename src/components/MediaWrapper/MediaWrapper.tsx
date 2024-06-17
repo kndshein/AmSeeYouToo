@@ -74,7 +74,7 @@ export default function MediaWrapper({
     enabled:
       inView ||
       (!!collection_references &&
-        collection_references.includes(sanitizeMediaId(media_data.id))),
+        collection_references.includes(media_data.id)),
   });
 
   return (
