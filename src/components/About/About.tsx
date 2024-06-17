@@ -26,7 +26,7 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
           <h1 className={styles.title}>AmSeeYou</h1>
           <section className={styles.body}>
             <p>
-              <span>AmSeeYou</span> showcases and cherishes the Marvel Cinematic
+              <i>AmSeeYou</i> showcases and cherishes the Marvel Cinematic
               Universe (MCU) films and TV shows. This website presents the
               entire universe in in-universe chronological order from{' '}
               <a
@@ -127,15 +127,9 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             .
           </p>
           <p>
-            See the legacy site v1.0{' '}
-            <a
-              href="https://amseeyou-legacy.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              here
-            </a>
-            .
+            Follow along the progression of this site by viewing each major
+            versions of the project: <a href="/v1">v1</a>, <a href="/v2">v2</a>,
+            and <a href="/v3">v3</a>.
           </p>
         </div>
       </section>
