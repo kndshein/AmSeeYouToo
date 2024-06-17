@@ -28,7 +28,9 @@ export default function MediaWrapper({
   is_active,
   idx,
 }: PropTypes) {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
   let query_array = [];
   let url_append = '';
   let url_media_type;
