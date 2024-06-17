@@ -146,7 +146,12 @@ export default function MediaWrapper({
               media_ui_type={media_ui_type}
             />
             <Index idx={idx} />
-            {media_data.type == 'tv' && <Season media_data={media_data} />}
+            {media_data.type == 'tv' && (
+              <Season
+                media_data={media_data}
+                is_content_collapsed={is_content_collapsed}
+              />
+            )}
             <Media
               tmdb_data={data}
               media_data={media_data}
