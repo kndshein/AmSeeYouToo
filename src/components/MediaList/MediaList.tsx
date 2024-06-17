@@ -27,6 +27,7 @@ export default function MediaList({
   const handleToggle: HandleToggleType = (id) => {
     setActiveToggle(id == active_toggle ? null : id);
     setCollectionReferences(null);
+    document.getElementById(id.toString())?.scrollIntoView();
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {

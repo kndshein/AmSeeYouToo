@@ -78,6 +78,7 @@ export default function MediaWrapper({
 
   return (
     <button
+      id={idx.toString()}
       ref={ref}
       className={`${media_data.id} media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'

@@ -49,6 +49,7 @@ code {
   border: 0;
   text-align: left;
   background: transparent;
+  scroll-margin: 50px;
 
   &:not(.collapsed-layout) {
     z-index: 2;
