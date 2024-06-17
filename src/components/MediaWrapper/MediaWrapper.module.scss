@@ -38,13 +38,16 @@
 }
 
 .content {
-  cursor: auto;
-  pointer-events: all;
-  user-select: text;
   position: relative;
   overflow: hidden;
   height: 100%;
   border: 1px solid $accent-lite;
+}
+
+:global(.media):global(.expanded-layout) .content {
+  cursor: auto;
+  pointer-events: all;
+  user-select: text;
 }
 
 :global(.media):global(.collapsed-layout) .content {
