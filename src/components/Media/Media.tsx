@@ -5,12 +5,14 @@ import TopContainer from './TopContainer/TopContainer';
 import LeftContainer from './LeftContainer/LeftContainer';
 import RightContainer from './RightContainer/RightContainer';
 import { motion } from 'framer-motion';
+import { HandleToggleType } from '../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_content_expanded: boolean;
   inView: boolean;
+  handleToggle: HandleToggleType;
 };
 
 export const container = {
@@ -27,6 +29,7 @@ export default function Media({
   media_data,
   is_content_expanded,
   inView,
+  handleToggle,
 }: PropTypes) {
   return (
     <motion.section
@@ -58,6 +61,7 @@ export default function Media({
         media_data={media_data}
         is_content_expanded={is_content_expanded}
         inView={inView}
+        handleToggle={handleToggle}
       />
     </motion.section>
   );

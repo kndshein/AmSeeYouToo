@@ -73,7 +73,7 @@ export default function MediaWrapper({
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
       }`}
-      onClick={() => handleToggle(idx)}
+      onClick={() => handleToggle(media_data.id)}
       tabIndex={0}
       disabled={isLoading || !is_backdrop_loaded}
     >
@@ -158,6 +158,7 @@ export default function MediaWrapper({
               media_data={media_data}
               is_content_expanded={is_content_expanded}
               inView={inView}
+              handleToggle={handleToggle}
             />
           </motion.div>
         </div>

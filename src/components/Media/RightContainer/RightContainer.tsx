@@ -8,12 +8,14 @@ import { container } from '../Media';
 import { motion } from 'framer-motion';
 import Overview from '../Overview/Overview';
 import Collection from '../Collection/Collection';
+import { HandleToggleType } from '../../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_content_expanded: boolean;
   inView: boolean;
+  handleToggle: HandleToggleType;
 };
 
 export default function RightContainer({
@@ -21,6 +23,7 @@ export default function RightContainer({
   media_data,
   is_content_expanded,
   inView,
+  handleToggle,
 }: PropTypes) {
   const element = {
     visible: {
@@ -98,6 +101,7 @@ export default function RightContainer({
             tmdb_data={tmdb_data}
             media_data={media_data}
             inView={inView}
+            handleToggle={handleToggle}
           />
         )}
     </motion.section>

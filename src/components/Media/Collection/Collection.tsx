@@ -4,11 +4,13 @@ import { TmdbType } from '../../../types/Tmdb';
 import axios from 'axios';
 import styles from './Collection.module.scss';
 import media_list from '../../../assets/media-list.json';
+import { HandleToggleType } from '../../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   inView: boolean;
+  handleToggle: HandleToggleType;
 };
 
 function sanitizeMediaId(id: string) {
@@ -19,6 +21,7 @@ export default function Collection({
   tmdb_data,
   media_data,
   inView,
+  handleToggle,
 }: PropTypes) {
   const { isLoading, data } = useQuery({
     queryKey: ['collection', tmdb_data.belongs_to_collection.id],
@@ -41,13 +44,17 @@ export default function Collection({
         <div className={styles.parts_container}>
           {data.parts.map((part: any) => {
             //TODO: Make this more efficient
-            const does_media_exist = media_list.find(
+            const media_id_in_app = media_list.find(
               (media) => sanitizeMediaId(media.id) == part.id
             );
             return (
               <>
-                {curr_media_id != part.id && does_media_exist && (
-                  <button className={styles.part_container} key={part.id}>
+                {curr_media_id != part.id && !!media_id_in_app && (
+                  <button
+                    className={styles.part_container}
+                    key={part.id}
+                    onClick={() => handleToggle(media_id_in_app.id)}
+                  >
                     <img
                       src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
                       alt={part.original_title}

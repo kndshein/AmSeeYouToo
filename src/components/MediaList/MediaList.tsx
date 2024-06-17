@@ -18,8 +18,8 @@ export default function MediaList({
 }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
 
-  const handleToggle: HandleToggleType = (index) => {
-    setActiveToggle(index == active_toggle ? null : index);
+  const handleToggle: HandleToggleType = (id) => {
+    setActiveToggle(id == active_toggle ? null : id);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
@@ -28,7 +28,7 @@ export default function MediaList({
         media_data={ele}
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
-        is_active={active_toggle == idx}
+        is_active={active_toggle == ele.id}
         idx={idx}
       />
     );
