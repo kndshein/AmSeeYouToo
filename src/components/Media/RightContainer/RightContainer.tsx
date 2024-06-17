@@ -8,22 +8,29 @@ import { container } from '../Media';
 import { motion } from 'framer-motion';
 import Overview from '../Overview/Overview';
 import Collection from '../Collection/Collection';
-import { HandleToggleType } from '../../../types/Toggles';
+import {
+  HandleToggleType,
+  SetCollectionReferences,
+} from '../../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
+  is_active: boolean;
   is_content_expanded: boolean;
   inView: boolean;
   handleToggle: HandleToggleType;
+  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function RightContainer({
   tmdb_data,
   media_data,
+  is_active,
   is_content_expanded,
   inView,
   handleToggle,
+  setCollectionReferences,
 }: PropTypes) {
   const element = {
     visible: {
@@ -94,14 +101,16 @@ export default function RightContainer({
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
       )}
-      {inView &&
+      {(inView || is_active) &&
         media_data.type == 'movie' &&
         tmdb_data.belongs_to_collection != null && (
           <Collection
             tmdb_data={tmdb_data}
             media_data={media_data}
+            is_active={is_active}
             inView={inView}
             handleToggle={handleToggle}
+            setCollectionReferences={setCollectionReferences}
           />
         )}
     </motion.section>

@@ -1,6 +1,10 @@
 import { Fragment, useState, RefObject } from 'react';
 import { MediaType } from '../../types/Media';
-import { ActiveToggleType, HandleToggleType } from '../../types/Toggles';
+import {
+  ActiveToggleType,
+  CollectionRefType,
+  HandleToggleType,
+} from '../../types/Toggles';
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
 import media_list from '../../assets/media-list.json';
 import styles from './MediaList.module.scss';
@@ -17,6 +21,8 @@ export default function MediaList({
   media_list_ref,
 }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
+  const [collection_references, setCollectionReferences] =
+    useState<CollectionRefType>(null);
 
   const handleToggle: HandleToggleType = (id) => {
     setActiveToggle(id == active_toggle ? null : id);
@@ -30,9 +36,13 @@ export default function MediaList({
         handleToggle={handleToggle}
         is_active={active_toggle == ele.id}
         idx={idx}
+        collection_references={collection_references}
+        setCollectionReferences={setCollectionReferences}
       />
     );
   };
+
+  console.log(active_toggle);
 
   return (
     <div className={styles.media_list} ref={media_list_ref}>

@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import { HandleToggleType } from '../../types/Toggles';
+import {
+  CollectionRefType,
+  HandleToggleType,
+  SetCollectionReferences,
+} from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -13,6 +17,7 @@ import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Season from './Season/Season';
+import { sanitizeMediaId } from '../../utils/utils';
 
 type PropTypes = {
   media_data: MediaType;
@@ -20,6 +25,8 @@ type PropTypes = {
   handleToggle: HandleToggleType;
   is_active: boolean;
   idx: number;
+  collection_references: CollectionRefType;
+  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function MediaWrapper({
@@ -28,6 +35,8 @@ export default function MediaWrapper({
   handleToggle,
   is_active,
   idx,
+  collection_references,
+  setCollectionReferences,
 }: PropTypes) {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -62,7 +71,10 @@ export default function MediaWrapper({
   const { isLoading, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
-    enabled: inView,
+    enabled:
+      inView ||
+      (!!collection_references &&
+        collection_references.includes(sanitizeMediaId(media_data.id))),
   });
 
   return (
@@ -156,9 +168,11 @@ export default function MediaWrapper({
             <Media
               tmdb_data={data}
               media_data={media_data}
+              is_active={is_active}
               is_content_expanded={is_content_expanded}
               inView={inView}
               handleToggle={handleToggle}
+              setCollectionReferences={setCollectionReferences}
             />
           </motion.div>
         </div>

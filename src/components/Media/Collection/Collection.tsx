@@ -4,27 +4,30 @@ import { TmdbType } from '../../../types/Tmdb';
 import axios from 'axios';
 import styles from './Collection.module.scss';
 import media_list from '../../../assets/media-list.json';
-import { HandleToggleType } from '../../../types/Toggles';
+import {
+  CollectionRefType,
+  HandleToggleType,
+  SetCollectionReferences,
+} from '../../../types/Toggles';
 import { motion } from 'framer-motion';
-import { calculateDelay } from '../../../utils/utils';
-import { Fragment } from 'react';
+import { calculateDelay, sanitizeMediaId } from '../../../utils/utils';
+import { Fragment, useEffect } from 'react';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
+  is_active: boolean;
   inView: boolean;
   handleToggle: HandleToggleType;
+  setCollectionReferences: SetCollectionReferences;
 };
-
-function sanitizeMediaId(id: string) {
-  return id.split('-')[0];
-}
 
 export default function Collection({
   tmdb_data,
   media_data,
-  inView,
+  is_active,
   handleToggle,
+  setCollectionReferences,
 }: PropTypes) {
   const { isLoading, data } = useQuery({
     queryKey: ['collection', tmdb_data.belongs_to_collection.id],
@@ -36,10 +39,22 @@ export default function Collection({
           }?api_key=${import.meta.env.VITE_API_KEY}`
         )
         .then((res) => res.data),
-    enabled: inView,
   });
 
   const curr_media_id = sanitizeMediaId(media_data.id);
+  const app_media_ids = media_list.map((media) => sanitizeMediaId(media.id));
+
+  useEffect(() => {
+    if (is_active && !isLoading) {
+      const collection_parts: CollectionRefType = [];
+      data.parts.forEach((part: any) => {
+        const curr_sanitized_id = part.id.toString();
+        if (app_media_ids.includes(curr_sanitized_id))
+          collection_parts.push(curr_sanitized_id);
+      });
+      if (collection_parts.length) setCollectionReferences(collection_parts);
+    }
+  }, [is_active]);
 
   return (
     <section className={styles.collections_container}>
@@ -69,7 +84,11 @@ export default function Collection({
                 {curr_media_id != part.id && !!app_media_id && (
                   <motion.button
                     className={styles.part_container}
-                    onClick={() => handleToggle(app_media_id.id)}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      console.log(app_media_id.id);
+                      handleToggle(app_media_id.id);
+                    }}
                     variants={{
                       visible: {
                         opacity: 1,
