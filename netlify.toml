@@ -1,4 +1,4 @@
 [[headers]]
-  for = "/assets-v3/*"
+  for = "/*"
   [headers.values]
     access-control-allow-origin = "*"
