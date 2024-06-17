@@ -29,17 +29,17 @@
     ]
   },
   {
-    "version": "1.2.0",
+    "version": "2.0.0",
     "date": "Jul 2021",
     "notes": ["Added TV shows and accompanying episodes."]
   },
   {
-    "version": "1.3.0",
+    "version": "2.1.0",
     "date": "Jul 2021",
     "notes": ["Refactored API calls."]
   },
   {
-    "version": "1.4.0",
+    "version": "2.2.0",
     "date": "Jul 2021",
     "notes": [
       "Added loading spinners.",
@@ -47,12 +47,12 @@
     ]
   },
   {
-    "version": "1.5.0",
+    "version": "2.3.0",
     "date": "Jul 2021",
     "notes": ["Added 'Movies Only' filter and About Card."]
   },
   {
-    "version": "1.5.1",
+    "version": "2.3.1",
     "date": "Sep 2021",
     "notes": [
       "Added <i>Shang-Chi and the Legend of Ten Rings</i>.",
@@ -60,38 +60,38 @@
     ]
   },
   {
-    "version": "1.5.2",
+    "version": "2.3.2",
     "date": "Oct 2021",
     "notes": ["Added <i>What If...?</i>", "Refactored genres' CSS styling."]
   },
   {
-    "version": "1.6.0",
+    "version": "2.4.0",
     "date": "Oct 2021",
     "notes": [
       "Added labels for better differentiation between movies and shows."
     ]
   },
   {
-    "version": "1.6.1",
+    "version": "2.4.1",
     "date": "Nov 2021",
     "notes": ["Added <i>Eternals</i>."]
   },
   {
-    "version": "1.6.2",
+    "version": "2.4.2",
     "date": "Jan 2022",
     "notes": ["Added <i>Spider-Man: No Way Home</i> and <i>Hawkeye</i>."]
   },
   {
-    "version": "1.6.3",
+    "version": "2.4.3",
     "date": "Jan 2022",
     "notes": [
       "Added <i>Doctor Strange in the Multiverse of Madness</i>, <i>Moon Knight</i>, and <i>Thor: Love and Thunder</i>.",
-      "Responsiveness on ultrawide screens.",
+      "Responsiveness on ultra-wide screens.",
       "Misc. CSS fixes."
     ]
   },
   {
-    "version": "1.7.0",
+    "version": "2.5.0",
     "date": "Nov 2022",
     "notes": [
       "Updated patch notes system.",
@@ -101,7 +101,7 @@
     ]
   },
   {
-    "version": "1.8.0",
+    "version": "2.6.0",
     "date": "Nov 2022",
     "notes": [
       "Created 'misc' category.",
@@ -110,12 +110,12 @@
     ]
   },
   {
-    "version": "2.0.0",
+    "version": "3.0.0",
     "date": "Feb 2023",
     "notes": ["Rebuilt site using Vite."]
   },
   {
-    "version": "2.1.0",
+    "version": "3.1.0",
     "date": "Apr 2023",
     "notes": [
       "Added movie static effects to cards.",
@@ -125,14 +125,14 @@
     ]
   },
   {
-    "version": "2.1.1",
+    "version": "3.1.1",
     "date": "Apr 2023",
     "notes": [
       "Added <i>Black Panther: Wakanda Forever</i>, <i>The Guardians of the Galaxy Holiday Special</i>, <i>Ant-Man and the Wasp: Quantumania</i>, and <i>Guardians of the Galaxy Volume 3</i>."
     ]
   },
   {
-    "version": "2.2.0",
+    "version": "3.2.0",
     "date": "Apr 2023",
     "notes": [
       "Added a new hover effect.",
@@ -140,17 +140,17 @@
     ]
   },
   {
-    "version": "2.3.0",
+    "version": "3.3.0",
     "date": "Apr 2023",
     "notes": ["Added numbering design on media interface."]
   },
   {
-    "version": "2.3.1",
+    "version": "3.3.1",
     "date": "Sep 2023",
     "notes": ["Fixed typo in patch notes.", "Added <i>Secret Invasion</i>."]
   },
   {
-    "version": "3.0.0",
+    "version": "4.0.0",
     "date": "June 2024",
     "notes": [
       "Overhauled content view UI.",
@@ -160,15 +160,20 @@
     ]
   },
   {
-    "version": "3.0.1",
+    "version": "4.0.1",
     "date": "June 2024",
     "notes": [
       "Added <i>I am Groot (Season 2)</i>, <i>Loki (Season 2)</i>, <i>The Marvels</i>, <i>What If...? (Season 2)</i>, and <i>Echo</i>."
     ]
   },
   {
-    "version": "3.0.2",
+    "version": "4.0.2",
     "date": "June 2024",
     "notes": ["Set logic to only query for data once."]
+  },
+  {
+    "version": "4.0.3",
+    "date": "June 2024",
+    "notes": ["Reconfigured patch notes."]
   }
 ]
