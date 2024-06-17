@@ -65,37 +65,36 @@ export default function Collections({
     >
       {filtered_parts.map((part: any) => {
         return (
-          <Fragment key={part.id}>
-            <motion.button
-              className={styles.part_container}
-              onClick={(event) => {
-                event.stopPropagation();
-                console.log(part.app_media_id);
-                handleToggle(part.app_media_id);
-              }}
-              variants={{
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    y: {
-                      duration: 0.2,
-                    },
+          <motion.button
+            className={styles.part_container}
+            key={part.id}
+            onClick={(event) => {
+              event.stopPropagation();
+              console.log(part.app_media_id);
+              handleToggle(part.app_media_id);
+            }}
+            variants={{
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  y: {
+                    duration: 0.2,
                   },
                 },
-                hidden: {
-                  opacity: 0,
-                  y: -50,
-                },
-              }}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
-                alt={part.original_title}
-              />
-              <p className={styles.part_title}>{part.original_title}</p>
-            </motion.button>
-          </Fragment>
+              },
+              hidden: {
+                opacity: 0,
+                y: -50,
+              },
+            }}
+          >
+            <img
+              src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
+              alt={part.original_title}
+            />
+            <p className={styles.part_title}>{part.original_title}</p>
+          </motion.button>
         );
       })}
     </motion.div>
