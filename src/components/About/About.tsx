@@ -26,7 +26,7 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
           <h1 className={styles.title}>AmSeeYou</h1>
           <section className={styles.body}>
             <p>
-              <span>AmSeeYou</span> showcases and cherishes the Marvel Cinematic
+              <i>AmSeeYou</i> showcases and cherishes the Marvel Cinematic
               Universe (MCU) films and TV shows. This website presents the
               entire universe in in-universe chronological order from{' '}
               <a
@@ -48,7 +48,10 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             </p>
             <p>
               I will continue to maintain the site as long as it still brings me
-              joy. Here's to small things in life!
+              joy. Follow along the progression of this site by viewing each
+              major versions of the project: <a href="/v1">v1</a>,{' '}
+              <a href="/v2">v2</a>, and <a href="/v3">v3</a>. Here's to small
+              things in life!
             </p>
             <p>
               Warmly,
@@ -66,7 +69,7 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
             <tbody>
               {[...patch_notes]
                 .reverse()
-                .map(({ version, date, notes }, idx) => {
+                .map(({ version, date, notes, url }, idx) => {
                   return (
                     <tr
                       key={version}
@@ -74,7 +77,9 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
                         idx == 0 ? styles.current : ''
                       }`}
                     >
-                      <td className={styles.version}>{version}</td>
+                      <td className={styles.version}>
+                        {url ? <a href={url}>{version}</a> : version}
+                      </td>
                       <td className={styles.date}>{date}</td>
                       <td className={styles.notes_container}>
                         {notes.map((note, idx) => (
@@ -123,17 +128,6 @@ export default function About({ isModalOpen, setIsModalOpen }: PropTypes) {
               rel="noopener noreferrer"
             >
               tutorial
-            </a>
-            .
-          </p>
-          <p>
-            See the legacy site v1.0{' '}
-            <a
-              href="https://amseeyou-legacy.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              here
             </a>
             .
           </p>
