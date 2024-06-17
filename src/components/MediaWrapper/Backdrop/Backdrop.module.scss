@@ -18,10 +18,16 @@
   }
 }
 
+:global(.media):global(.active) {
+  .backdrop_wrapper {
+    left: 0;
+  }
+}
+
 .backdrop_wrapper {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -170%;
   filter: brightness(0.69) sepia(100%) hue-rotate(165deg);
   width: 1000px;
   height: 100vh;
