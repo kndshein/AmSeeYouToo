@@ -26,6 +26,7 @@ export default function MediaList({
 
   const handleToggle: HandleToggleType = (id) => {
     setActiveToggle(id == active_toggle ? null : id);
+    setCollectionReferences(null);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {

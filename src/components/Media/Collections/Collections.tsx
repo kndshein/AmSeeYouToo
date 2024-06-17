@@ -49,10 +49,10 @@ export default function Collections({
           });
           collection_parts.push(media_list[app_media_idx].id);
         }
-        setCollectionReferences(collection_parts);
-        setReferencedLoadingParts(collection_parts);
-        setFilteredParts(combined_filtered_parts);
       }
+      setCollectionReferences(collection_parts);
+      setReferencedLoadingParts(collection_parts);
+      setFilteredParts(combined_filtered_parts);
     }
   }, [is_active]);
 
@@ -66,8 +66,8 @@ export default function Collections({
             const cloned_referenced_loading_parts = [
               ...referenced_loading_parts,
             ];
-            referenced_loading_parts.splice(idx, 1);
-            setCollectionReferences(cloned_referenced_loading_parts);
+            cloned_referenced_loading_parts.splice(idx, 1);
+            setReferencedLoadingParts(cloned_referenced_loading_parts);
           }
         });
       }
