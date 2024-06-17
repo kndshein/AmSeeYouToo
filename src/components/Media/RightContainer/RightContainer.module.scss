@@ -40,12 +40,14 @@
   width: 100%;
   font-family: $body-text;
   letter-spacing: 2px;
+  margin-bottom: -5px;
 }
 
 .info_group span {
-  font-size: clamp(1.25rem, 1.5vw, 2rem);
+  font-size: clamp(1.25rem, 1.8vw, 1.8rem);
   margin-right: 10px;
   color: white;
+  margin-bottom: 5px;
 }
 
 .dot {
