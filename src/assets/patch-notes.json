@@ -158,5 +158,17 @@
       "Improved network efficiency by only fetching for data if the media is in view",
       "Accessibility improvements."
     ]
+  },
+  {
+    "version": "3.0.1",
+    "date": "June 2024",
+    "notes": [
+      "Added <i>I am Groot (Season 2)</i>, <i>Loki (Season 2)</i>, <i>The Marvels</i>, <i>What If...? (Season 2)</i>, and <i>Echo</i>."
+    ]
+  },
+  {
+    "version": "3.0.2",
+    "date": "June 2024",
+    "notes": ["Set logic to only query for data once."]
   }
 ]
