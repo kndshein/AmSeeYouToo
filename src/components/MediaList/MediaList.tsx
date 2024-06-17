@@ -42,8 +42,6 @@ export default function MediaList({
     );
   };
 
-  console.log(active_toggle);
-
   return (
     <div className={styles.media_list} ref={media_list_ref}>
       {media_list_typed.map((ele, idx) => {

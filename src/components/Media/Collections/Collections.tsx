@@ -102,7 +102,6 @@ export default function Collections({
             key={part.id}
             onClick={(event) => {
               event.stopPropagation();
-              console.log(part.app_media_id);
               handleToggle(part.app_media_id);
             }}
             disabled={is_ref_media_unready}
