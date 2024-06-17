@@ -199,7 +199,8 @@
     "notes": [
       "Implemented logic to use an alternate backdrop for TV shows based on season number.",
       "Configured to use higher quality backdrops.",
-      "Fixed clipped poster on widescreens."
+      "Configured to use TV shows' stills more efficiently.",
+      "Fixed clipped genres on widescreens."
     ]
   }
 ]
