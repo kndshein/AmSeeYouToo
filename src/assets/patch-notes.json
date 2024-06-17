@@ -202,5 +202,13 @@
       "Configured to use TV shows' stills more efficiently.",
       "Fixed clipped genres on widescreens."
     ]
+  },
+  {
+    "version": "4.3.0",
+    "date": "June 2024",
+    "notes": [
+      "Added season marker for TV shows.",
+      "Adjusted scrollbar paddings on small view heights."
+    ]
   }
 ]
