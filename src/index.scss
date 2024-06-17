@@ -60,6 +60,10 @@ code {
     }
   }
 
+  &:not(.ready) {
+    overflow: hidden;
+  }
+
   &.ready.collapsed-layout {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
