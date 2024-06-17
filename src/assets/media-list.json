@@ -54,11 +54,20 @@
   },
   { "type": "movie", "id": "118340-guardians-of-the-galaxy" },
   { "type": "movie", "id": "283995-guardians-of-the-galaxy-2" },
-  { "type": "misc", "id": "1010818-groot-s-first-steps" },
-  { "type": "misc", "id": "1010819-the-little-guy" },
-  { "type": "misc", "id": "1010820-groot-s-pursuit" },
-  { "type": "misc", "id": "1010821-groot-takes-a-bath" },
-  { "type": "misc", "id": "1010823-magnum-opus" },
+  {
+    "type": "tv",
+    "id": "232125-i-am-groot",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 5
+  },
+  {
+    "type": "tv",
+    "id": "232125-i-am-groot",
+    "season": 2,
+    "epiStart": 1,
+    "epiEnd": 5
+  },
   {
     "type": "tv",
     "id": "61889-daredevil",
