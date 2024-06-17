@@ -8,7 +8,8 @@ import {
 } from '../../../types/Toggles';
 import { motion } from 'framer-motion';
 import { calculateDelay, sanitizeMediaId } from '../../../utils/utils';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Loading from '../../Loading/Loading';
 
 type PropTypes = {
   collection_data: any;
@@ -26,6 +27,9 @@ export default function Collections({
   setCollectionReferences,
 }: PropTypes) {
   const [filtered_parts, setFilteredParts] = useState<any[]>([]);
+  const [referenced_loading_parts, setReferencedLoadingParts] = useState<
+    string[]
+  >([]);
 
   useEffect(() => {
     // Only compute the collections if media is selected
@@ -42,10 +46,33 @@ export default function Collections({
           collection_parts.push(app_media.id);
         }
         setCollectionReferences(collection_parts);
+        setReferencedLoadingParts(collection_parts);
         setFilteredParts(combined_filtered_parts);
       }
     }
   }, [is_active]);
+
+  // Ping to see if the referenced media are ready
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (is_active && referenced_loading_parts.length) {
+        referenced_loading_parts.forEach((part, idx) => {
+          const media = document.getElementsByClassName(part);
+          if (media[0].classList.contains('ready')) {
+            const cloned_referenced_loading_parts = [
+              ...referenced_loading_parts,
+            ];
+            referenced_loading_parts.splice(idx, 1);
+            setCollectionReferences(cloned_referenced_loading_parts);
+          }
+        });
+      }
+    }, 1000);
+
+    if (!is_active || !referenced_loading_parts.length) clearInterval(interval);
+
+    return () => clearInterval(interval);
+  }, [is_active, referenced_loading_parts]);
 
   return (
     <motion.div
@@ -64,15 +91,21 @@ export default function Collections({
       }}
     >
       {filtered_parts.map((part: any) => {
+        const is_ref_media_unready = referenced_loading_parts.includes(
+          part.app_media_id
+        );
         return (
           <motion.button
-            className={styles.part_container}
+            className={`${styles.part_container} ${
+              is_ref_media_unready ? styles.disabled : ''
+            }`}
             key={part.id}
             onClick={(event) => {
               event.stopPropagation();
               console.log(part.app_media_id);
               handleToggle(part.app_media_id);
             }}
+            disabled={is_ref_media_unready}
             variants={{
               visible: {
                 opacity: 1,
@@ -93,6 +126,11 @@ export default function Collections({
               src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
               alt={part.original_title}
             />
+            {is_ref_media_unready && (
+              <div className={styles.loading_container}>
+                <Loading />
+              </div>
+            )}
             <p className={styles.part_title}>{part.original_title}</p>
           </motion.button>
         );

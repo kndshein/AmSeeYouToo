@@ -79,7 +79,7 @@ export default function MediaWrapper({
   return (
     <button
       ref={ref}
-      className={`media ${is_active ? 'active' : ''} ${
+      className={`${media_data.id} media ${is_active ? 'active' : ''} ${
         isLoading || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
@@ -92,7 +92,7 @@ export default function MediaWrapper({
         <Loading />
       ) : (
         <div
-          className={`${media_data.id} ${styles.content_container} ${
+          className={`${styles.content_container} ${
             is_active ? styles.active : ''
           } ${is_content_expanded ? styles.expanded_layout : ''}`}
         >
