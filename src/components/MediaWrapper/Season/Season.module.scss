@@ -36,3 +36,19 @@
     mix-blend-mode: screen;
   }
 }
+
+:global(.media):not(:global(.collapsed-layout)) {
+  .season_wrapper {
+    opacity: 0.5;
+  }
+
+  .season_label {
+    color: gray;
+  }
+
+  .season_num {
+    color: gray;
+    background-color: black;
+    mix-blend-mode: unset;
+  }
+}
