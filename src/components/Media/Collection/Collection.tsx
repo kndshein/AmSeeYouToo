@@ -28,7 +28,7 @@ export default function Collection({
     enabled: is_content_expanded,
   });
 
-  console.log(data);
+  const curr_media_id = media_data.id.split('-')[0];
 
   return (
     <section>
@@ -37,14 +37,18 @@ export default function Collection({
         <div className={styles.parts_container}>
           {data.parts.map((part: any) => {
             return (
-              <div className={styles.part_container}>
-                {/* TODO: Find to make sure the movie exists in the site */}
-                <img
-                  src={`https://image.tmdb.org/t/p/w342${part.poster_path}`}
-                  alt={part.original_title}
-                />
-                {part.original_title}
-              </div>
+              <>
+                {curr_media_id != part.id && (
+                  <div className={styles.part_container}>
+                    {/* TODO: Find to make sure the movie exists in the site */}
+                    <img
+                      src={`https://image.tmdb.org/t/p/w342${part.poster_path}`}
+                      alt={part.original_title}
+                    />
+                    {part.original_title}
+                  </div>
+                )}
+              </>
             );
           })}
         </div>
