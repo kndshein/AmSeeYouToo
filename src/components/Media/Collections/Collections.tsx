@@ -18,7 +18,7 @@ type PropTypes = {
   setCollectionReferences: SetCollectionReferences;
 };
 
-export default function Collection({
+export default function Collections({
   collection_data,
   tmdb_data,
   is_active,

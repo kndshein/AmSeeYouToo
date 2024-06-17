@@ -7,12 +7,11 @@ import Episodes from '../Episodes/Episodes';
 import { container } from '../Media';
 import { motion } from 'framer-motion';
 import Overview from '../Overview/Overview';
-import Collection from '../Collection/Collection';
 import {
   HandleToggleType,
   SetCollectionReferences,
 } from '../../../types/Toggles';
-import { CollectionWrapper } from '../CollectionWrapper/CollectionWrapper';
+import { CollectionsWrapper } from '../CollectionsWrapper/CollectionsWrapper';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -105,7 +104,7 @@ export default function RightContainer({
       {(inView || is_active) &&
         media_data.type == 'movie' &&
         tmdb_data.belongs_to_collection != null && (
-          <CollectionWrapper
+          <CollectionsWrapper
             tmdb_data={tmdb_data}
             is_active={is_active}
             handleToggle={handleToggle}

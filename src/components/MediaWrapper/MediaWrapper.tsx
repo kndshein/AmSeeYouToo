@@ -17,7 +17,6 @@ import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Season from './Season/Season';
-import { sanitizeMediaId } from '../../utils/utils';
 
 type PropTypes = {
   media_data: MediaType;
@@ -93,7 +92,7 @@ export default function MediaWrapper({
         <Loading />
       ) : (
         <div
-          className={`${styles.content_container} ${
+          className={`${media_data.id} ${styles.content_container} ${
             is_active ? styles.active : ''
           } ${is_content_expanded ? styles.expanded_layout : ''}`}
         >

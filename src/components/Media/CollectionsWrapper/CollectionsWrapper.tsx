@@ -5,8 +5,8 @@ import {
   SetCollectionReferences,
 } from '../../../types/Toggles';
 import { TmdbType } from '../../../types/Tmdb';
-import Collection from '../Collection/Collection';
-import styles from './CollectionWrapper.module.scss';
+import Collections from '../Collections/Collections';
+import styles from './CollectionsWrapper.module.scss';
 import Loading from '../../Loading/Loading';
 
 type PropTypes = {
@@ -16,7 +16,7 @@ type PropTypes = {
   setCollectionReferences: SetCollectionReferences;
 };
 
-export function CollectionWrapper({
+export function CollectionsWrapper({
   tmdb_data,
   is_active,
   handleToggle,
@@ -43,7 +43,7 @@ export function CollectionWrapper({
       {isLoading ? (
         <Loading />
       ) : (
-        <Collection
+        <Collections
           collection_data={data}
           tmdb_data={tmdb_data}
           is_active={is_active}
