@@ -1,4 +1,3 @@
-import { MediaType } from '../../../types/Media';
 import { TmdbType } from '../../../types/Tmdb';
 import styles from './Collection.module.scss';
 import media_list from '../../../assets/media-list.json';
@@ -49,58 +48,56 @@ export default function Collection({
   }, [is_active]);
 
   return (
-    <section className={styles.collections_container}>
-      <motion.div
-        className={styles.parts_container}
-        variants={{
-          visible: {
-            opacity: 1,
-            transition: {
-              delayChildren: calculateDelay(tmdb_data.overview),
-              staggerChildren: 0.2,
-            },
+    <motion.div
+      className={styles.parts_container}
+      variants={{
+        visible: {
+          opacity: 1,
+          transition: {
+            delayChildren: calculateDelay(tmdb_data.overview),
+            staggerChildren: 0.2,
           },
-          hidden: {
-            opacity: 0,
-          },
-        }}
-      >
-        {filtered_parts.map((part: any) => {
-          return (
-            <Fragment key={part.id}>
-              <motion.button
-                className={styles.part_container}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  console.log(part.app_media_id);
-                  handleToggle(part.app_media_id);
-                }}
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      y: {
-                        duration: 0.2,
-                      },
+        },
+        hidden: {
+          opacity: 0,
+        },
+      }}
+    >
+      {filtered_parts.map((part: any) => {
+        return (
+          <Fragment key={part.id}>
+            <motion.button
+              className={styles.part_container}
+              onClick={(event) => {
+                event.stopPropagation();
+                console.log(part.app_media_id);
+                handleToggle(part.app_media_id);
+              }}
+              variants={{
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    y: {
+                      duration: 0.2,
                     },
                   },
-                  hidden: {
-                    opacity: 0,
-                    y: -50,
-                  },
-                }}
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
-                  alt={part.original_title}
-                />
-                <p className={styles.part_title}>{part.original_title}</p>
-              </motion.button>
-            </Fragment>
-          );
-        })}
-      </motion.div>
-    </section>
+                },
+                hidden: {
+                  opacity: 0,
+                  y: -50,
+                },
+              }}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w154${part.poster_path}`}
+                alt={part.original_title}
+              />
+              <p className={styles.part_title}>{part.original_title}</p>
+            </motion.button>
+          </Fragment>
+        );
+      })}
+    </motion.div>
   );
 }

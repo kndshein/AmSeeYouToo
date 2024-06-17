@@ -4,9 +4,10 @@ import {
   HandleToggleType,
   SetCollectionReferences,
 } from '../../../types/Toggles';
-import { MediaType } from '../../../types/Media';
 import { TmdbType } from '../../../types/Tmdb';
 import Collection from '../Collection/Collection';
+import styles from './CollectionWrapper.module.scss';
+import Loading from '../../Loading/Loading';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -34,9 +35,13 @@ export function CollectionWrapper({
   });
 
   return (
-    <>
+    <section
+      className={`${styles.collections_container} ${
+        isLoading ? styles.loading : ''
+      }`}
+    >
       {isLoading ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
         <Collection
           collection_data={data}
@@ -46,6 +51,6 @@ export function CollectionWrapper({
           setCollectionReferences={setCollectionReferences}
         />
       )}
-    </>
+    </section>
   );
 }
