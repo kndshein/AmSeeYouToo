@@ -350,6 +350,13 @@
   },
   {
     "type": "tv",
+    "id": "84958-loki",
+    "season": 2,
+    "epiStart": 1,
+    "epiEnd": 6
+  },
+  {
+    "type": "tv",
     "id": "91363-what-if",
     "season": 1,
     "epiStart": 1,
