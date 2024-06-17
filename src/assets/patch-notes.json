@@ -178,5 +178,18 @@
     "version": "4.0.3",
     "date": "June 2024",
     "notes": ["Reconfigured patch notes."]
+  },
+  {
+    "version": "4.0.4",
+    "date": "June 2024",
+    "notes": ["Misc. styling tweaks."]
+  },
+  {
+    "version": "4.1.0",
+    "date": "June 2024",
+    "notes": [
+      "Archive previous versions of the site.",
+      "Redirect subdirectories to archived versions."
+    ]
   }
 ]
