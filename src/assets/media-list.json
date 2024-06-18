@@ -16,8 +16,16 @@
     "epiEnd": 10
   },
   { "type": "movie", "id": "299537-captain-marvel" },
-  { "type": "movie", "id": "1726-iron-man" },
-  { "type": "movie", "id": "10138-iron-man-2" },
+  {
+    "type": "movie",
+    "id": "1726-iron-man",
+    "custom_theme": { "title": "iron_man" }
+  },
+  {
+    "type": "movie",
+    "id": "10138-iron-man-2",
+    "custom_theme": { "title": "iron_man" }
+  },
   { "type": "movie", "id": "1724-the-incredible-hulk" },
   { "type": "misc", "id": "76122-marvel-one-shot-the-consultant" },
   {
@@ -42,7 +50,13 @@
     "epiStart": 8,
     "epiEnd": 16
   },
-  { "type": "movie", "id": "68721-iron-man-3" },
+  {
+    "type": "movie",
+    "id": "68721-iron-man-3",
+    "custom_theme": {
+      "title": "iron_man"
+    }
+  },
   { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
   { "type": "movie", "id": "100402-captain-america-the-winter-soldier" },
   {
