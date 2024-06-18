@@ -27,8 +27,6 @@
   { "type": "movie", "id": "10195-thor" },
   { "type": "movie", "id": "24428-the-avengers" },
   { "type": "misc", "id": "119569-marvel-one-shot-item-47" },
-  { "type": "movie", "id": "68721-iron-man-3" },
-  { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -44,6 +42,8 @@
     "epiStart": 8,
     "epiEnd": 16
   },
+  { "type": "movie", "id": "68721-iron-man-3" },
+  { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
   { "type": "movie", "id": "100402-captain-america-the-winter-soldier" },
   {
     "type": "tv",
@@ -406,6 +406,7 @@
     "epiStart": 1,
     "epiEnd": 6
   },
+  { "type": "movie", "id": "505642-black-panther-wakanda-forever" },
   {
     "type": "tv",
     "id": "122226-echo",
@@ -429,7 +430,6 @@
   },
   { "type": "movie", "id": "616037-thor-love-and-thunder" },
   { "type": "misc", "id": "894205-werewolf-by-night" },
-  { "type": "movie", "id": "505642-black-panther-wakanda-forever" },
   {
     "type": "misc",
     "id": "774752-the-guardians-of-the-galaxy-holiday-special"

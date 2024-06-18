@@ -258,5 +258,10 @@
       "Added guard to freeze fetching while scrolling to another media.",
       "Implemented logic to only scroll if media is out of viewport."
     ]
+  },
+  {
+    "version": "4.5.6",
+    "date": "June 2024",
+    "notes": ["Re-synced data to the list on DigitalSpy."]
   }
 ]
