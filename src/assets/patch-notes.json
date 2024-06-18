@@ -88,7 +88,7 @@
     "notes": [
       "Added <i>Doctor Strange in the Multiverse of Madness</i>, <i>Moon Knight</i>, and <i>Thor: Love and Thunder</i>.",
       "Responsiveness on ultra-wide screens.",
-      "Misc. CSS fixes."
+      "Fixed misc. styling."
     ]
   },
   {
@@ -122,8 +122,8 @@
     "notes": [
       "Added movie static effects to cards.",
       "Added animated card effect on hover",
-      "Addressed some accessibility concerns. ('About' modal, and tabbing through cards)",
-      "Misc bug fixes."
+      "Addressed some accessibility concerns. (About modal, and tabbing through media)",
+      "Fixed various bugs."
     ]
   },
   {
@@ -138,7 +138,7 @@
     "date": "Apr 2023",
     "notes": [
       "Added a new hover effect.",
-      "Added underline styling element on card view."
+      "Added underline styling element on collapsed media view."
     ]
   },
   {
@@ -156,11 +156,11 @@
     "version": "4.0.0",
     "date": "June 2024",
     "notes": [
-      "Overhauled content view UI.",
-      "Added animations to media interactions.",
-      "Improved network efficiency by only fetching for data if the media is in view",
-      "Refactored styling of genre tags",
-      "Accessibility improvements."
+      "Overhauled expanded media view UI.",
+      "Added animations to media view.",
+      "Improved efficiency by only fetching for data if the media is in view.",
+      "Refactored styling of genre tags.",
+      "Improved accessibility."
     ]
   },
   {
@@ -173,17 +173,17 @@
   {
     "version": "4.0.2",
     "date": "June 2024",
-    "notes": ["Set logic to only query for data once."]
+    "notes": ["Set logic to query for data only once."]
   },
   {
     "version": "4.0.3",
     "date": "June 2024",
-    "notes": ["Reconfigured patch notes."]
+    "notes": ["Re-configured patch notes."]
   },
   {
     "version": "4.0.4",
     "date": "June 2024",
-    "notes": ["Misc. styling tweaks."]
+    "notes": ["Tweaked misc. styling."]
   },
   {
     "version": "4.1.0",
@@ -197,7 +197,7 @@
     "version": "4.2.0",
     "date": "June 2024",
     "notes": [
-      "Implemented logic to use an alternate backdrop for TV shows based on season number.",
+      "Implemented alternate backdrops for TV shows based on season numbers.",
       "Configured to use higher quality backdrops.",
       "Configured to use TV shows' stills more efficiently.",
       "Fixed clipped genres on widescreens."
@@ -208,7 +208,7 @@
     "date": "June 2024",
     "notes": [
       "Added season marker for TV shows.",
-      "Adjusted scrollbar paddings on small view heights."
+      "Adjusted poster scrollbar padding on small view-heights."
     ]
   },
   {
@@ -220,22 +220,22 @@
     "version": "4.5.0",
     "date": "June 2024",
     "notes": [
-      "Implemented navigation to media displayed in the collections list.",
+      "Implemented media navgation via the collections list.",
       "Implemented pre-fetching resources shown in the collections list."
     ]
   },
   {
     "version": "4.5.1",
     "date": "June 2024",
-    "notes": ["Fixed stacking media interaction from navigation."]
+    "notes": ["Fixed overlapping visual bug from media navigation."]
   },
   {
     "version": "4.5.2",
     "date": "June 2024",
     "notes": [
-      "Fixed bug where shows were stacking together on click.",
-      "Fixed bug where pinging interval isn't cleared properly.",
-      "Fixed bug where collection reference is not tracked properly."
+      "Fixed bug where TV shows were overlapping in media view.",
+      "Fixed bug where intervals were not cleared up when no longer in use.",
+      "Fixed bug where pre-fetching collections wasn't working properly."
     ]
   },
   {
@@ -243,7 +243,7 @@
     "date": "June 2024",
     "notes": [
       "Added logic to scroll into view when media is selected.",
-      "Fixed overlapping nav."
+      "Fixed overlapping nav bar."
     ]
   },
   {
@@ -262,7 +262,7 @@
   {
     "version": "4.5.6",
     "date": "June 2024",
-    "notes": ["Re-synced data to the list on DigitalSpy."]
+    "notes": ["Re-synced data to the content list on DigitalSpy."]
   },
   {
     "version": "4.5.7",
@@ -279,6 +279,9 @@
   {
     "version": "4.6.0",
     "date": "June 2024",
-    "notes": ["Added themed titles for various characters."]
+    "notes": [
+      "Setup scaffold for themed titles.",
+      "Added themed titles for <i>Iron Man</i>, <i>Captain America</i>, <i>Thor</i>, <i>Black Panther</i>, <i>Spider-man</i>, and <i>Black Widow</i>."
+    ]
   }
 ]
