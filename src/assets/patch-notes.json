@@ -291,5 +291,14 @@
       "Configured scrolling to be instant on Chrome due to laggy scrolling on Chromiums.",
       "Reduced computation for non-themed titles."
     ]
+  },
+  {
+    "version": "4.6.2",
+    "date": "June 2024",
+    "notes": [
+      "Slightly improved media expanded/collapsed logic.",
+      "Tweaked various themed titles.",
+      "Added <i>Hulk</i> title theme."
+    ]
   }
 ]
