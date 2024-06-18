@@ -24,18 +24,19 @@ export default function MediaList({
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
   const [collection_references, setCollectionReferences] =
     useState<CollectionRefType>(null);
-  const [is_scrolling, setIsScrolling] = useState(false);
+  // Use `is_navigating` over `is_scrolling` since this is a coded action. Does not take into account of user scrolling
+  const [is_navigating, setIsNavigating] = useState(false);
 
   const handleToggle: HandleToggleType = (id) => {
     const ele_active_to_be = document.getElementById(id.toString());
 
     // If element is not in view, set scrolling state, which is used downstream to prevent fetching
     if (!!ele_active_to_be && !isElementInViewport(ele_active_to_be)) {
-      setIsScrolling(true);
+      setIsNavigating(true);
       ele_active_to_be.scrollIntoView({ behavior: 'smooth' });
       // Janky solution to prevent from fetching while scrolling
       setTimeout(() => {
-        setIsScrolling(false);
+        setIsNavigating(false);
       }, 1000);
     }
 
@@ -50,7 +51,7 @@ export default function MediaList({
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
         is_active={active_toggle == idx}
-        is_scrolling={is_scrolling}
+        is_navigating={is_navigating}
         idx={idx}
         collection_references={collection_references}
         setCollectionReferences={setCollectionReferences}
