@@ -237,5 +237,13 @@
       "Fixed bug where pinging interval isn't cleared properly.",
       "Fixed bug where collection reference is not tracked properly."
     ]
+  },
+  {
+    "version": "4.5.3",
+    "date": "June 2024",
+    "notes": [
+      "Added logic to scroll into view when media is selected.",
+      "Fixed overlapping nav."
+    ]
   }
 ]
