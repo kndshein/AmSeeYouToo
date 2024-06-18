@@ -8,6 +8,7 @@ import {
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
 import media_list from '../../assets/media-list.json';
 import styles from './MediaList.module.scss';
+import { isElementInViewport } from '../../utils/utils';
 
 let media_list_typed = media_list as Array<MediaType>;
 
@@ -26,17 +27,20 @@ export default function MediaList({
   const [is_scrolling, setIsScrolling] = useState(false);
 
   const handleToggle: HandleToggleType = (id) => {
-    //TODO: Only scroll into view if the element is not in view
-    setIsScrolling(true);
-    document
-      .getElementById(id.toString())
-      ?.scrollIntoView({ behavior: 'smooth' });
+    const ele_active_to_be = document.getElementById(id.toString());
+
+    // If element is not in view, set scrolling state, which is used downstream to prevent fetching
+    if (!!ele_active_to_be && !isElementInViewport(ele_active_to_be)) {
+      setIsScrolling(true);
+      ele_active_to_be.scrollIntoView({ behavior: 'smooth' });
+      // Janky solution to prevent from fetching while scrolling
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    }
+
     setActiveToggle(id == active_toggle ? null : id);
     setCollectionReferences(null);
-    // Janky solution to prevent from fetching while scrolling
-    setTimeout(() => {
-      setIsScrolling(false);
-    }, 1000);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
