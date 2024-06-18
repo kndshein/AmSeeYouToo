@@ -37,14 +37,18 @@ export default function MediaList({
         // Use 'instant' for Chrome since scrolling on Chromiums seem to be laggy
         behavior: !!window.chrome ? 'instant' : 'smooth',
       });
+      setTimeout(() => {
+        setActiveToggle(id == active_toggle ? null : id);
+        setCollectionReferences(null);
+      }, 200);
       // Janky solution to prevent from fetching while scrolling
       setTimeout(() => {
         setIsNavigating(false);
-      }, 1000);
+      }, 1500);
+    } else {
+      setActiveToggle(id == active_toggle ? null : id);
+      setCollectionReferences(null);
     }
-
-    setActiveToggle(id == active_toggle ? null : id);
-    setCollectionReferences(null);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
