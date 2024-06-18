@@ -245,5 +245,18 @@
       "Added logic to scroll into view when media is selected.",
       "Fixed overlapping nav."
     ]
+  },
+  {
+    "version": "4.5.6",
+    "date": "June 2024",
+    "notes": ["Updated packages and fixed one breaking change."]
+  },
+  {
+    "version": "4.5.5",
+    "date": "June 2024",
+    "notes": [
+      "Added guard to freeze fetching while scrolling to another media.",
+      "Implemented logic to only scroll if media is out of viewport."
+    ]
   }
 ]
