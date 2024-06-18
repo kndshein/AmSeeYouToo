@@ -48,8 +48,11 @@ export default function MediaWrapper({
   let media_ui_type: MediaUiType; // To display "Show" instead of "TV"
   const [is_backdrop_loaded, setIsBackdropLoaded] = useState(false);
   // Denotes if curr media is fully expanded or not
-  const [is_content_expanded, setIsContentExpanded] = useState(is_active);
-  const [is_content_collapsed, setIsContentCollapsed] = useState(!is_active);
+  const [{ is_content_expanded, is_content_collapsed }, setContentStatus] =
+    useState({
+      is_content_expanded: is_active,
+      is_content_collapsed: !is_active,
+    });
   const is_to_prefetch =
     !!collection_references && collection_references.includes(media_data.id);
 
@@ -120,12 +123,20 @@ export default function MediaWrapper({
             layout
             style={{ borderRadius: '10px' }}
             onLayoutAnimationComplete={() => {
-              setIsContentExpanded(is_active);
-              setIsContentCollapsed(!is_active);
+              setContentStatus({
+                is_content_expanded: is_active,
+                is_content_collapsed: !is_active,
+              });
             }}
             onLayoutAnimationStart={() => {
-              setIsContentExpanded((prevState) => prevState && is_active);
-              setIsContentCollapsed((prevState) => prevState && !is_active);
+              setContentStatus((prevState) => {
+                return {
+                  is_content_expanded:
+                    prevState.is_content_expanded && is_active,
+                  is_content_collapsed:
+                    prevState.is_content_collapsed && !is_active,
+                };
+              });
             }}
             onClick={(event) => {
               if (is_content_expanded) event.stopPropagation();
