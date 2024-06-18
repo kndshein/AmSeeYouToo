@@ -59,7 +59,7 @@ export default function Media({
       }}
     >
       <TopContainer tmdb_data={tmdb_data} media_data={media_data} />
-      <LeftContainer tmdb_data={tmdb_data} />
+      <LeftContainer tmdb_data={tmdb_data} media_data={media_data} />
       <RightContainer
         tmdb_data={tmdb_data}
         media_data={media_data}
