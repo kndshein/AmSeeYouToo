@@ -95,4 +95,20 @@
       -webkit-text-stroke: 1px rgb(250, 211, 57);
     }
   }
+
+  &:global(.black_panther) {
+    span:nth-child(-n + 13) {
+      background: linear-gradient(
+        rgb(30, 2, 97) 20%,
+        rgb(88, 20, 234) 45%,
+        rgb(143, 181, 251) 65%,
+        rgb(64, 191, 255) 75%,
+        rgb(0, 170, 249) 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba(105, 210, 255, 0.9);
+    }
+  }
 }

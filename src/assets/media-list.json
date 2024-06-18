@@ -217,7 +217,11 @@
     "epiEnd": 6
   },
   { "type": "movie", "id": "284052-doctor-strange" },
-  { "type": "movie", "id": "284054-black-panther" },
+  {
+    "type": "movie",
+    "id": "284054-black-panther",
+    "theme": { "title": "black_panther" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -440,7 +444,11 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "505642-black-panther-wakanda-forever" },
+  {
+    "type": "movie",
+    "id": "505642-black-panther-wakanda-forever",
+    "theme": { "title": "black_panther" }
+  },
   {
     "type": "tv",
     "id": "122226-echo",
