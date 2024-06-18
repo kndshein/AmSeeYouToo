@@ -22,7 +22,7 @@ export function CollectionsWrapper({
   handleToggle,
   setCollectionReferences,
 }: PropTypes) {
-  const { isLoading, data } = useQuery({
+  const { isPending, data } = useQuery({
     queryKey: ['collection', tmdb_data.belongs_to_collection.id],
     queryFn: () =>
       axios
@@ -37,10 +37,10 @@ export function CollectionsWrapper({
   return (
     <section
       className={`${styles.collections_container} ${
-        isLoading ? styles.loading : ''
+        isPending ? styles.loading : ''
       }`}
     >
-      {isLoading ? (
+      {isPending ? (
         <Loading />
       ) : (
         <Collections

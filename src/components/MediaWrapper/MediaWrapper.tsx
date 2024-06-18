@@ -67,13 +67,14 @@ export default function MediaWrapper({
     import.meta.env.VITE_API_KEY
   }&language=en-US&include_image_language=null&append_to_response=credits${url_append}`;
 
-  const { isLoading, data } = useQuery({
+  const { isPending, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
     enabled:
       inView ||
       (!!collection_references &&
         collection_references.includes(media_data.id)),
+    throwOnError: true,
   });
 
   return (
@@ -81,15 +82,15 @@ export default function MediaWrapper({
       id={idx.toString()}
       ref={ref}
       className={`${media_data.id} media ${is_active ? 'active' : ''} ${
-        isLoading || !is_backdrop_loaded ? '' : 'ready'
+        isPending || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
       }`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
-      disabled={isLoading || !is_backdrop_loaded}
+      disabled={isPending || !is_backdrop_loaded}
     >
-      {isLoading ? (
+      {isPending ? (
         <Loading />
       ) : (
         <div
