@@ -130,8 +130,8 @@ export default function MediaWrapper({
                   '0 0 1px white, 0 0 5px 1px rgb(102, 192, 204), 0 0 20px 7px rgb(45, 100, 114)',
                 transition: {
                   boxShadow: {
-                    delay: 2,
-                    duration: 0.5,
+                    delay: 2.5,
+                    duration: 0.8,
                   },
                 },
               },
