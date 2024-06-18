@@ -62,41 +62,49 @@ export default function RightContainer({
         visible: { ...container.visible, transition: { staggerChildren: 0.3 } },
       }}
     >
-      <motion.section className={styles.info_group} variants={element}>
-        <motion.span className={styles.vote} variants={element}>
-          {Math.round(tmdb_data.vote_average * 10) / 10}
-        </motion.span>
-        <motion.span className={styles.dot}>•</motion.span>
-        {media_data.type == 'tv' ? (
-          <motion.span variants={element}>
-            {dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}
-          </motion.span>
-        ) : (
-          <>
-            <motion.span variants={element}>
-              {dateCalc(tmdb_data.release_date)}
+      {/* Only render them when active to reduce calculation while collapsed */}
+      {is_active && (
+        <>
+          <motion.section className={styles.info_group} variants={element}>
+            <motion.span className={styles.vote} variants={element}>
+              {Math.round(tmdb_data.vote_average * 10) / 10}
             </motion.span>
-            <motion.span className={styles.dot} variants={element}>
-              •
-            </motion.span>
-            <motion.span variants={element}>
-              {runtimeCalc(tmdb_data.runtime)}
-            </motion.span>
-          </>
-        )}
-      </motion.section>
-      <motion.section className={styles.cast} variants={element}>
-        {tmdb_data.credits.cast.slice(0, 5).map((actor: any, idx: number) => {
-          return (
-            <motion.span className={styles.actor} key={idx} variants={element}>
-              {actor.name}
-            </motion.span>
-          );
-        })}
-      </motion.section>
-      {/* Shows w/ singular seasons don't nest their overview info */}
-      {is_content_expanded && (
-        <Overview tmdb_data={tmdb_data} media_data={media_data} />
+            <motion.span className={styles.dot}>•</motion.span>
+            {media_data.type == 'tv' ? (
+              <motion.span variants={element}>
+                {dateCalc(tmdb_data[`season/${media_data.season}`].air_date)}
+              </motion.span>
+            ) : (
+              <>
+                <motion.span variants={element}>
+                  {dateCalc(tmdb_data.release_date)}
+                </motion.span>
+                <motion.span className={styles.dot} variants={element}>
+                  •
+                </motion.span>
+                <motion.span variants={element}>
+                  {runtimeCalc(tmdb_data.runtime)}
+                </motion.span>
+              </>
+            )}
+          </motion.section>
+          <motion.section className={styles.cast} variants={element}>
+            {tmdb_data.credits.cast
+              .slice(0, 5)
+              .map((actor: any, idx: number) => {
+                return (
+                  <motion.span
+                    className={styles.actor}
+                    key={idx}
+                    variants={element}
+                  >
+                    {actor.name}
+                  </motion.span>
+                );
+              })}
+          </motion.section>
+          <Overview tmdb_data={tmdb_data} media_data={media_data} />
+        </>
       )}
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />

@@ -9,6 +9,7 @@ type PropTypes = {
 };
 
 export default function Overview({ tmdb_data, media_data }: PropTypes) {
+  // Shows w/ singular seasons don't nest their overview info
   const overview_text =
     media_data.type == 'tv'
       ? tmdb_data[`season/${media_data.season}`].overview || tmdb_data.overview
