@@ -39,10 +39,15 @@ export default function TopContainer({ tmdb_data, media_data }: PropTypes) {
         visible: { ...container.visible, transition: { staggerChildren: 0.1 } },
       }}
     >
-      <motion.h2 className={styles.title} variants={text}>
+      <motion.h2
+        className={`${styles.title} ${media_data.theme?.title}`}
+        variants={text}
+      >
         {media_data.type == 'tv'
           ? tmdb_data.original_name
-          : tmdb_data.original_title}
+          : tmdb_data.original_title
+              .split('')
+              .map((letter: string) => <span>{letter}</span>)}
       </motion.h2>
       <motion.p className={styles.tagline} variants={text}>
         {media_data.type == 'tv' ? (

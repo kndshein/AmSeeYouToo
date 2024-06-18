@@ -10,12 +10,18 @@
 
 .title {
   position: relative;
+  display: inline;
   width: 100%;
   margin: 0;
   padding-left: 20px;
   color: white;
   font-size: clamp(2.5rem, 3vw, 4rem);
-  line-height: clamp(2.5rem, 3vw, 4rem);
+  line-height: clamp(2.1rem, 3vw, 3.5rem);
+
+  span {
+    font-family: $title-text;
+    letter-spacing: 2px;
+  }
 }
 
 .title::before {
@@ -41,4 +47,135 @@
 .season {
   font-weight: 700;
   color: $show;
+}
+
+.title {
+  &:global(.iron_man) {
+    background: linear-gradient(
+      177deg,
+      rgb(255, 225, 225) 15%,
+      rgb(236, 150, 150) 30%,
+      #ff0000 31%,
+      rgb(68, 0, 0) 60%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 208, 21);
+  }
+
+  &:global(.captain_america) {
+    // Only select 15th char and below
+    span:nth-child(-n + 15) {
+      background: linear-gradient(
+        rgb(223, 89, 89) 42%,
+        rgb(238, 238, 238) 43%,
+        rgb(238, 238, 238) 60%,
+        rgb(56, 128, 215) 61%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:global(.thor) {
+    span:nth-child(-n + 4) {
+      background: linear-gradient(
+        rgb(0, 129, 176) 10%,
+        rgb(0, 187, 255) 15%,
+        rgb(238, 238, 238) 50%,
+        rgb(71, 144, 233) 51%,
+        rgb(87, 56, 196) 65%,
+        rgb(255, 0, 0) 85%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(250, 211, 57);
+    }
+  }
+
+  &:global(.black_panther) {
+    span:nth-child(-n + 13) {
+      background: linear-gradient(
+        rgb(30, 2, 97) 20%,
+        rgb(88, 20, 234) 45%,
+        rgb(143, 181, 251) 65%,
+        rgb(64, 191, 255) 75%,
+        rgb(0, 170, 249) 80%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba(105, 210, 255, 0.9);
+    }
+  }
+
+  &:global(.spider-man) {
+    span:nth-child(-n + 10) {
+      color: yellow;
+      text-shadow: 2px 2px red;
+      -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+    }
+  }
+
+  &:global(.black-widow) {
+    font-style: italic;
+    span {
+      position: relative;
+      &:nth-child(-n + 5) {
+        background: linear-gradient(
+          rgb(255, 255, 255) 20%,
+          rgb(255, 255, 255) 68%,
+          rgb(0, 0, 0) 69%,
+          rgb(0, 0, 0) 70%,
+          rgb(255, 255, 255) 71%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      &:nth-child(n + 6) {
+        background: linear-gradient(
+          rgb(255, 255, 255) 20%,
+          rgb(255, 255, 255) 33%,
+          rgb(0, 0, 0) 34%,
+          rgb(0, 0, 0) 35%,
+          rgb(255, 255, 255) 36%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &:nth-child(6)::before {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        bottom: 50%;
+        left: -0.2rem;
+        border-left: clamp(0.4rem, 0.7vw, 0.7rem) solid transparent;
+        border-right: clamp(0.4rem, 0.7vw, 0.7rem) solid transparent;
+        border-top: clamp(0.5rem, 0.7vw, 0.9rem) solid red;
+        border-radius: 1px;
+        background-color: unset;
+        transform: skew(-15deg);
+      }
+
+      &:nth-child(6)::after {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -0.4rem;
+        border-left: clamp(0.4rem, 0.7vw, 0.7rem) solid transparent;
+        border-right: clamp(0.4rem, 0.7vw, 0.7rem) solid transparent;
+        border-bottom: clamp(0.6rem, 0.7vw, 1rem) solid red;
+        border-radius: 1px;
+        background-color: unset;
+        transform: skew(-15deg);
+      }
+    }
+  }
 }

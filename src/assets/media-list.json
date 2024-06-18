@@ -1,5 +1,9 @@
 [
-  { "type": "movie", "id": "1771-captain-america-the-first-avenger" },
+  {
+    "type": "movie",
+    "id": "1771-captain-america-the-first-avenger",
+    "theme": { "title": "captain_america" }
+  },
   { "type": "misc", "id": "211387-marvel-one-shot-agent-carter" },
   {
     "type": "tv",
@@ -16,15 +20,23 @@
     "epiEnd": 10
   },
   { "type": "movie", "id": "299537-captain-marvel" },
-  { "type": "movie", "id": "1726-iron-man" },
-  { "type": "movie", "id": "10138-iron-man-2" },
+  {
+    "type": "movie",
+    "id": "1726-iron-man",
+    "theme": { "title": "iron_man" }
+  },
+  {
+    "type": "movie",
+    "id": "10138-iron-man-2",
+    "theme": { "title": "iron_man" }
+  },
   { "type": "movie", "id": "1724-the-incredible-hulk" },
   { "type": "misc", "id": "76122-marvel-one-shot-the-consultant" },
   {
     "type": "misc",
     "id": "76535-marvel-one-shot-a-funny-thing-happened-on-the-way-to-thor-s-hammer"
   },
-  { "type": "movie", "id": "10195-thor" },
+  { "type": "movie", "id": "10195-thor", "theme": { "title": "thor" } },
   { "type": "movie", "id": "24428-the-avengers" },
   { "type": "misc", "id": "119569-marvel-one-shot-item-47" },
   {
@@ -34,7 +46,11 @@
     "epiStart": 1,
     "epiEnd": 7
   },
-  { "type": "movie", "id": "76338-thor-the-dark-world" },
+  {
+    "type": "movie",
+    "id": "76338-thor-the-dark-world",
+    "theme": { "title": "thor" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -42,9 +58,19 @@
     "epiStart": 8,
     "epiEnd": 16
   },
-  { "type": "movie", "id": "68721-iron-man-3" },
+  {
+    "type": "movie",
+    "id": "68721-iron-man-3",
+    "theme": {
+      "title": "iron_man"
+    }
+  },
   { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
-  { "type": "movie", "id": "100402-captain-america-the-winter-soldier" },
+  {
+    "type": "movie",
+    "id": "100402-captain-america-the-winter-soldier",
+    "theme": { "title": "captain_america" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -161,10 +187,18 @@
     "epiStart": 1,
     "epiEnd": 13
   },
-  { "type": "movie", "id": "271110-captain-america-civil-war" },
+  {
+    "type": "movie",
+    "id": "271110-captain-america-civil-war",
+    "theme": { "title": "captain_america" }
+  },
   { "type": "misc", "id": "413279-team-thor" },
   { "type": "misc", "id": "441829-team-thor-part-2" },
-  { "type": "movie", "id": "497698-black-widow" },
+  {
+    "type": "movie",
+    "id": "497698-black-widow",
+    "theme": { "title": "black-widow" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -187,7 +221,11 @@
     "epiEnd": 6
   },
   { "type": "movie", "id": "284052-doctor-strange" },
-  { "type": "movie", "id": "284054-black-panther" },
+  {
+    "type": "movie",
+    "id": "284054-black-panther",
+    "theme": { "title": "black_panther" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -209,8 +247,16 @@
     "epiStart": 9,
     "epiEnd": 22
   },
-  { "type": "movie", "id": "315635-spider-man-homecoming" },
-  { "type": "movie", "id": "284053-thor-ragnarok" },
+  {
+    "type": "movie",
+    "id": "315635-spider-man-homecoming",
+    "theme": { "title": "spider-man" }
+  },
+  {
+    "type": "movie",
+    "id": "284053-thor-ragnarok",
+    "theme": { "title": "thor" }
+  },
   { "type": "misc", "id": "505945-team-darryl" },
   {
     "type": "tv",
@@ -385,8 +431,16 @@
   },
   { "type": "movie", "id": "566525-shang-chi-and-the-legend-of-the-ten-rings" },
   { "type": "movie", "id": "524434-eternals" },
-  { "type": "movie", "id": "429617-spider-man-far-from-home" },
-  { "type": "movie", "id": "634649-spider-man-no-way-home" },
+  {
+    "type": "movie",
+    "id": "429617-spider-man-far-from-home",
+    "theme": { "title": "spider-man" }
+  },
+  {
+    "type": "movie",
+    "id": "634649-spider-man-no-way-home",
+    "theme": { "title": "spider-man" }
+  },
   {
     "type": "movie",
     "id": "453395-doctor-strange-in-the-multiverse-of-madness"
@@ -406,7 +460,11 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "505642-black-panther-wakanda-forever" },
+  {
+    "type": "movie",
+    "id": "505642-black-panther-wakanda-forever",
+    "theme": { "title": "black_panther" }
+  },
   {
     "type": "tv",
     "id": "122226-echo",
@@ -428,7 +486,11 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "616037-thor-love-and-thunder" },
+  {
+    "type": "movie",
+    "id": "616037-thor-love-and-thunder",
+    "theme": { "title": "thor" }
+  },
   { "type": "misc", "id": "894205-werewolf-by-night" },
   {
     "type": "misc",

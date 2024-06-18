@@ -1,5 +1,8 @@
 interface Id {
   id: string;
+  theme?: {
+    title?: string;
+  };
 }
 
 export interface MovieType extends Id {
