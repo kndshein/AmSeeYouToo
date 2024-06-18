@@ -99,16 +99,15 @@
   &:global(.black_panther) {
     span:nth-child(-n + 13) {
       background: linear-gradient(
-        rgb(30, 2, 97) 20%,
-        rgb(88, 20, 234) 45%,
-        rgb(143, 181, 251) 65%,
-        rgb(64, 191, 255) 75%,
+        rgb(30, 2, 97) 30%,
+        rgb(109, 41, 255) 45%,
+        rgb(226, 236, 255) 70%,
         rgb(0, 170, 249) 80%
       );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1px rgba(105, 210, 255, 0.9);
+      -webkit-text-stroke: 0.5px rgba(105, 210, 255, 0.9);
     }
   }
 
