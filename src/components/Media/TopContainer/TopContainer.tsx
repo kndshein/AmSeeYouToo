@@ -45,9 +45,13 @@ export default function TopContainer({ tmdb_data, media_data }: PropTypes) {
       >
         {media_data.type == 'tv'
           ? tmdb_data.original_name
-          : tmdb_data.original_title
+          : media_data.theme?.title
+          ? tmdb_data.original_title
               .split('')
-              .map((letter: string) => <span>{letter}</span>)}
+              .map((letter: string, idx: number) => (
+                <span key={idx}>{letter}</span>
+              ))
+          : tmdb_data.original_title}
       </motion.h2>
       <motion.p className={styles.tagline} variants={text}>
         {media_data.type == 'tv' ? (

@@ -280,8 +280,16 @@
     "version": "4.6.0",
     "date": "June 2024",
     "notes": [
-      "Setup scaffold for themed titles.",
+      "Set up scaffold for themed titles.",
       "Added themed titles for <i>Iron Man</i>, <i>Captain America</i>, <i>Thor</i>, <i>Black Panther</i>, <i>Spider-man</i>, and <i>Black Widow</i>."
+    ]
+  },
+  {
+    "version": "4.6.1",
+    "date": "June 2024",
+    "notes": [
+      "Configured scrolling to be instant on Chrome due to laggy scrolling on Chromiums.",
+      "Reduced computation for non-themed titles."
     ]
   }
 ]

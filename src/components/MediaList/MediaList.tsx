@@ -33,7 +33,10 @@ export default function MediaList({
     // If element is not in view, set scrolling state, which is used downstream to prevent fetching
     if (!!ele_active_to_be && !isElementInViewport(ele_active_to_be)) {
       setIsNavigating(true);
-      ele_active_to_be.scrollIntoView({ behavior: 'smooth' });
+      ele_active_to_be.scrollIntoView({
+        // Use 'instant' for Chrome since scrolling on Chromiums seem to be laggy
+        behavior: !!window.chrome ? 'instant' : 'smooth',
+      });
       // Janky solution to prevent from fetching while scrolling
       setTimeout(() => {
         setIsNavigating(false);
