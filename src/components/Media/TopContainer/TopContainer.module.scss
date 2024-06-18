@@ -179,4 +179,23 @@
       }
     }
   }
+
+  &:global(.hulk) {
+    @for $i from 0 through 4 {
+      span:nth-child(#{$i + 15}) {
+        background: linear-gradient(
+          calc(205deg - #{$i} * 10deg),
+          rgb(255, 255, 255) 25%,
+          rgb(59, 255, 15) 40%,
+          rgb(6, 85, 3) 60%,
+          rgb(3, 54, 0) 70%
+        );
+      }
+    }
+    span:nth-child(n + 15) {
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }

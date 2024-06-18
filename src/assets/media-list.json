@@ -30,7 +30,11 @@
     "id": "10138-iron-man-2",
     "theme": { "title": "iron_man" }
   },
-  { "type": "movie", "id": "1724-the-incredible-hulk" },
+  {
+    "type": "movie",
+    "id": "1724-the-incredible-hulk",
+    "theme": { "title": "hulk" }
+  },
   { "type": "misc", "id": "76122-marvel-one-shot-the-consultant" },
   {
     "type": "misc",
