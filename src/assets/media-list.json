@@ -194,7 +194,11 @@
   },
   { "type": "misc", "id": "413279-team-thor" },
   { "type": "misc", "id": "441829-team-thor-part-2" },
-  { "type": "movie", "id": "497698-black-widow" },
+  {
+    "type": "movie",
+    "id": "497698-black-widow",
+    "theme": { "title": "black-widow" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
