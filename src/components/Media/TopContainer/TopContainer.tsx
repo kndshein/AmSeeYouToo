@@ -40,12 +40,14 @@ export default function TopContainer({ tmdb_data, media_data }: PropTypes) {
       }}
     >
       <motion.h2
-        className={`${styles.title} ${media_data.custom_theme?.title}`}
+        className={`${styles.title} ${media_data.theme?.title}`}
         variants={text}
       >
         {media_data.type == 'tv'
           ? tmdb_data.original_name
-          : tmdb_data.original_title}
+          : tmdb_data.original_title
+              .split('')
+              .map((letter: string) => <span>{letter}</span>)}
       </motion.h2>
       <motion.p className={styles.tagline} variants={text}>
         {media_data.type == 'tv' ? (

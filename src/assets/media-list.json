@@ -1,5 +1,9 @@
 [
-  { "type": "movie", "id": "1771-captain-america-the-first-avenger" },
+  {
+    "type": "movie",
+    "id": "1771-captain-america-the-first-avenger",
+    "theme": { "title": "captain_america" }
+  },
   { "type": "misc", "id": "211387-marvel-one-shot-agent-carter" },
   {
     "type": "tv",
@@ -19,12 +23,12 @@
   {
     "type": "movie",
     "id": "1726-iron-man",
-    "custom_theme": { "title": "iron_man" }
+    "theme": { "title": "iron_man" }
   },
   {
     "type": "movie",
     "id": "10138-iron-man-2",
-    "custom_theme": { "title": "iron_man" }
+    "theme": { "title": "iron_man" }
   },
   { "type": "movie", "id": "1724-the-incredible-hulk" },
   { "type": "misc", "id": "76122-marvel-one-shot-the-consultant" },
@@ -53,12 +57,16 @@
   {
     "type": "movie",
     "id": "68721-iron-man-3",
-    "custom_theme": {
+    "theme": {
       "title": "iron_man"
     }
   },
   { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
-  { "type": "movie", "id": "100402-captain-america-the-winter-soldier" },
+  {
+    "type": "movie",
+    "id": "100402-captain-america-the-winter-soldier",
+    "theme": { "title": "captain_america" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -175,7 +183,11 @@
     "epiStart": 1,
     "epiEnd": 13
   },
-  { "type": "movie", "id": "271110-captain-america-civil-war" },
+  {
+    "type": "movie",
+    "id": "271110-captain-america-civil-war",
+    "theme": { "title": "captain_america" }
+  },
   { "type": "misc", "id": "413279-team-thor" },
   { "type": "misc", "id": "441829-team-thor-part-2" },
   { "type": "movie", "id": "497698-black-widow" },

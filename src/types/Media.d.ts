@@ -1,6 +1,6 @@
 interface Id {
   id: string;
-  custom_theme?: {
+  theme?: {
     title?: string;
   };
 }
