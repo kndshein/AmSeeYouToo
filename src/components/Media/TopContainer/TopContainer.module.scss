@@ -67,12 +67,15 @@
   &:global(.captain_america) {
     // Only select 15th char and below
     span:nth-child(-n + 15) {
-      background: linear-gradient(
-        rgb(223, 89, 89) 42%,
-        rgb(238, 238, 238) 43%,
-        rgb(238, 238, 238) 60%,
-        rgb(56, 128, 215) 61%
-      );
+      background: linear-gradient(135deg, transparent 20%, rgba(black, 0.5)),
+        linear-gradient(
+          rgb(157, 0, 0) 20%,
+          rgb(223, 89, 89) 42%,
+          rgb(255, 255, 255) 43%,
+          rgb(255, 255, 255) 60%,
+          rgb(56, 128, 215) 61%,
+          rgb(0, 77, 171) 75%
+        );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
