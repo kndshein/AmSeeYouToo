@@ -78,4 +78,21 @@
       -webkit-text-fill-color: transparent;
     }
   }
+
+  &:global(.thor) {
+    span:nth-child(-n + 4) {
+      background: linear-gradient(
+        rgb(0, 129, 176) 10%,
+        rgb(0, 187, 255) 15%,
+        rgb(238, 238, 238) 50%,
+        rgb(71, 144, 233) 51%,
+        rgb(87, 56, 196) 65%,
+        rgb(255, 0, 0) 85%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(250, 211, 57);
+    }
+  }
 }

@@ -36,7 +36,7 @@
     "type": "misc",
     "id": "76535-marvel-one-shot-a-funny-thing-happened-on-the-way-to-thor-s-hammer"
   },
-  { "type": "movie", "id": "10195-thor" },
+  { "type": "movie", "id": "10195-thor", "theme": { "title": "thor" } },
   { "type": "movie", "id": "24428-the-avengers" },
   { "type": "misc", "id": "119569-marvel-one-shot-item-47" },
   {
@@ -46,7 +46,11 @@
     "epiStart": 1,
     "epiEnd": 7
   },
-  { "type": "movie", "id": "76338-thor-the-dark-world" },
+  {
+    "type": "movie",
+    "id": "76338-thor-the-dark-world",
+    "theme": { "title": "thor" }
+  },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -236,7 +240,11 @@
     "epiEnd": 22
   },
   { "type": "movie", "id": "315635-spider-man-homecoming" },
-  { "type": "movie", "id": "284053-thor-ragnarok" },
+  {
+    "type": "movie",
+    "id": "284053-thor-ragnarok",
+    "theme": { "title": "thor" }
+  },
   { "type": "misc", "id": "505945-team-darryl" },
   {
     "type": "tv",
@@ -454,7 +462,11 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "616037-thor-love-and-thunder" },
+  {
+    "type": "movie",
+    "id": "616037-thor-love-and-thunder",
+    "theme": { "title": "thor" }
+  },
   { "type": "misc", "id": "894205-werewolf-by-night" },
   {
     "type": "misc",
