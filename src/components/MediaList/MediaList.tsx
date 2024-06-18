@@ -25,9 +25,12 @@ export default function MediaList({
     useState<CollectionRefType>(null);
 
   const handleToggle: HandleToggleType = (id) => {
+    //TODO: Only scroll into view if the element is not in view
+    document
+      .getElementById(id.toString())
+      ?.scrollIntoView({ behavior: 'instant' });
     setActiveToggle(id == active_toggle ? null : id);
     setCollectionReferences(null);
-    document.getElementById(id.toString())?.scrollIntoView();
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
