@@ -243,7 +243,11 @@
     "epiStart": 9,
     "epiEnd": 22
   },
-  { "type": "movie", "id": "315635-spider-man-homecoming" },
+  {
+    "type": "movie",
+    "id": "315635-spider-man-homecoming",
+    "theme": { "title": "spider-man" }
+  },
   {
     "type": "movie",
     "id": "284053-thor-ragnarok",
@@ -423,8 +427,16 @@
   },
   { "type": "movie", "id": "566525-shang-chi-and-the-legend-of-the-ten-rings" },
   { "type": "movie", "id": "524434-eternals" },
-  { "type": "movie", "id": "429617-spider-man-far-from-home" },
-  { "type": "movie", "id": "634649-spider-man-no-way-home" },
+  {
+    "type": "movie",
+    "id": "429617-spider-man-far-from-home",
+    "theme": { "title": "spider-man" }
+  },
+  {
+    "type": "movie",
+    "id": "634649-spider-man-no-way-home",
+    "theme": { "title": "spider-man" }
+  },
   {
     "type": "movie",
     "id": "453395-doctor-strange-in-the-multiverse-of-madness"
