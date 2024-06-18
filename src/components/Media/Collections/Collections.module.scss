@@ -28,15 +28,12 @@
   img {
     width: 100%;
     border-radius: 5px;
-    transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out, filter 0.2s ease-in-out;
+    filter: brightness(0.4) sepia(1) hue-rotate(165deg);
   }
 
   &.disabled {
     cursor: auto;
-
-    img {
-      filter: grayscale(100%);
-    }
 
     .part_title {
       color: rgba(white, 0.2);
@@ -44,10 +41,10 @@
   }
 
   &:not(.disabled):hover {
-    box-shadow: 0 0 15px rgba(black, 0.3);
+    box-shadow: inset 0 0 0 1.5px $accent;
 
     img {
-      box-shadow: 0 0 0 1px $accent;
+      filter: none;
     }
 
     .part_title {
