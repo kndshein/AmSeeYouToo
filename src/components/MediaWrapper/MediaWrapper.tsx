@@ -23,6 +23,7 @@ type PropTypes = {
   is_movies_only: boolean;
   handleToggle: HandleToggleType;
   is_active: boolean;
+  is_scrolling: boolean;
   idx: number;
   collection_references: CollectionRefType;
   setCollectionReferences: SetCollectionReferences;
@@ -33,6 +34,7 @@ export default function MediaWrapper({
   is_movies_only,
   handleToggle,
   is_active,
+  is_scrolling,
   idx,
   collection_references,
   setCollectionReferences,
@@ -48,6 +50,8 @@ export default function MediaWrapper({
   // Denotes if curr media is fully expanded or not
   const [is_content_expanded, setIsContentExpanded] = useState(is_active);
   const [is_content_collapsed, setIsContentCollapsed] = useState(!is_active);
+  const is_to_prefetch =
+    !!collection_references && collection_references.includes(media_data.id);
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
@@ -70,11 +74,8 @@ export default function MediaWrapper({
   const { isPending, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
-    enabled:
-      inView ||
-      (!!collection_references &&
-        collection_references.includes(media_data.id)),
-    throwOnError: true,
+    // If is_active, do it. Otherwise, do it if inView or is_to_prefetch, but not while is_scrolling
+    enabled: is_active ? true : is_scrolling ? false : inView || is_to_prefetch,
   });
 
   return (

@@ -23,14 +23,20 @@ export default function MediaList({
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
   const [collection_references, setCollectionReferences] =
     useState<CollectionRefType>(null);
+  const [is_scrolling, setIsScrolling] = useState(false);
 
   const handleToggle: HandleToggleType = (id) => {
     //TODO: Only scroll into view if the element is not in view
+    setIsScrolling(true);
     document
       .getElementById(id.toString())
-      ?.scrollIntoView({ behavior: 'instant' });
+      ?.scrollIntoView({ behavior: 'smooth' });
     setActiveToggle(id == active_toggle ? null : id);
     setCollectionReferences(null);
+    // Janky solution to prevent from fetching while scrolling
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 1000);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
@@ -40,6 +46,7 @@ export default function MediaList({
         is_movies_only={is_movies_only}
         handleToggle={handleToggle}
         is_active={active_toggle == idx}
+        is_scrolling={is_scrolling}
         idx={idx}
         collection_references={collection_references}
         setCollectionReferences={setCollectionReferences}
