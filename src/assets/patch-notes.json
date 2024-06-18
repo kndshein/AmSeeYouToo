@@ -275,5 +275,10 @@
     "notes": [
       "Fixed bug where content isn't dynamically loaded based on viewport if first time opening the site or forced refreshed."
     ]
+  },
+  {
+    "version": "4.6.0",
+    "date": "June 2024",
+    "notes": ["Added themed titles for various characters."]
   }
 ]
