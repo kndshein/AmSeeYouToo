@@ -33,7 +33,7 @@ export default function Backdrop({
         <div className={styles.screen_overlay}></div>
         <img
           className={styles.backdrop}
-          src={`https://image.tmdb.org/t/p/w1280${backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
           alt={data.original_title}
           onLoad={() => setIsBackdropLoaded(true)}
         />
