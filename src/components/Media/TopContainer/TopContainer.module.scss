@@ -198,4 +198,27 @@
       -webkit-text-fill-color: transparent;
     }
   }
+
+  &:global(.ant-man) {
+    span:nth-child(-n + 7) {
+      display: inline-block;
+      transition: transform 0.2s ease-out;
+      background: linear-gradient(
+        rgb(104, 0, 0) 10%,
+        rgb(255, 41, 41) 50%,
+        rgb(77, 0, 0) 90%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgb(28, 9, 9);
+    }
+    &:hover {
+      span:nth-child(-n + 7) {
+        color: red;
+        transform: scale(0.3, 0.4);
+        transition: transform 0.2s ease-out;
+      }
+    }
+  }
 }

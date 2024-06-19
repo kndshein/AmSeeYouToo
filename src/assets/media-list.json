@@ -176,7 +176,7 @@
     "epiStart": 9,
     "epiEnd": 13
   },
-  { "type": "movie", "id": "102899-ant-man" },
+  { "type": "movie", "id": "102899-ant-man", "theme": { "title": "ant-man" } },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -360,7 +360,11 @@
     "epiStart": 1,
     "epiEnd": 13
   },
-  { "type": "movie", "id": "363088-ant-man-and-the-wasp" },
+  {
+    "type": "movie",
+    "id": "363088-ant-man-and-the-wasp",
+    "theme": { "title": "ant-man" }
+  },
   { "type": "movie", "id": "299536-avengers-infinity-war" },
   {
     "type": "tv",
@@ -500,7 +504,11 @@
     "type": "misc",
     "id": "774752-the-guardians-of-the-galaxy-holiday-special"
   },
-  { "type": "movie", "id": "640146-ant-man-and-the-wasp-quantumania" },
+  {
+    "type": "movie",
+    "id": "640146-ant-man-and-the-wasp-quantumania",
+    "theme": { "title": "ant-man" }
+  },
   { "type": "movie", "id": "447365-guardians-of-the-galaxy-volume-3" },
   {
     "type": "tv",
