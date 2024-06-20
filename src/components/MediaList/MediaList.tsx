@@ -77,10 +77,9 @@ export default function MediaList({
                 : ''
             }`}
           >
-            {ele.type == 'movie' && WrapperComponent(ele, idx)}
-            {!is_movies_only &&
-              (ele.type == 'tv' || ele.type == 'misc') &&
-              WrapperComponent(ele, idx)}
+            {ele.type == 'movie'
+              ? WrapperComponent(ele, idx)
+              : !is_movies_only && WrapperComponent(ele, idx)}
           </Fragment>
         );
       })}

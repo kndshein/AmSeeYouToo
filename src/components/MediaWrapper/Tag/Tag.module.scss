@@ -26,8 +26,12 @@
   color: $show;
 }
 
-.type_tag.misc {
-  color: $misc;
+.type_tag.short {
+  color: $short;
+}
+
+.type_tag.special {
+  color: $special;
 }
 
 .type_tag.show_type {

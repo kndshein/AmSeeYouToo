@@ -6,7 +6,7 @@ interface Id {
 }
 
 export interface MovieType extends Id {
-  type: 'movie' | 'misc';
+  type: 'movie' | 'short' | 'special';
 }
 
 export interface ShowType extends Id {
@@ -17,4 +17,4 @@ export interface ShowType extends Id {
 }
 
 export type MediaType = MovieType | ShowType;
-export type MediaUiType = 'movie' | 'misc' | 'show';
+export type MediaUiType = 'movie' | 'show' | 'short' | 'special';

@@ -310,5 +310,12 @@
     "version": "4.7.0",
     "date": "June 2024",
     "notes": ["Face-lifted nav bar style."]
+  },
+  {
+    "version": "4.7.1",
+    "date": "June 2024",
+    "notes": [
+      "Added <i>Short</i> and <i>Special</i> tags to replace the previously all-encompassing <i>Misc</i> tag."
+    ]
   }
 ]

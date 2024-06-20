@@ -4,7 +4,7 @@
     "id": "1771-captain-america-the-first-avenger",
     "theme": { "title": "captain_america" }
   },
-  { "type": "misc", "id": "211387-marvel-one-shot-agent-carter" },
+  { "type": "short", "id": "211387-marvel-one-shot-agent-carter" },
   {
     "type": "tv",
     "id": "61550-marvel-s-agent-carter",
@@ -35,14 +35,14 @@
     "id": "1724-the-incredible-hulk",
     "theme": { "title": "hulk" }
   },
-  { "type": "misc", "id": "76122-marvel-one-shot-the-consultant" },
+  { "type": "short", "id": "76122-marvel-one-shot-the-consultant" },
   {
-    "type": "misc",
+    "type": "short",
     "id": "76535-marvel-one-shot-a-funny-thing-happened-on-the-way-to-thor-s-hammer"
   },
   { "type": "movie", "id": "10195-thor", "theme": { "title": "thor" } },
   { "type": "movie", "id": "24428-the-avengers" },
-  { "type": "misc", "id": "119569-marvel-one-shot-item-47" },
+  { "type": "short", "id": "119569-marvel-one-shot-item-47" },
   {
     "type": "tv",
     "id": "1403-marvel-s-agents-of-s-h-i-e-l-d",
@@ -69,7 +69,7 @@
       "title": "iron_man"
     }
   },
-  { "type": "misc", "id": "253980-marvel-one-shot-all-hail-the-king" },
+  { "type": "short", "id": "253980-marvel-one-shot-all-hail-the-king" },
   {
     "type": "movie",
     "id": "100402-captain-america-the-winter-soldier",
@@ -196,8 +196,8 @@
     "id": "271110-captain-america-civil-war",
     "theme": { "title": "captain_america" }
   },
-  { "type": "misc", "id": "413279-team-thor" },
-  { "type": "misc", "id": "441829-team-thor-part-2" },
+  { "type": "short", "id": "413279-team-thor" },
+  { "type": "short", "id": "441829-team-thor-part-2" },
   {
     "type": "movie",
     "id": "497698-black-widow",
@@ -261,7 +261,7 @@
     "id": "284053-thor-ragnarok",
     "theme": { "title": "thor" }
   },
-  { "type": "misc", "id": "505945-team-darryl" },
+  { "type": "short", "id": "505945-team-darryl" },
   {
     "type": "tv",
     "id": "68716-marvel-s-inhumans",
@@ -499,9 +499,9 @@
     "id": "616037-thor-love-and-thunder",
     "theme": { "title": "thor" }
   },
-  { "type": "misc", "id": "894205-werewolf-by-night" },
+  { "type": "special", "id": "894205-werewolf-by-night" },
   {
-    "type": "misc",
+    "type": "special",
     "id": "774752-the-guardians-of-the-galaxy-holiday-special"
   },
   {
