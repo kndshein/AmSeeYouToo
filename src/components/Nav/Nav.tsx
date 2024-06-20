@@ -11,7 +11,6 @@ export default function Nav({ is_movies_only, setIsMoviesOnly }: PropTypes) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <nav>
-      <div className={styles.background}></div>
       <button
         onClick={() => setIsModalOpen(true)}
         className={`${styles.button} ${styles.about}`}

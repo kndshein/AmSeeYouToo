@@ -22,7 +22,7 @@ nav .gif_container {
   height: 150px;
   margin: 0 20px;
   overflow: hidden;
-  box-shadow: 0 0 0 10px rgba($main, 0.7);
+  box-shadow: 0 0 0 2px $main, 0 0 0 10px $background, 0 0 0 12px $accent;
 }
 
 nav .gif_container img {
@@ -52,7 +52,6 @@ nav .gif_container img {
     width: 100%;
     height: 100%;
     background-color: $main;
-    border: 2px solid $accent;
     transform-origin: 100% 0;
   }
 }
@@ -62,15 +61,16 @@ nav .gif_container img {
 }
 
 .about::before {
-  right: -50px;
+  right: -55px;
   transform: skew(-30deg);
 }
 
 .media_filter {
   &::before {
-    left: -50px;
+    left: -55px;
     transform: skew(30deg);
   }
+
   &.active {
     color: white;
     text-shadow: 0 0 10px $accent-lite;
