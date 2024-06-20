@@ -11,7 +11,11 @@ export default function Nav({ is_movies_only, setIsMoviesOnly }: PropTypes) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <nav>
-      <button onClick={() => setIsModalOpen(true)} className={styles.button}>
+      <div className={styles.background}></div>
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className={`${styles.button} ${styles.about}`}
+      >
         About Site
       </button>
       <About isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
@@ -22,7 +26,9 @@ export default function Nav({ is_movies_only, setIsMoviesOnly }: PropTypes) {
         />
       </div>
       <button
-        className={`${is_movies_only ? styles.active : ''} ${styles.button}`}
+        className={`${is_movies_only ? styles.active : ''} ${styles.button} ${
+          styles.media_filter
+        }`}
         onClick={() => {
           is_movies_only ? setIsMoviesOnly(false) : setIsMoviesOnly(true);
         }}
