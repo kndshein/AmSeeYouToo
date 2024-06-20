@@ -305,5 +305,10 @@
     "version": "4.6.3",
     "date": "June 2024",
     "notes": ["Added <i>Ant-Man</i> title theme."]
+  },
+  {
+    "version": "4.7.0",
+    "date": "June 2024",
+    "notes": ["Face-lifted nav bar style."]
   }
 ]
