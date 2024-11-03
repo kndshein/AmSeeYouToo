@@ -11,7 +11,6 @@ import {
   HandleToggleType,
   SetCollectionReferences,
 } from '../../../types/Toggles';
-import { CollectionsWrapper } from '../CollectionsWrapper/CollectionsWrapper';
 
 type PropTypes = {
   tmdb_data: TmdbType;
@@ -27,10 +26,6 @@ export default function RightContainer({
   tmdb_data,
   media_data,
   is_active,
-  is_content_expanded,
-  inView,
-  handleToggle,
-  setCollectionReferences,
 }: PropTypes) {
   const element = {
     visible: {
@@ -109,16 +104,6 @@ export default function RightContainer({
       {media_data.type == 'tv' && (
         <Episodes tmdb_data={tmdb_data} media_data={media_data} />
       )}
-      {(inView || is_active) &&
-        media_data.type == 'movie' &&
-        tmdb_data.belongs_to_collection != null && (
-          <CollectionsWrapper
-            tmdb_data={tmdb_data}
-            is_active={is_active}
-            handleToggle={handleToggle}
-            setCollectionReferences={setCollectionReferences}
-          />
-        )}
     </motion.section>
   );
 }
