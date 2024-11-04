@@ -25,8 +25,6 @@ type PropTypes = {
   is_active: boolean;
   is_navigating: boolean;
   idx: number;
-  collection_references: CollectionRefType;
-  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function MediaWrapper({
