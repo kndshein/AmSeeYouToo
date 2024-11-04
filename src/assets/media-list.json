@@ -430,6 +430,8 @@
     "epiStart": 1,
     "epiEnd": 9
   },
+  { "type": "movie", "id": "533535-deadpool-wolverine" },
+  { "type": "movie", "id": "566525-shang-chi-and-the-legend-of-the-ten-rings" },
   {
     "type": "tv",
     "id": "88396-falcon-winter-soldier",
@@ -437,7 +439,6 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "566525-shang-chi-and-the-legend-of-the-ten-rings" },
   { "type": "movie", "id": "524434-eternals" },
   {
     "type": "movie",
