@@ -1,11 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import {
-  CollectionRefType,
-  HandleToggleType,
-  SetCollectionReferences,
-} from '../../types/Toggles';
+import { HandleToggleType } from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
