@@ -321,6 +321,9 @@
   {
     "version": "4.8.0",
     "date": "November 2024",
-    "notes": ["Removed navigation-via-collections feature introduced in 4.5.0."]
+    "notes": [
+      "Removed navigation-via-collections feature introduced in 4.5.0.",
+      "Added <i>Agatha All Along</i> and <i>Deadpool & Wolverine</i>."
+    ]
   }
 ]
