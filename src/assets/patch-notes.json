@@ -317,5 +317,13 @@
     "notes": [
       "Added <i>Short</i> and <i>Special</i> tags to replace the previously all-encompassing <i>Misc</i> tag."
     ]
+  },
+  {
+    "version": "4.8.0",
+    "date": "November 2024",
+    "notes": [
+      "Removed navigation-via-collections feature introduced in 4.5.0.",
+      "Added <i>Agatha All Along</i> and <i>Deadpool & Wolverine</i>."
+    ]
   }
 ]

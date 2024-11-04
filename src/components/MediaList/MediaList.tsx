@@ -1,10 +1,6 @@
 import { Fragment, useState, RefObject } from 'react';
 import { MediaType } from '../../types/Media';
-import {
-  ActiveToggleType,
-  CollectionRefType,
-  HandleToggleType,
-} from '../../types/Toggles';
+import { ActiveToggleType, HandleToggleType } from '../../types/Toggles';
 import MediaWrapper from '../MediaWrapper/MediaWrapper';
 import media_list from '../../assets/media-list.json';
 import styles from './MediaList.module.scss';
@@ -22,8 +18,6 @@ export default function MediaList({
   media_list_ref,
 }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
-  const [collection_references, setCollectionReferences] =
-    useState<CollectionRefType>(null);
   // Use `is_navigating` over `is_scrolling` since this is a coded action. Does not take into account of user scrolling
   const [is_navigating, setIsNavigating] = useState(false);
 
@@ -35,20 +29,15 @@ export default function MediaList({
       setIsNavigating(true);
       ele_active_to_be.scrollIntoView({
         // Use 'instant' for Chrome since scrolling on Chromiums seem to be laggy
-        behavior: !!window.chrome ? 'instant' : 'smooth',
+        behavior: 'smooth',
       });
-      setTimeout(() => {
-        setActiveToggle(id == active_toggle ? null : id);
-        setCollectionReferences(null);
-      }, 200);
       // Janky solution to prevent from fetching while scrolling
       setTimeout(() => {
         setIsNavigating(false);
-      }, 1500);
-    } else {
-      setActiveToggle(id == active_toggle ? null : id);
-      setCollectionReferences(null);
+      }, 1000);
     }
+
+    setActiveToggle(id == active_toggle ? null : id);
   };
 
   const WrapperComponent = (ele: MediaType, idx: number) => {
@@ -60,8 +49,6 @@ export default function MediaList({
         is_active={active_toggle == idx}
         is_navigating={is_navigating}
         idx={idx}
-        collection_references={collection_references}
-        setCollectionReferences={setCollectionReferences}
       />
     );
   };

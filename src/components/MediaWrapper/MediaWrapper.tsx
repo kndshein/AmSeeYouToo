@@ -1,11 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { MediaType, MediaUiType } from '../../types/Media';
-import {
-  CollectionRefType,
-  HandleToggleType,
-  SetCollectionReferences,
-} from '../../types/Toggles';
+import { HandleToggleType } from '../../types/Toggles';
 import Loading from '../Loading/Loading';
 import Tag from './Tag/Tag';
 import Title from './Title/Title';
@@ -25,8 +21,6 @@ type PropTypes = {
   is_active: boolean;
   is_navigating: boolean;
   idx: number;
-  collection_references: CollectionRefType;
-  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function MediaWrapper({
@@ -36,8 +30,6 @@ export default function MediaWrapper({
   is_active,
   is_navigating,
   idx,
-  collection_references,
-  setCollectionReferences,
 }: PropTypes) {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -53,8 +45,6 @@ export default function MediaWrapper({
       is_content_expanded: is_active,
       is_content_collapsed: !is_active,
     });
-  const is_to_prefetch =
-    !!collection_references && collection_references.includes(media_data.id);
 
   if (media_data.type == 'tv') {
     query_array = ['show', media_data.id, media_data.season];
@@ -77,12 +67,8 @@ export default function MediaWrapper({
   const { isPending, data } = useQuery({
     queryKey: query_array,
     queryFn: () => axios.get(url).then((res) => res.data),
-    // If is_active, do it. Otherwise, do it if inView or is_to_prefetch, but not while is_navigating
-    enabled: is_active
-      ? true
-      : is_navigating
-      ? false
-      : inView || is_to_prefetch,
+    // If is_active, do it. Otherwise, do it if inView, but not while is_navigating
+    enabled: is_active ? true : is_navigating ? false : inView,
   });
 
   return (
@@ -187,9 +173,6 @@ export default function MediaWrapper({
               media_data={media_data}
               is_active={is_active}
               is_content_expanded={is_content_expanded}
-              inView={inView}
-              handleToggle={handleToggle}
-              setCollectionReferences={setCollectionReferences}
             />
           </motion.div>
         </div>
