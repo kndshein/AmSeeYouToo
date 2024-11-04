@@ -517,5 +517,12 @@
     "epiStart": 1,
     "epiEnd": 6
   },
-  { "type": "movie", "id": "609681-the-marvels" }
+  { "type": "movie", "id": "609681-the-marvels" },
+  {
+    "type": "tv",
+    "id": "138501-agatha-all-along",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 9
+  }
 ]
