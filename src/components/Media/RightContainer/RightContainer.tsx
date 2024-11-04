@@ -7,19 +7,11 @@ import Episodes from '../Episodes/Episodes';
 import { container } from '../Media';
 import { motion } from 'framer-motion';
 import Overview from '../Overview/Overview';
-import {
-  HandleToggleType,
-  SetCollectionReferences,
-} from '../../../types/Toggles';
 
 type PropTypes = {
   tmdb_data: TmdbType;
   media_data: MediaType;
   is_active: boolean;
-  is_content_expanded: boolean;
-  inView: boolean;
-  handleToggle: HandleToggleType;
-  setCollectionReferences: SetCollectionReferences;
 };
 
 export default function RightContainer({
