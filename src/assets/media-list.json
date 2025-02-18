@@ -425,6 +425,13 @@
   },
   {
     "type": "tv",
+    "id": "91363-what-if",
+    "season": 3,
+    "epiStart": 1,
+    "epiEnd": 8
+  },
+  {
+    "type": "tv",
     "id": "85271-wandavision",
     "season": 1,
     "epiStart": 1,
@@ -525,5 +532,10 @@
     "season": 1,
     "epiStart": 1,
     "epiEnd": 9
+  },
+  {
+    "type": "movie",
+    "id": "822119-captain-america-brave-new-world",
+    "theme": { "title": "captain_america" }
   }
 ]
