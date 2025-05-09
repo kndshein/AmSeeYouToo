@@ -79,7 +79,7 @@ export default function MediaWrapper({
         isPending || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
-      }`}
+      } ${idx >= 100 && idx < 200 ? 'first-hundred' : ''}`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isPending || !is_backdrop_loaded}

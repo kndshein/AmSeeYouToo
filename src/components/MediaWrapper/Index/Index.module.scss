@@ -21,6 +21,11 @@
   right: unset;
 }
 
+// This is done because numbers from 100 - 199 lean too much to the left because 1 is too thin
+:global(.media):global(.first-hundred) .index {
+  left: 0;
+}
+
 :global(.media):global(.expanded-layout):global(.active) .index {
   left: unset;
   right: 0.75rem;
