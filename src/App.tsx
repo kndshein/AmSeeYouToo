@@ -11,6 +11,7 @@ Modal.setAppElement('#root');
 function App() {
   const [is_DOM_loaded, setIsDOMLoaded] = useState(false);
   const [is_movies_only, setIsMoviesOnly] = useState(true);
+  const [is_media_reversed, setIsMediaReversed] = useState(false);
 
   const query_client = new QueryClient({
     defaultOptions: {
@@ -45,7 +46,15 @@ function App() {
             is_movies_only={is_movies_only}
             setIsMoviesOnly={setIsMoviesOnly}
           />
-          <MediaListWrapper is_movies_only={is_movies_only} />
+          <button onClick={() => setIsMediaReversed((prevState) => !prevState)}>
+            {is_media_reversed
+              ? 'Show Chronological Order'
+              : 'Show Reverse Chronological Order'}
+          </button>
+          <MediaListWrapper
+            is_movies_only={is_movies_only}
+            is_media_reversed={is_media_reversed}
+          />
         </main>
       )}
       <ReactQueryDevtools initialIsOpen={false} />

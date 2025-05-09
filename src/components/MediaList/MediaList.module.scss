@@ -12,6 +12,19 @@
     content: '';
     min-width: 30px;
   }
+
+  &.reverse {
+    flex-flow: row-reverse;
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      min-width: 30px;
+    }
+  }
 }
 
 .media_list::-webkit-scrollbar {
