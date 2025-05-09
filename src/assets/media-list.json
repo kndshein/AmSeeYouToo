@@ -534,8 +534,19 @@
     "epiEnd": 9
   },
   {
+    "type": "tv",
+    "id": "202555-daredevil-born-again",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 9
+  },
+  {
     "type": "movie",
     "id": "822119-captain-america-brave-new-world",
     "theme": { "title": "captain_america" }
+  },
+  {
+    "type": "movie",
+    "id": "986056-thunderbolts"
   }
 ]
