@@ -2,7 +2,8 @@
 
 .media_list {
   display: flex;
-  height: 94vh;
+  height: 100%;
+  padding: 20px 0;
   overflow-x: scroll;
   scrollbar-color: $accent-lite $main;
   scrollbar-width: thin;

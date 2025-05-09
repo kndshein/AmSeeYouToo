@@ -42,7 +42,7 @@ code {
   position: relative;
   align-self: center;
   min-width: 250px;
-  height: 95%;
+  height: 100%;
   border-radius: 10px;
   padding: 2px;
   margin-left: 30px;
@@ -100,4 +100,11 @@ code {
       }
     }
   }
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  padding-bottom: 55px;
 }
