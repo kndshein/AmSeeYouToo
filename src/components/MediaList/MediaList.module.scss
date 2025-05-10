@@ -26,6 +26,10 @@
       min-width: 30px;
     }
   }
+
+  &.is_active {
+    overflow: hidden;
+  }
 }
 
 .media_list::-webkit-scrollbar {

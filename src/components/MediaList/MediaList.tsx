@@ -72,7 +72,12 @@ export default function MediaList({
   }, [order_type]);
 
   return (
-    <div className={styles.media_list} ref={media_list_ref}>
+    <div
+      className={`${styles.media_list} ${
+        active_toggle ? styles.is_active : ''
+      }`}
+      ref={media_list_ref}
+    >
       {media_list.map((ele, idx) => {
         return (
           <Fragment
