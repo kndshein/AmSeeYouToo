@@ -8,10 +8,23 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
+export type OrderType =
+  | 'Chronological'
+  | 'Reverse Chronological'
+  | 'Release'
+  | 'Reverse Release';
+
+const order_types = [
+  'Chronological',
+  'Reverse Chronological',
+  'Release',
+  'Reverse Release',
+];
+
 function App() {
   const [is_DOM_loaded, setIsDOMLoaded] = useState(false);
   const [is_movies_only, setIsMoviesOnly] = useState(true);
-  const [is_media_reversed, setIsMediaReversed] = useState(false);
+  const [order_index, setOrderIndex] = useState(0);
 
   const query_client = new QueryClient({
     defaultOptions: {
@@ -38,6 +51,8 @@ function App() {
     }
   }, []);
 
+  const order_type = order_types[order_index] as OrderType;
+
   return (
     <QueryClientProvider client={query_client}>
       {is_DOM_loaded && (
@@ -46,14 +61,19 @@ function App() {
             is_movies_only={is_movies_only}
             setIsMoviesOnly={setIsMoviesOnly}
           />
-          <button onClick={() => setIsMediaReversed((prevState) => !prevState)}>
-            {is_media_reversed
-              ? 'Show Chronological Order'
-              : 'Show Reverse Chronological Order'}
+          <button
+            onClick={() =>
+              setOrderIndex((prevState) => {
+                if (prevState == order_types.length - 1) return 0;
+                return prevState + 1;
+              })
+            }
+          >
+            Showing in {order_types[order_index]} Order
           </button>
           <MediaListWrapper
             is_movies_only={is_movies_only}
-            is_media_reversed={is_media_reversed}
+            order_type={order_type}
           />
         </main>
       )}

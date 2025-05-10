@@ -2,15 +2,16 @@ import { useRef } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import MediaList from '../MediaList/MediaList';
 import styles from './MediaListWrapper.module.scss';
+import { OrderType } from '../../App';
 
 type PropTypes = {
   is_movies_only: boolean;
-  is_media_reversed: boolean;
+  order_type: OrderType;
 };
 
 export default function MediaListWrapper({
   is_movies_only,
-  is_media_reversed,
+  order_type,
 }: PropTypes) {
   const media_list_ref = useRef<HTMLDivElement>(null);
 
@@ -40,7 +41,7 @@ export default function MediaListWrapper({
         <MdKeyboardArrowRight />
       </button>
       <MediaList
-        is_media_reversed={is_media_reversed}
+        order_type={order_type}
         is_movies_only={is_movies_only}
         media_list_ref={media_list_ref}
       />

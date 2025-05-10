@@ -5,23 +5,28 @@ import MediaWrapper from '../MediaWrapper/MediaWrapper';
 import media_list_json from '../../assets/media-list.json';
 import styles from './MediaList.module.scss';
 import { isElementInViewport } from '../../utils/utils';
+import { OrderType } from '../../App';
 
 type PropTypes = {
   is_movies_only: boolean;
-  is_media_reversed: boolean;
+  order_type: OrderType;
   media_list_ref: RefObject<HTMLDivElement>;
 };
 
-const media_list = media_list_json as Array<MediaType>;
+const media_list_chrono = media_list_json as Array<MediaType>;
+const media_list_chrono_reversed = [
+  ...media_list_json,
+].reverse() as Array<MediaType>;
 
 export default function MediaList({
   is_movies_only,
-  is_media_reversed,
+  order_type,
   media_list_ref,
 }: PropTypes) {
   const [active_toggle, setActiveToggle] = useState<ActiveToggleType>(null);
   // Use `is_navigating` over `is_scrolling` since this is a coded action. Does not take into account of user scrolling
   const [is_navigating, setIsNavigating] = useState(false);
+  const [media_list, setMediaList] = useState(media_list_chrono);
 
   const handleToggle: HandleToggleType = (id) => {
     const ele_active_to_be = document.getElementById(id.toString());
@@ -56,19 +61,15 @@ export default function MediaList({
   };
 
   useEffect(() => {
-    const curr_ref = media_list_ref.current;
-    if (curr_ref) {
-      if (is_media_reversed) {
-        curr_ref.classList.add(styles.reverse);
-      } else {
-        curr_ref.classList.remove(styles.reverse);
-      }
-      // Put a setTimeout so DOM has a chance to update
-      setTimeout(() => {
-        curr_ref.scrollLeft = curr_ref.scrollWidth * -1;
-      }, 1);
+    switch (order_type) {
+      case 'Chronological':
+        setMediaList(media_list_chrono);
+        break;
+      case 'Reverse Chronological':
+        setMediaList(media_list_chrono_reversed);
+        break;
     }
-  }, [is_media_reversed]);
+  }, [order_type]);
 
   return (
     <div className={styles.media_list} ref={media_list_ref}>
