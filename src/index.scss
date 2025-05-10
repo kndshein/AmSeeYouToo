@@ -102,9 +102,25 @@ code {
   }
 }
 
-.App {
+.app {
   display: flex;
   flex-flow: column;
   height: 100vh;
   padding-bottom: 55px;
+}
+
+.order_type_btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $accent;
+  color: $accent-lite;
+  padding: 5px;
+  transition: 0.1s linear;
+
+  &:hover {
+    background-color: $accent;
+    border-color: $accent-lite;
+    color: white;
+  }
 }

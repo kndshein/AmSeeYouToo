@@ -56,12 +56,13 @@ function App() {
   return (
     <QueryClientProvider client={query_client}>
       {is_DOM_loaded && (
-        <main className="App">
+        <main className="app">
           <Nav
             is_movies_only={is_movies_only}
             setIsMoviesOnly={setIsMoviesOnly}
           />
           <button
+            className="order_type_btn"
             onClick={() =>
               setOrderIndex((prevState) => {
                 if (prevState == order_types.length - 1) return 0;
