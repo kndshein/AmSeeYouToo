@@ -1,8 +1,11 @@
+import { OrderType } from '../../../App';
 import styles from './Index.module.scss';
 import { motion } from 'framer-motion';
 
 interface Props {
   idx: number;
+  order_type: OrderType;
+  media_length: number;
 }
 
 function normalizeNum(num: number) {
@@ -13,10 +16,20 @@ function normalizeNum(num: number) {
   return output.join('');
 }
 
-export default function Index({ idx }: Props) {
+export default function Index({ idx, order_type, media_length }: Props) {
+  const calculated_idx = order_type.includes('Reverse')
+    ? media_length - idx
+    : idx + 1;
   return (
-    <motion.span className={styles.index} layout="position">
-      {normalizeNum(idx + 1)}
+    <motion.span
+      className={`${styles.index} ${
+        calculated_idx >= 100 && calculated_idx < 200
+          ? styles.first_hundred
+          : ''
+      }`}
+      layout="position"
+    >
+      {normalizeNum(calculated_idx)}
     </motion.span>
   );
 }

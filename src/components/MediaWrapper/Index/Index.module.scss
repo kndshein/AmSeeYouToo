@@ -19,11 +19,11 @@
   top: -1rem;
   left: -3rem;
   right: unset;
-}
 
-// This is done because numbers from 100 - 199 lean too much to the left because 1 is too thin
-:global(.media):global(.first-hundred) .index {
-  left: 0;
+  // This is done because numbers from 100 - 199 lean too much to the left because 1 is too thin
+  &.first_hundred {
+    left: 0;
+  }
 }
 
 :global(.media):global(.expanded-layout):global(.active) .index {

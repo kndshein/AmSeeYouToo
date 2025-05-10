@@ -119,8 +119,6 @@ code {
   transition: 0.1s linear;
 
   &:hover {
-    background-color: $accent;
-    border-color: $accent-lite;
     color: white;
   }
 }

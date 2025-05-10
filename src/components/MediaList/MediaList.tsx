@@ -47,7 +47,11 @@ export default function MediaList({
     setActiveToggle(id == active_toggle ? null : id);
   };
 
-  const WrapperComponent = (ele: MediaType, idx: number) => {
+  const WrapperComponent = (
+    ele: MediaType,
+    idx: number,
+    media_length: number
+  ) => {
     return (
       <MediaWrapper
         media_data={ele}
@@ -56,6 +60,8 @@ export default function MediaList({
         is_active={active_toggle == idx}
         is_navigating={is_navigating}
         idx={idx}
+        order_type={order_type}
+        media_length={media_length}
       />
     );
   };
@@ -88,8 +94,9 @@ export default function MediaList({
             }`}
           >
             {ele.type == 'movie'
-              ? WrapperComponent(ele, idx)
-              : !is_movies_only && WrapperComponent(ele, idx)}
+              ? WrapperComponent(ele, idx, media_list.length)
+              : !is_movies_only &&
+                WrapperComponent(ele, idx, media_list.length)}
           </Fragment>
         );
       })}

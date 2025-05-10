@@ -13,6 +13,7 @@ import styles from './MediaWrapper.module.scss';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Season from './Season/Season';
+import { OrderType } from '../../App';
 
 type PropTypes = {
   media_data: MediaType;
@@ -21,6 +22,8 @@ type PropTypes = {
   is_active: boolean;
   is_navigating: boolean;
   idx: number;
+  order_type: OrderType;
+  media_length: number;
 };
 
 export default function MediaWrapper({
@@ -30,6 +33,8 @@ export default function MediaWrapper({
   is_active,
   is_navigating,
   idx,
+  order_type,
+  media_length,
 }: PropTypes) {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -79,7 +84,7 @@ export default function MediaWrapper({
         isPending || !is_backdrop_loaded ? '' : 'ready'
       } ${is_content_expanded ? 'expanded-layout' : ''} ${
         is_content_collapsed ? 'collapsed-layout' : ''
-      } ${idx >= 100 && idx < 200 ? 'first-hundred' : ''}`}
+      }`}
       onClick={() => handleToggle(idx)}
       tabIndex={0}
       disabled={isPending || !is_backdrop_loaded}
@@ -161,7 +166,11 @@ export default function MediaWrapper({
               is_movies_only={is_movies_only}
               media_ui_type={media_ui_type}
             />
-            <Index idx={idx} />
+            <Index
+              idx={idx}
+              order_type={order_type}
+              media_length={media_length}
+            />
             {media_data.type == 'tv' && (
               <Season
                 media_data={media_data}
