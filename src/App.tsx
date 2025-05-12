@@ -8,18 +8,9 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-export type OrderType =
-  | 'Chronological'
-  | 'Reverse Chronological'
-  | 'Release'
-  | 'Reverse Release';
+export type OrderType = 'Chronological' | 'Reverse Chronological';
 
-const order_types = [
-  'Chronological',
-  'Reverse Chronological',
-  'Release',
-  'Reverse Release',
-];
+const order_types = ['Chronological', 'Reverse Chronological'];
 
 function App() {
   const [is_DOM_loaded, setIsDOMLoaded] = useState(false);

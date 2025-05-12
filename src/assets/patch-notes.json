@@ -339,5 +339,10 @@
     "notes": [
       "Added <i>Daredevil: Born Again (Season 1)</i> and <i>Thunderbolts*</i>."
     ]
+  },
+  {
+    "version": "4.9.0",
+    "date": "May 2025",
+    "notes": ["Added feature to view the list in reverse chronological order."]
   }
 ]
