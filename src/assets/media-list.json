@@ -1,5 +1,12 @@
 [
   {
+    "type": "tv",
+    "id": "241388-eyes-of-wakanda",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 4
+  },
+  {
     "type": "movie",
     "id": "1771-captain-america-the-first-avenger",
     "theme": { "title": "captain_america" }
@@ -432,6 +439,13 @@
   },
   {
     "type": "tv",
+    "id": "138505-marvel-zombies",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 4
+  },
+  {
+    "type": "tv",
     "id": "85271-wandavision",
     "season": 1,
     "epiStart": 1,
@@ -507,6 +521,13 @@
     "id": "616037-thor-love-and-thunder",
     "theme": { "title": "thor" }
   },
+  {
+    "type": "tv",
+    "id": "114471-ironheart",
+    "season": 1,
+    "epiStart": 1,
+    "epiEnd": 6
+  },
   { "type": "special", "id": "894205-werewolf-by-night" },
   {
     "type": "special",
@@ -548,5 +569,9 @@
   {
     "type": "movie",
     "id": "986056-thunderbolts"
+  },
+  {
+    "type": "movie",
+    "id": "617126-the-fantastic-4-first-steps"
   }
 ]

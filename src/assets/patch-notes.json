@@ -344,5 +344,12 @@
     "version": "4.9.0",
     "date": "May 2025",
     "notes": ["Added feature to view the list in reverse chronological order."]
+  },
+  {
+    "version": "4.9.1",
+    "date": "November 2025",
+    "notes": [
+      "Added <i>Ironheart</i>, <i>The Fantastic Four: First Steps</i>, <i>Eyes of Wakanda</i>, and <i>Marvel Zombies</i>."
+    ]
   }
 ]
